@@ -1,24 +1,47 @@
 mixin footer
   -
-    socialsLinks = [
+    const navLinks = [
+      {
+      href: '#',
+      text: 'Услуги'
+      },
+      {
+      href: '#',
+      text: 'Абонементы'
+      },
+      {
+      href: '#',
+      text: 'Акции'
+      },
+      {
+      href: '#',
+      text: 'Тренеры'
+      },
+      {
+      href: '#',
+      text: 'Расписание'
+      },
+    ]
+
+    const socialsLinks = [
+      {
+      icon: 'vk',
+      iconwidth: '25',
+      iconheight: '25',
+      href: '#',
+      aria: 'Ссылка на страницу в Вконтакте.'
+      },
       {
       icon: 'ok',
-      iconwidth: '12',
-      iconheight: '20',
+      iconwidth: '25',
+      iconheight: '25',
       href: '#',
       aria: 'Ссылка на страницу в Одноклассниках.'
       },
       {
-      icon: 'dzen',
-      iconwidth: '20',
-      iconheight: '20',
-      href: '#',
-      aria: 'Ссылка на страницу в Яндекс Дзен.'
-      },
-      {
       icon: 'reddit',
-      iconwidth: '20',
-      iconheight: '20',
+      iconwidth: '25',
+      iconheight: '25',
       href: '#',
       aria: 'Ссылка на страницу в Реддит.'
       },
@@ -26,3 +49,15 @@ mixin footer
 
   footer.footer
     .container
+      .footer__nav
+        +logo
+        ul
+          each item in navLinks
+            li
+              a(href=item.href)=item.text
+      .footer__social
+        ul
+          each item in socialsLinks
+            li
+              a(href=item.href)
+                +icon(item.icon, item.iconwidth, item.iconheight)

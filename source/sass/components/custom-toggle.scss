@@ -10,7 +10,7 @@
       @include visually-hidden;
 
       &.focus-visible + label {
-        @include default-outline($color-alice-blue);
+        @include default-outline($color-default-black);
       }
 
       & + label {
@@ -29,7 +29,7 @@
         @include default-outline(transparent);
 
         @include hover-focus {
-          @include default-outline($color-alice-blue);
+          @include default-outline($color-default-black);
         }
 
         @include vp-767 {
@@ -38,7 +38,7 @@
         }
 
         & .custom-toggle__icon {
-          background-color: $color-alice-blue;
+          background-color: $color-default-black;
           background-image: url("./../img/svg/custom-toggle-checkmark.svg");
           background-position: -12px;
           background-repeat: no-repeat;

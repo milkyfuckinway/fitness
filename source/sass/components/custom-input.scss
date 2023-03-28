@@ -16,15 +16,15 @@
     @include default-outline(transparent);
 
     @include hover {
-      @include default-outline($color-alice-blue);
+      @include default-outline($color-default-black);
     }
 
     @include hover-focus {
-      @include default-outline($color-alice-blue);
+      @include default-outline($color-default-black);
     }
 
     border: 0;
-    color: $color-tangaroa;
+    color: $color-default-black;
     cursor: text;
     flex-grow: 1;
     font-size: 14px;
@@ -36,7 +36,7 @@
     width: 100%;
 
     &::placeholder {
-      color: rgba($color-tangaroa, 0.7);
+      color: rgba($color-default-black, 0.7);
       font-size: 14px;
       line-height: 150%;
     }
