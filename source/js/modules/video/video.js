@@ -21,7 +21,11 @@ const initVideo = () => {
       videoContainer.addEventListener('click', (evt) => {
         if (evt.target.closest('[data-preview-button]')) {
           if (video) {
-            video.src = videoLink;
+            if (window.innerWidth > 1199) {
+              video.src = videoLink;
+            } else {
+              video.src = `${videoLink}&mute=1`;
+            }
           }
           video.addEventListener('load', onVideoLoad);
         }
