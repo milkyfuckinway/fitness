@@ -1,0 +1,7 @@
+mixin logo()
+  if(currentUrl === "index.html")
+    span.logo.disabled
+      +icon("logo", "122", "44")
+  else
+    a.header__logo(href="index.html", aria-label="Переход на главную")
+      +icon("logo", "122", "44")

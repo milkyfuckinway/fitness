@@ -1,0 +1,91 @@
+.custom-input,
+.custom-textarea {
+  display: flex;
+  padding: 0 0 20px 0;
+  position: relative;
+  width: 100%;
+
+  & label {
+    align-items: center;
+    display: flex;
+    width: 100%;
+  }
+
+  & input,
+  & textarea {
+    @include default-outline(transparent);
+
+    @include hover {
+      @include default-outline($color-alice-blue);
+    }
+
+    @include hover-focus {
+      @include default-outline($color-alice-blue);
+    }
+
+    border: 0;
+    color: $color-tangaroa;
+    cursor: text;
+    flex-grow: 1;
+    font-size: 14px;
+    line-height: 150%;
+    margin-left: auto;
+    min-height: 43px;
+    padding: 11px 16px;
+    transition: outline, opacity 0.3s ease;
+    width: 100%;
+
+    &::placeholder {
+      color: rgba($color-tangaroa, 0.7);
+      font-size: 14px;
+      line-height: 150%;
+    }
+  }
+
+  &__error {
+    bottom: 35px;
+    color: #ff1553;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  &.is-invalid {
+    input,
+    textarea {
+      outline-color: #ff1553;
+
+      &:focus,
+      &:hover {
+        outline-color: rgba(#ff1553, 0.5);
+      }
+    }
+  }
+
+  &.is-valid {
+    input {
+      outline-color: #22b259;
+
+      &:focus,
+      &:hover {
+        outline-color: rgba(#22b259, 0.5);
+      }
+    }
+  }
+
+  .input-message {
+    bottom: -2px;
+    font-size: 12px;
+    left: 0;
+    position: absolute;
+
+    &--invalid {
+      color: #ff1553;
+    }
+
+    &--valid {
+      color: #15ab07;
+    }
+  }
+}

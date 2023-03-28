@@ -1,0 +1,56 @@
+mixin form(className)
+  div(class=className data-callback="base" data-form-validate)
+    form(action="https://echo.htmlacademy.ru" method="post")
+      block
+
+mixin inputName
+  div(class="custom-input" data-limitation="name" data-required data-validate-type="text")
+    input(name="name" data-focus type="text" aria-label="Введите имя." autocomplete="off" required placeholder="Имя")
+
+mixin inputTel
+  div(class="custom-input" data-required data-validate-type="phone")
+    input(name="tel" type="tel" aria-label="Введите номер телефона." autocomplete="off" required placeholder="Телефон")
+
+mixin inputEmail
+  div(class="custom-input" data-required data-validate-type="email")
+    input(name="email" type="email" aria-label="Введите ваш Email." autocomplete="off" required placeholder="Email")
+
+mixin checkboxGroup
+  div(data-validate-type="checkbox")
+    block
+
+mixin toggleGroup
+  div(data-validate-type="toggle-group")
+    block
+
+mixin inputCheckbox(id, name, checked, text)
+  div(class="custom-toggle custom-toggle--checkbox" data-validate-type="checkbox")
+    input(id=id name=name type="checkbox" checked=checked required=required)
+    label(for=id)
+      .custom-toggle__icon
+      |#{text}
+
+mixin inputRadio(id, name, checked, text)
+  div(class="custom-toggle custom-toggle--radio")
+    input(id=id name=name type="radio" checked=checked)
+    label(for=id)
+      .custom-toggle__icon
+      |#{text}
+
+mixin inputSubmit(text)
+  button(type='submit') #{text}
+
+mixin inputReset(text)
+  button(type='reset') #{text}
+
+//- +form('test')
+//- +inputName
+//- +inputTel
+//- +inputEmail
+//- +toggleGroup
+//- +inputCheckbox('id', 'name', checked=false, 'checkbox')
+//- +toggleGroup
+//- +inputRadio('idForLabel1', 'Параметр', checked=true, 'LabelText')
+//- +inputRadio('idForLabel2', 'Параметр', checked=false, 'LabelText')
+//- +inputSubmit('Подтвердить')
+//- +inputReset('Сбросить')

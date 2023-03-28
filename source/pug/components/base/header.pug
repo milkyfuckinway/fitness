@@ -1,0 +1,35 @@
+mixin header
+  -
+    const headerLinks = [
+      {
+        href: '#',
+        text : 'Тренажёрный зал'
+      },
+      {
+        href: '#',
+        text : 'Групповые занятия'
+      },
+      {
+        href: '#',
+        text : 'Кардио-зона'
+      },
+
+    ]
+
+  header.header()
+    .container
+      .header__top
+        +logo
+        a(href='tel:88005555555') 8-800-555-55-55
+      .header__bottom
+        .header__content
+          ul
+            each item in headerLinks
+              li
+                a(href=item.href)=item.text
+          span Омск
+          h1 Фитнес центр
+          a.btn(href="#tariffs") Купить абонемент
+        +picture-responsive-dt("content/header", "hero", "jpg", "500", "556")
+
+
