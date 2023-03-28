@@ -12,13 +12,16 @@
 
 .header .container {
   color: $color-default-white;
+  padding-bottom: 51px;
   padding-top: 30px;
 
   @include vp-1199 {
+    padding-bottom: 82px;
     padding-top: 35px;
   }
 
   @include vp-767 {
+    padding-bottom: 79px;
     padding-top: 15px;
   }
 }
@@ -37,14 +40,6 @@
 
 .header__top .logo {
   color: $color-default-white;
-
-  @include vp-1199 {
-    margin-top: 5px;
-  }
-
-  @include vp-767 {
-    margin-top: 0;
-  }
 }
 
 .header__top .logo:not(.disabled) {
@@ -57,7 +52,7 @@
   display: block;
 
   @include vp-1199 {
-    height: 17px;
+    height: 16px;
     width: 82px;
   }
 
@@ -94,12 +89,12 @@
   column-gap: 63px;
   display: grid;
   grid-template-columns: calc(500px - 103px) 500px;
-  padding-bottom: 51px;
+  margin-top: 7px;
 
   @include vp-1199 {
     column-gap: 30px;
     grid-template-columns: 1fr 1fr;
-    padding-bottom: 82px;
+    margin-top: 0;
   }
 
   @include vp-767 {
