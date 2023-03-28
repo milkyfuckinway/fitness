@@ -2224,6 +2224,56 @@ button,
   display: flex;
 }
 
+.about .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.about__media {
+  position: relative;
+}
+
+.about__video {
+  height: 228px;
+  position: relative;
+  width: 364px;
+}
+.about__video:not(.is-active)::before {
+  background-color: rgba(20, 54, 122, 0.5);
+  content: "";
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  z-index: 2;
+}
+
+.about__video button {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transition: opacity 0.3s;
+  -o-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+  z-index: 3;
+}
+
+.about__video img {
+  position: relative;
+  z-index: 1;
+}
+
+.about__video iframe {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
 /* @mixin hover-focus {
     @media (hover: hover) {
       &:hover:not(.focus-visible) {

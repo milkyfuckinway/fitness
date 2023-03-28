@@ -1,0 +1,26 @@
+mixin about
+  -
+    const heading = "Тренажерный зал"
+    const description = "Просторный зал площадью 900 кв/м"
+    const textContent = [
+      {
+      text: "Supergym — самый большой фитнес центр за Уралом и идеальное место для укрепления тела и здоровья. Тренажерный зал оснащен всем необходимым современным оборудованием для всех спортсменов."
+      },
+      {
+      text: "В зале расположены отдельная зона для Crossfit и кардио-зона с 40 тренажерами. Также в фитнес центре есть несколько оборудованных залов для различных видов групповых занятий."
+      }
+    ]
+
+  section.about
+    .container
+      .about__content
+        h2=heading
+        h3=description
+        each item in textContent
+          p=item.text
+      .about__media
+        +picture-responsive("content/about/content", "gym", "jpg", "660", "401", "Наша качалка.")
+        .about__video(data-src="https://www.youtube.com/embed/9TZXsZItgdw?autoplay=1")
+          button(data-preview-button type="button") Кнопка
+          +picture-responsive("content/about/preview", "preview", "jpg", "364", "228", "Предпросмотр видео.")
+          iframe(width='560', height='315', frameborder='0', allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture', allowfullscreen)
