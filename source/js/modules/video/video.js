@@ -7,18 +7,23 @@ const initVideo = () => {
       const video = videoContainer.querySelector('iframe');
       const videoLink = video.dataset.src;
 
+      const onVideoLoad = () => {
+        video.removeEventListener('load', onVideoLoad);
+        if (playButton) {
+          playButton.remove();
+        }
+        videoContainer.classList.add('is-active');
+        if (previewImage) {
+          previewImage.remove();
+        }
+      };
+
       videoContainer.addEventListener('click', (evt) => {
         if (evt.target.closest('[data-preview-button]')) {
-          if (playButton) {
-            playButton.remove();
-          }
-          videoContainer.classList.add('is-active');
-          if (previewImage) {
-            previewImage.remove();
-          }
           if (video) {
             video.src = videoLink;
           }
+          video.addEventListener('load', onVideoLoad);
         }
       });
     });

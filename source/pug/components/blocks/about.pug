@@ -20,7 +20,7 @@ mixin about
           p=item.text
       .about__media
         +picture-responsive("content/about/content", "gym", "jpg", "660", "401", "Наша качалка.")
-        .about__video()
+        .about__video
           button(data-preview-button type="button") Кнопка
           +picture-responsive("content/about/preview", "preview", "jpg", "364", "228", "Предпросмотр видео.")
           iframe(data-src="https://www.youtube.com/embed/9TZXsZItgdw?autoplay=1", width='560', height='315', frameborder='0', allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture', allowfullscreen)
