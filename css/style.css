@@ -2373,20 +2373,30 @@ button,
 }
 
 .about__media {
+  position: relative;
   width: 100%;
 }
 
-.about__media img {
+.about__media > img {
   width: 100%;
 }
 
 .about__preview {
+  background-color: #102654;
   height: 228px;
+  position: absolute;
+  -webkit-transform: translate(-17.5%, -50%);
+      -ms-transform: translate(-17.5%, -50%);
+          transform: translate(-17.5%, -50%);
   width: 364px;
 }
 @media (max-width: 1199px) {
   .about__preview {
     height: 167px;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
     width: 266px;
   }
 }
