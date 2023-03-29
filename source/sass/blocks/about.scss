@@ -99,36 +99,45 @@
   width: 100%;
 }
 
-.about__media > picture img {
+.about__media img {
   width: 100%;
 }
 
-.about__preview {
-  height: 228px;
-  width: 364px;
-
-  @include vp-1199 {
-    min-height: auto;
-    width: 100%;
-  }
-}
-
+.about__preview,
 .about__preview > div,
 .about__preview > iframe {
   height: 228px;
   width: 364px;
 
   @include vp-1199 {
-    min-height: auto;
-    width: 100%;
+    height: 167px;
+    width: 266px;
+  }
+
+  @include vp-767 {
+    height: 167px;
+    width: 320px;
   }
 }
 
-.about__preview > div > img {
-  background-image: url("./../img/content/about/preview/desktop/preview.jpg");
+.about__preview {
+  margin: 0 auto;
+}
+
+.about__preview > div {
   background-position: center;
   background-size: cover;
   height: 100%;
   position: absolute;
   width: 100%;
+
+  @include graphic-retina("content/about/preview/desktop/preview", $color-sapphire, "jpg");
+
+  @include vp-1199 {
+    @include graphic-retina("content/about/preview/tablet/preview", $color-sapphire, "jpg");
+  }
+
+  @include vp-767 {
+    @include graphic-retina("content/about/preview/mobile/preview", $color-sapphire, "jpg");
+  }
 }

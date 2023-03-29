@@ -2344,41 +2344,105 @@ button,
   width: 100%;
 }
 
-.about__media > picture img {
+.about__media img {
   width: 100%;
 }
 
-.about__preview {
-  height: 228px;
-  width: 364px;
-}
-@media (max-width: 1199px) {
-  .about__preview {
-    min-height: auto;
-    width: 100%;
-  }
-}
-
+.about__preview,
 .about__preview > div,
 .about__preview > iframe {
   height: 228px;
   width: 364px;
 }
 @media (max-width: 1199px) {
-  .about__preview > div,
+  .about__preview,
+.about__preview > div,
 .about__preview > iframe {
-    min-height: auto;
-    width: 100%;
+    height: 167px;
+    width: 266px;
+  }
+}
+@media (max-width: 767px) {
+  .about__preview,
+.about__preview > div,
+.about__preview > iframe {
+    height: 167px;
+    width: 320px;
   }
 }
 
-.about__preview > div > img {
-  background-image: url("./../img/content/about/preview/desktop/preview.jpg");
+.about__preview {
+  margin: 0 auto;
+}
+
+.about__preview > div {
   background-position: center;
   background-size: cover;
   height: 100%;
   position: absolute;
   width: 100%;
+  background-image: url("./../img/content/about/preview/desktop/preview.jpg");
+}
+@supports (background-image: url("./../img/content/about/preview/desktop/preview.jpg")) {
+  .about__preview > div {
+    background-color: #102654;
+    background-image: url("./../img/content/about/preview/desktop/preview.jpg");
+  }
+}
+@media (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+  .about__preview > div {
+    background-image: url("./../img/content/about/preview/desktop/preview@2x.jpg");
+  }
+  @supports (background-image: url("./../img/content/about/preview/desktop/preview@2x.jpg")) {
+    .about__preview > div {
+      background-color: #102654;
+      background-image: url("./../img/content/about/preview/desktop/preview@2x.jpg");
+    }
+  }
+}
+@media (max-width: 1199px) {
+  .about__preview > div {
+    background-image: url("./../img/content/about/preview/tablet/preview.jpg");
+  }
+  @supports (background-image: url("./../img/content/about/preview/tablet/preview.jpg")) {
+    .about__preview > div {
+      background-color: #102654;
+      background-image: url("./../img/content/about/preview/tablet/preview.jpg");
+    }
+  }
+}
+@media (max-width: 1199px) and (-webkit-min-device-pixel-ratio: 1.5), (max-width: 1199px) and (-o-min-device-pixel-ratio: 3/2), (max-width: 1199px) and (min-resolution: 144dpi), (max-width: 1199px) and (min-resolution: 1.5dppx) {
+  .about__preview > div {
+    background-image: url("./../img/content/about/preview/tablet/preview@2x.jpg");
+  }
+  @supports (background-image: url("./../img/content/about/preview/tablet/preview@2x.jpg")) {
+    .about__preview > div {
+      background-color: #102654;
+      background-image: url("./../img/content/about/preview/tablet/preview@2x.jpg");
+    }
+  }
+}
+@media (max-width: 767px) {
+  .about__preview > div {
+    background-image: url("./../img/content/about/preview/mobile/preview.jpg");
+  }
+  @supports (background-image: url("./../img/content/about/preview/mobile/preview.jpg")) {
+    .about__preview > div {
+      background-color: #102654;
+      background-image: url("./../img/content/about/preview/mobile/preview.jpg");
+    }
+  }
+}
+@media (max-width: 767px) and (-webkit-min-device-pixel-ratio: 1.5), (max-width: 767px) and (-o-min-device-pixel-ratio: 3/2), (max-width: 767px) and (min-resolution: 144dpi), (max-width: 767px) and (min-resolution: 1.5dppx) {
+  .about__preview > div {
+    background-image: url("./../img/content/about/preview/mobile/preview@2x.jpg");
+  }
+  @supports (background-image: url("./../img/content/about/preview/mobile/preview@2x.jpg")) {
+    .about__preview > div {
+      background-color: #102654;
+      background-image: url("./../img/content/about/preview/mobile/preview@2x.jpg");
+    }
+  }
 }
 
 /* @mixin hover-focus {
