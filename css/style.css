@@ -2373,8 +2373,20 @@ button,
 }
 
 .about__media {
+  margin: 0 auto;
   position: relative;
-  width: 100%;
+}
+@media (max-width: 767px) {
+  .about__media {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 40px;
+  }
 }
 
 .about__media > img {
@@ -2403,6 +2415,10 @@ button,
 @media (max-width: 767px) {
   .about__preview {
     height: 167px;
+    position: unset;
+    -webkit-transform: none;
+        -ms-transform: none;
+            transform: none;
     width: 320px;
   }
 }
@@ -2484,6 +2500,7 @@ button,
 .about__preview > div > button {
   background-color: transparent;
   background-image: url("./../img/svg/play.svg");
+  background-size: contain;
   border: 0;
   border-radius: 50%;
   height: 100px;
@@ -2510,6 +2527,12 @@ button,
 }
 .about__preview > div > button:active {
   opacity: 0.7;
+}
+@media (max-width: 1199px) {
+  .about__preview > div > button {
+    height: 73px;
+    width: 73px;
+  }
 }
 
 /* @mixin hover-focus {
