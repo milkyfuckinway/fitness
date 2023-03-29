@@ -71,3 +71,44 @@
     }
   }
 }
+
+.tariffs .tabs__element {
+  background-color: transparent;
+}
+
+.tariffs .tabs__element ul {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.tariffs .tabs__element li {
+  background-color: $color-default-white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  list-style: none;
+  padding: 7px;
+  position: relative;
+
+  &::before {
+    background: $gradient-card-300;
+    background-size: 500%;
+    clip-path: polygon(0% 0%, 0% 100%, 7px 100%, 7px 7px, calc(100% - 7px) 7px, calc(100% - 7px) calc(100% - 7px), 7px calc(100% - 7px), 7px 100%, 100% 100%, 100% 0%);
+    content: "";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transition: background-position 0.25s linear;
+    width: 100%;
+  }
+
+  &:hover {
+    &::before {
+      background-position: 100%;
+    }
+  }
+}

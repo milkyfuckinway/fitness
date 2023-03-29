@@ -2756,6 +2756,58 @@ button,
   width: 100%;
 }
 
+.tariffs .tabs__element {
+  background-color: transparent;
+}
+
+.tariffs .tabs__element ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.tariffs .tabs__element li {
+  background-color: #ffffff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  list-style: none;
+  padding: 7px;
+  position: relative;
+}
+.tariffs .tabs__element li::before {
+  background: -o-linear-gradient(315deg, transparent 0%, transparent 50%, #d10a42 66%, #00359f 100%);
+  background: linear-gradient(135deg, transparent 0%, transparent 50%, #d10a42 66%, #00359f 100%);
+  background-size: 500%;
+  -webkit-clip-path: polygon(0% 0%, 0% 100%, 7px 100%, 7px 7px, calc(100% - 7px) 7px, calc(100% - 7px) calc(100% - 7px), 7px calc(100% - 7px), 7px 100%, 100% 100%, 100% 0%);
+          clip-path: polygon(0% 0%, 0% 100%, 7px 100%, 7px 7px, calc(100% - 7px) 7px, calc(100% - 7px) calc(100% - 7px), 7px calc(100% - 7px), 7px 100%, 100% 100%, 100% 0%);
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  -webkit-transition: background-position 0.25s linear;
+  -o-transition: background-position 0.25s linear;
+  transition: background-position 0.25s linear;
+  width: 100%;
+}
+.tariffs .tabs__element li:hover::before {
+  background-position: 100%;
+}
+
 /* @mixin hover-focus {
     @media (hover: hover) {
       &:hover:not(.focus-visible) {
