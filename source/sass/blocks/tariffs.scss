@@ -1,0 +1,61 @@
+.tariffs {
+  background-color: $color-ghost-white;
+}
+
+.tariffs .container {
+  padding-bottom: 120px;
+  padding-top: 120px;
+}
+
+.tariffs h2 {
+  font-family: $ff-alumnisans;
+  font-size: 54px;
+  letter-spacing: 0.03em;
+  line-height: 65px;
+  margin-top: 0;
+  text-align: center;
+}
+
+.tariffs .tabs__controls {
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  max-width: 100%;
+  position: relative;
+  width: max-content;
+
+  &::before {
+    background-color: rgba(120, 120, 120, 0.2);
+    bottom: 0;
+    content: "";
+    height: 2px;
+    position: absolute;
+    width: 100%;
+  }
+}
+
+.tariffs .tabs__control {
+  background-color: transparent;
+  border: 0;
+  color: #102654;
+  font-size: 20px;
+  line-height: 150%;
+  margin: 0;
+  opacity: 0.5;
+  padding: 20px;
+  text-transform: lowercase;
+  width: max-content;
+
+  @include vp-1199 {
+    font-size: 18px;
+  }
+
+  @include vp-767 {
+    font-size: 16px;
+  }
+
+  &.is-active {
+    opacity: 1;
+  }
+}

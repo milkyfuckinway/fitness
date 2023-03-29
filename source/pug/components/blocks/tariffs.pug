@@ -1,6 +1,5 @@
 mixin tariffs
   -
-    const heading = "Абонементы";
     const tariffMonth = [
       {
       title: "С тренеорм",
@@ -64,11 +63,13 @@ mixin tariffs
       },
     ]
 
+    const heading = "Абонементы";
     const tariffs = [tariffMonth, tariffSemiAnnual, tariffAnnual]
     const controls = ["1 месяц", "6 месяцев", "12 месяцев"]
 
   section.tariffs
-    .container(data-tabs="parent")
+    .container.tabs(data-tabs="parent")
+      h2=heading
       .tabs__controls(data-tabs="controls")
         each item in controls
           button.tabs__control(data-tabs="control" type="button" aria-label=`Тарифы подписки на срок в ${item}`)=item
@@ -82,6 +83,6 @@ mixin tariffs
                   p=item.time
                   .tariffs__price
                     span=item.price
-                  +btn(href=item.href)
+                  a.btn(href=item.href) Купить абонемент
 
 
