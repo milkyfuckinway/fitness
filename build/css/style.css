@@ -2697,6 +2697,7 @@ button,
 .tariffs .tabs__controls {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  gap: 40px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -2725,7 +2726,8 @@ button,
   line-height: 150%;
   margin: 0;
   opacity: 0.5;
-  padding: 20px;
+  padding: 20px 0;
+  position: relative;
   text-transform: lowercase;
   width: -webkit-max-content;
   width: -moz-max-content;
@@ -2743,6 +2745,15 @@ button,
 }
 .tariffs .tabs__control.is-active {
   opacity: 1;
+}
+.tariffs .tabs__control.is-active::before {
+  background-color: #d10a42;
+  bottom: 0;
+  content: "";
+  height: 2px;
+  left: 0;
+  position: absolute;
+  width: 100%;
 }
 
 /* @mixin hover-focus {

@@ -18,6 +18,7 @@
 
 .tariffs .tabs__controls {
   flex-wrap: wrap;
+  gap: 40px;
   justify-content: center;
   margin: 0 auto;
   margin-bottom: 20px;
@@ -43,7 +44,8 @@
   line-height: 150%;
   margin: 0;
   opacity: 0.5;
-  padding: 20px;
+  padding: 20px 0;
+  position: relative;
   text-transform: lowercase;
   width: max-content;
 
@@ -57,5 +59,15 @@
 
   &.is-active {
     opacity: 1;
+
+    &::before {
+      background-color: #d10a42;
+      bottom: 0;
+      content: "";
+      height: 2px;
+      left: 0;
+      position: absolute;
+      width: 100%;
+    }
   }
 }
