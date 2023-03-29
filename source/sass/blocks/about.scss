@@ -96,19 +96,25 @@
 }
 
 .about__media {
+  position: relative;
   width: 100%;
 }
 
-.about__media img {
+.about__media > img {
   width: 100%;
 }
 
 .about__preview {
+  background-color: $color-sapphire;
   height: 228px;
+  position: absolute;
+  transform: translate(-17.5%, -50%);
   width: 364px;
 
   @include vp-1199 {
     height: 167px;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 266px;
   }
 

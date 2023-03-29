@@ -7,7 +7,7 @@ function ytdeferSetup() {
     buttonElement.addEventListener('click', genYtdeferClk(index));
     divElement.appendChild(buttonElement);
   });
-  
+
   if (typeof YT === 'undefined') {
     loadYouTubePlayerAPI();
   }
@@ -39,6 +39,9 @@ const genYtdeferClk = (index) => () => {
   const videoId = videoDivElement.parentNode.getAttribute('data-src');
   const player = new YT.Player(videoDivElement.id, {
     videoId,
+    playerVars: {
+      'autoplay': 1,
+    },
     events: {
       onReady(event) {
         event.target.playVideo();
