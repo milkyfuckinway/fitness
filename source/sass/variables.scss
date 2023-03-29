@@ -23,9 +23,8 @@ $black-to-right: linear-gradient(90deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0)
 $gradient-header-desktop: conic-gradient(from 150.87deg at 16.03% 39.06%, #b80027 -46.69deg, #003d85 32.24deg, #b80027 313.31deg, #003d85 392.24deg);
 $gradient-header-tablet: conic-gradient(from 155.49deg at 20.7% 35.74%, #b80027 -46.69deg, #003d85 32.24deg, #b80027 313.31deg, #003d85 392.24deg);
 $gradient-header-mobile: conic-gradient(from 167.26deg at 35.31% 34.22%, #b80027 -46.69deg, #003d85 32.24deg, #b80027 313.31deg, #003d85 392.24deg);
-$gradient-button: linear-gradient(97.05deg, #ed0233 17.6%, #003eb7 95.31%);
-$gradient-button-300: linear-gradient(97.05deg, transparent 0%, transparent 50%, #ed0233 72.53%, #003eb7 98.44%);
-$gradient-card: linear-gradient(to right, #d10a42 0%, #00359f 100%);
+$gradient-button-white-300: linear-gradient(97.05deg, #ffffff 0%, #ffffff 40%, #ed0233 72.53%, #003eb7 98.44%);
+$gradient-button-sapphire-300: linear-gradient(97.05deg, $color-sapphire 0%, $color-sapphire 40%, #ed0233 72.53%, #003eb7 98.44%);
 $gradient-card-300: linear-gradient(135deg, transparent 0%, transparent 50%, #d10a42 66%, #00359f 100%);
 
 // Typography

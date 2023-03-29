@@ -1194,10 +1194,6 @@ button,
 }
 
 .btn {
-  background-image: -o-linear-gradient(352.95deg, transparent 0%, transparent 50%, #ed0233 72.53%, #003eb7 98.44%);
-  background-image: linear-gradient(97.05deg, transparent 0%, transparent 50%, #ed0233 72.53%, #003eb7 98.44%);
-  background-size: 300% 100%;
-  border: 4px solid #ffffff;
   color: #ffffff;
   cursor: pointer;
   display: -webkit-inline-box;
@@ -1211,31 +1207,48 @@ button,
           justify-content: center;
   letter-spacing: 0.05em;
   line-height: 17px;
-  padding: 18px 20px;
+  padding: 22px 24px;
   position: relative;
   text-transform: uppercase;
-  -webkit-transition: background-position 0.3s ease-out, border-color 0.2s ease-out;
-  -o-transition: background-position 0.3s ease-out, border-color 0.2s ease-out;
-  transition: background-position 0.3s ease-out, border-color 0.2s ease-out;
+  -webkit-transition: 0.3s color;
+  -o-transition: 0.3s color;
+  transition: 0.3s color;
   z-index: 1;
 }
 .btn:disabled {
   opacity: 0.5;
   pointer-events: none;
 }
+.btn::before {
+  background-image: -o-linear-gradient(352.95deg, #ffffff 0%, #ffffff 40%, #ed0233 72.53%, #003eb7 98.44%);
+  background-image: linear-gradient(97.05deg, #ffffff 0%, #ffffff 40%, #ed0233 72.53%, #003eb7 98.44%);
+  background-size: 300%;
+  -webkit-clip-path: polygon(0% 0%, 0% 100%, 4px 100%, 4px 4px, calc(100% - 4px) 4px, calc(100% - 4px) calc(100% - 4px), 4px calc(100% - 4px), 4px 100%, 100% 100%, 100% 0%);
+          clip-path: polygon(0% 0%, 0% 100%, 4px 100%, 4px 4px, calc(100% - 4px) 4px, calc(100% - 4px) calc(100% - 4px), 4px calc(100% - 4px), 4px 100%, 100% 100%, 100% 0%);
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  -webkit-transition: 0.3s background-position ease-in, 0.3s -webkit-clip-path ease-in;
+  transition: 0.3s background-position ease-in, 0.3s -webkit-clip-path ease-in;
+  -o-transition: 0.3s background-position ease-in, 0.3s clip-path ease-in;
+  transition: 0.3s background-position ease-in, 0.3s clip-path ease-in;
+  transition: 0.3s background-position ease-in, 0.3s clip-path ease-in, 0.3s -webkit-clip-path ease-in;
+  width: 100%;
+  z-index: -1;
+}
 @media (hover: hover) {
-  .btn:hover:not(.focus-visible):not(:focus-visible) {
+  .btn:hover:not(.focus-visible):not(:focus-visible)::before {
     background-position: 100%;
-    border: 0;
-    border-color: transparent;
-    padding: 22px 24px;
+    -webkit-clip-path: polygon(0% 0%, 0% 100%, 4px 100%, 4px 4px, 4px 4px, 4px calc(100% - 4px), 4px calc(100% - 4px), 4px 100%, 100% 100%, 100% 0%);
+            clip-path: polygon(0% 0%, 0% 100%, 4px 100%, 4px 4px, 4px 4px, 4px calc(100% - 4px), 4px calc(100% - 4px), 4px 100%, 100% 100%, 100% 0%);
   }
 }
-.btn.focus-visible:focus:not(:focus-visible) {
+.btn.focus-visible:focus:not(:focus-visible)::before {
   background-position: 100%;
-  border: 0;
-  border-color: transparent;
-  padding: 22px 24px;
+  -webkit-clip-path: polygon(0% 0%, 0% 100%, 4px 100%, 4px 4px, 4px 4px, 4px calc(100% - 4px), 4px calc(100% - 4px), 4px 100%, 100% 100%, 100% 0%);
+          clip-path: polygon(0% 0%, 0% 100%, 4px 100%, 4px 4px, 4px 4px, 4px calc(100% - 4px), 4px calc(100% - 4px), 4px 100%, 100% 100%, 100% 0%);
 }
 .btn.focus-visible:focus {
   outline: 2px solid #ffffff;
@@ -2785,7 +2798,7 @@ button,
       -ms-flex-pack: justify;
           justify-content: space-between;
   list-style: none;
-  padding: 7px;
+  padding: 50px;
   position: relative;
 }
 .tariffs .tabs__element li::before {
@@ -2806,6 +2819,19 @@ button,
 }
 .tariffs .tabs__element li:hover::before {
   background-position: 100%;
+}
+
+.tariffs .btn {
+  color: #102654;
+}
+.tariffs .btn::before {
+  background-image: -o-linear-gradient(352.95deg, #102654 0%, #102654 40%, #ed0233 72.53%, #003eb7 98.44%);
+  background-image: linear-gradient(97.05deg, #102654 0%, #102654 40%, #ed0233 72.53%, #003eb7 98.44%);
+}
+@media (hover: hover) {
+  .tariffs .btn:hover:not(.focus-visible) {
+    color: #ffffff;
+  }
 }
 
 /* @mixin hover-focus {

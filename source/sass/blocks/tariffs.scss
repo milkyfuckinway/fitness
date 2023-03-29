@@ -90,7 +90,7 @@
   flex-direction: column;
   justify-content: space-between;
   list-style: none;
-  padding: 7px;
+  padding: 50px;
   position: relative;
 
   &::before {
@@ -110,5 +110,17 @@
     &::before {
       background-position: 100%;
     }
+  }
+}
+
+.tariffs .btn {
+  color: $color-sapphire;
+
+  &::before {
+    background-image: $gradient-button-sapphire-300;
+  }
+
+  @include hover {
+    color: $color-default-white;
   }
 }
