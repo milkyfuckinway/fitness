@@ -7,6 +7,7 @@ function ytdeferSetup() {
     buttonElement.addEventListener('click', genYtdeferClk(index));
     divElement.appendChild(buttonElement);
   });
+  
   if (typeof YT === 'undefined') {
     loadYouTubePlayerAPI();
   }
@@ -36,7 +37,6 @@ function loadYouTubePlayerAPI() {
 const genYtdeferClk = (index) => () => {
   const videoDivElement = document.querySelector(`#ytdefer_vid${index}`);
   const videoId = videoDivElement.parentNode.getAttribute('data-src');
-  // eslint-disable-next-line no-undef, no-unused-vars
   const player = new YT.Player(videoDivElement.id, {
     videoId,
     events: {
