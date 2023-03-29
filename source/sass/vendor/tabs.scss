@@ -5,8 +5,8 @@
 .tabs__controls {
   display: flex;
   justify-content: space-between;
-  width: 100%;
   margin-bottom: 40px;
+  width: 100%;
 
   @media screen and (max-width: 767px) {
     flex-wrap: wrap;
@@ -14,12 +14,12 @@
 }
 
 .tabs__control {
-  text-transform: uppercase;
   cursor: pointer;
-  margin: 0 20px;
-  opacity: 0.5;
-  min-width: auto;
   justify-content: center;
+  margin: 0 20px;
+  min-width: auto;
+  opacity: 0.5;
+  text-transform: uppercase;
   width: 25%;
 
   @media screen and (max-width: 1023px) {
@@ -53,14 +53,6 @@
     padding: 15px;
   }
 
-  p {
-    margin: 0;
-
-    &:not(:last-child) {
-      margin: 0 0 20px 0;
-    }
-  }
-
   &:nth-child(1) {
     background-color: rgb(250, 235, 215);
   }
@@ -84,6 +76,6 @@
 
 .tabs--unset .tabs__element {
   height: 100%;
-  overflow-y: auto;
   overflow-x: hidden;
+  overflow-y: auto;
 }

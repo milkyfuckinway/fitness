@@ -4,24 +4,28 @@
 
 .tariffs .container {
   padding-bottom: 120px;
+  padding-left: 50px;
+  padding-right: 50px;
   padding-top: 120px;
 }
 
 .tariffs h2 {
   font-family: $ff-alumnisans;
   font-size: 54px;
+  font-weight: 600;
   letter-spacing: 0.03em;
   line-height: 65px;
+  margin-bottom: 10px;
   margin-top: 0;
   text-align: center;
 }
 
 .tariffs .tabs__controls {
   flex-wrap: wrap;
-  gap: 40px;
+  gap: 48px;
   justify-content: center;
   margin: 0 auto;
-  margin-bottom: 20px;
+  margin-bottom: 12px;
   max-width: 100%;
   position: relative;
   width: max-content;
@@ -44,7 +48,7 @@
   line-height: 150%;
   margin: 0;
   opacity: 0.5;
-  padding: 20px 0;
+  padding: 6px 0 14px;
   position: relative;
   text-transform: lowercase;
   width: max-content;
@@ -78,7 +82,8 @@
 
 .tariffs .tabs__element ul {
   display: flex;
-  justify-content: space-between;
+  gap: 40px;
+  justify-content: center;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -88,15 +93,15 @@
   background-color: $color-default-white;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   list-style: none;
-  padding: 50px;
+  min-height: 448px;
+  min-width: 360px;
+  padding: 57px 25px 67px;
   position: relative;
 
   &::before {
     background: $gradient-card-300;
     background-size: 500%;
-    clip-path: polygon(0% 0%, 0% 100%, 7px 100%, 7px 7px, calc(100% - 7px) 7px, calc(100% - 7px) calc(100% - 7px), 7px calc(100% - 7px), 7px 100%, 100% 100%, 100% 0%);
     content: "";
     height: 100%;
     left: 0;
@@ -104,6 +109,8 @@
     top: 0;
     transition: background-position 0.25s linear;
     width: 100%;
+
+    @include clipOn(7px);
   }
 
   &:hover {
@@ -113,14 +120,95 @@
   }
 }
 
+.tariffs h3 {
+  font-size: 26px;
+  line-height: 40px;
+  margin-bottom: 5px;
+  margin-top: 0;
+  text-align: center;
+}
+
+.tariffs p {
+  font-size: 16px;
+  line-height: 150%;
+  margin-bottom: 65px;
+  margin-top: 0;
+  text-align: center;
+}
+
+.tariffs__price {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+.tariffs__price span {
+  color: #e8e8e8;
+  font-size: 100px;
+  font-weight: 700;
+  line-height: 100%;
+  opacity: 0.48;
+  position: absolute;
+  text-align: center;
+  top: -55px;
+  user-select: none;
+  z-index: 0;
+}
+
+.tariffs__price h4 {
+  align-items: center;
+  color: #103aae;
+  display: flex;
+  font-size: 60px;
+  font-weight: 700;
+  gap: 14px;
+  line-height: 150%;
+  margin: 0;
+  position: relative;
+  user-select: none;
+  z-index: 1;
+
+  &::after {
+    color: #102654;
+    content: "₽";
+    font-size: 58px;
+    font-weight: 400;
+    line-height: 100%;
+    -webkit-text-stroke: 2px;
+  }
+}
+
+.tariffs .tabs__element li:hover .btn {
+  color: $color-default-white;
+
+  &::before {
+    background-position: 100%;
+
+    @include clipOff(2px);
+  }
+}
+
 .tariffs .btn {
   color: $color-sapphire;
+  line-height: 16px;
+  margin: auto auto 0;
+  padding: 25px 46px;
 
   &::before {
     background-image: $gradient-button-sapphire-300;
+
+    @include clipOn(2px);
   }
 
-  @include hover {
-    color: $color-default-white;
+  @include focus {
+    @include default-outline($color-sapphire);
+  }
+}
+
+.tariffs .tabs__element li:hover .btn:hover {
+  &::before {
+    background-position: 50%;
   }
 }

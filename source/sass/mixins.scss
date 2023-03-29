@@ -10,6 +10,16 @@
   }
 }
 
+// clip-path
+
+@mixin clipOn($value) {
+  clip-path: polygon(0% 0%, 0% 100%, $value 100%, $value $value, calc(100% - $value) $value, calc(100% - $value) calc(100% - $value), $value calc(100% - $value), $value 100%, 100% 100%, 100% 0%);
+}
+
+@mixin clipOff($value) {
+  clip-path: polygon(0% 0%, 0% 100%, $value 100%, $value $value, $value $value, $value calc(100% - $value), $value calc(100% - $value), $value 100%, 100% 100%, 100% 0%);
+}
+
 // visually-hidden
 
 @mixin visually-hidden {

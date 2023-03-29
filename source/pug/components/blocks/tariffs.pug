@@ -2,7 +2,7 @@ mixin tariffs
   -
     const tariffMonth = [
       {
-      title: "С тренеорм",
+      title: "С тренером",
       time: "12 занятий",
       price: "5000",
       href: "#",
@@ -23,7 +23,7 @@ mixin tariffs
 
     const tariffSemiAnnual = [
       {
-      title: "С тренеорм",
+      title: "С тренером",
       time: "12 занятий",
       price: "20000",
       href: "#",
@@ -44,7 +44,7 @@ mixin tariffs
 
     const tariffAnnual = [
       {
-      title: "С тренеорм",
+      title: "С тренером",
       time: "12 занятий",
       price: "30000",
       href: "#",
@@ -82,6 +82,7 @@ mixin tariffs
                   h3=item.title
                   p=item.time
                   .tariffs__price
+                    h4=item.price
                     span=item.price
                   a.btn(href=item.href) Купить абонемент
 

@@ -22,22 +22,24 @@
   &::before {
     background-image: $gradient-button-white-300;
     background-size: 300%;
-    clip-path: polygon(0% 0%, 0% 100%, 4px 100%, 4px 4px, calc(100% - 4px) 4px, calc(100% - 4px) calc(100% - 4px), 4px calc(100% - 4px), 4px 100%, 100% 100%, 100% 0%);
     content: "";
     height: 100%;
     left: 0;
     position: absolute;
     top: 0;
-    transition: 0.3s background-position ease-in, 0.3s clip-path ease-in;
+    transition: 0.2s background-position, 0.2s clip-path;
     width: 100%;
     z-index: -1;
+
+    @include clipOn(4px);
   }
 
   @include hover-focus {
     &:not(:focus-visible) {
       &::before {
         background-position: 100%;
-        clip-path: polygon(0% 0%, 0% 100%, 4px 100%, 4px 4px, 4px 4px, 4px calc(100% - 4px), 4px calc(100% - 4px), 4px 100%, 100% 100%, 100% 0%);
+
+        @include clipOff(4px);
       }
     }
   }
