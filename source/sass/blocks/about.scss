@@ -96,8 +96,14 @@
 }
 
 .about__media {
+  margin: 0 auto;
   position: relative;
-  width: 100%;
+
+  @include vp-767 {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
 }
 
 .about__media > img {
@@ -120,6 +126,8 @@
 
   @include vp-767 {
     height: 167px;
+    position: unset;
+    transform: none;
     width: 320px;
   }
 }
@@ -150,10 +158,16 @@
 .about__preview > div > button {
   background-color: transparent;
   background-image: url("./../img/svg/play.svg");
+  background-size: contain;
   border: 0;
   border-radius: 50%;
   height: 100px;
   width: 100px;
 
   @include default-states($color-black-russian);
+
+  @include vp-1199 {
+    height: 73px;
+    width: 73px;
+  }
 }
