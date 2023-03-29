@@ -1,6 +1,7 @@
 import {iosVhFix} from './utils/ios-vh-fix';
 import {Form} from './modules/form-validate/form';
-import {initVideo} from './modules/video/video';
+import {ytdeferInit} from './vendor/ytdefer';
+
 // ---------------------------------
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -17,8 +18,8 @@ window.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('load', () => {
     const form = new Form();
     window.form = form;
-    initVideo();
     form.init();
+    ytdeferInit();
   });
 });
 
