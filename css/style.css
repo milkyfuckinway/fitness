@@ -650,6 +650,38 @@ template {
   background-color: #17ff45;
 }
 
+.ytdefer {
+  height: 180px;
+  margin: 0 auto;
+  width: 320px;
+}
+
+.ytdefer > div,
+.ytdefer > iframe {
+  height: inherit;
+  width: inherit;
+}
+
+.ytdefer > div {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: absolute;
+}
+
+.ytdefer > div > button {
+  cursor: pointer;
+  height: 50px;
+  width: 50px;
+  z-index: 1;
+}
+
 @font-face {
   font-display: swap;
   font-family: "Alumni Sans";
@@ -2348,39 +2380,26 @@ button,
   width: 100%;
 }
 
-.about__preview,
-.about__preview > div,
-.about__preview > iframe {
+.about__preview {
   height: 228px;
   width: 364px;
 }
 @media (max-width: 1199px) {
-  .about__preview,
-.about__preview > div,
-.about__preview > iframe {
+  .about__preview {
     height: 167px;
     width: 266px;
   }
 }
 @media (max-width: 767px) {
-  .about__preview,
-.about__preview > div,
-.about__preview > iframe {
+  .about__preview {
     height: 167px;
     width: 320px;
   }
 }
 
-.about__preview {
-  margin: 0 auto;
-}
-
 .about__preview > div {
   background-position: center;
   background-size: cover;
-  height: 100%;
-  position: absolute;
-  width: 100%;
   background-image: url("./../img/content/about/preview/desktop/preview.jpg");
 }
 @supports (background-image: url("./../img/content/about/preview/desktop/preview.jpg")) {
@@ -2443,6 +2462,44 @@ button,
       background-image: url("./../img/content/about/preview/mobile/preview@2x.jpg");
     }
   }
+}
+.about__preview > div::before {
+  background-color: rgba(20, 54, 122, 0.5);
+  content: "";
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+
+.about__preview > div > button {
+  background-color: transparent;
+  background-image: url("./../img/svg/play.svg");
+  border: 0;
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-transition: linear 0.2s opacity;
+  -o-transition: linear 0.2s opacity;
+  transition: linear 0.2s opacity;
+}
+@media (hover: hover) {
+  .about__preview > div > button:hover:not(.focus-visible):focus-visible {
+    outline: 2px solid #030a1a;
+    outline-offset: 2px;
+  }
+}
+.about__preview > div > button.focus-visible:focus:focus-visible {
+  outline: 2px solid #030a1a;
+  outline-offset: 2px;
+}
+@media (hover: hover) {
+  .about__preview > div > button:hover:not(.focus-visible) {
+    opacity: 0.7;
+  }
+}
+.about__preview > div > button:active {
+  opacity: 0.7;
 }
 
 /* @mixin hover-focus {
