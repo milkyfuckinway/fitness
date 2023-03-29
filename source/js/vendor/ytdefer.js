@@ -41,10 +41,12 @@ const genYtdeferClk = (index) => () => {
     videoId,
     playerVars: {
       'autoplay': 1,
+      'playsinline': 1
     },
     events: {
       onReady(event) {
         event.target.playVideo();
+        event.target.mute();
       },
     },
   });

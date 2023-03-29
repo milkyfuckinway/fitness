@@ -1,0 +1,87 @@
+mixin tariffs
+  -
+    const heading = "Абонементы";
+    const tariffMonth = [
+      {
+      title: "С тренеорм",
+      time: "12 занятий",
+      price: "5000",
+      href: "#",
+      },
+      {
+      title: "Дневной",
+      time: "с 8:00 до 17:00",
+      price: "1700",
+      href: "#",
+      },
+      {
+      title: "Полный день",
+      time: "с 8:00 до 22:00",
+      price: "2700",
+      href: "#",
+      },
+    ]
+
+    const tariffSemiAnnual = [
+      {
+      title: "С тренеорм",
+      time: "12 занятий",
+      price: "20000",
+      href: "#",
+      },
+      {
+      title: "Дневной",
+      time: "с 8:00 до 17:00",
+      price: "6800",
+      href: "#",
+      },
+      {
+      title: "Полный день",
+      time: "с 8:00 до 22:00",
+      price: "10800",
+      href: "#",
+      },
+    ]
+
+    const tariffAnnual = [
+      {
+      title: "С тренеорм",
+      time: "12 занятий",
+      price: "30000",
+      href: "#",
+      },
+      {
+      title: "Дневной",
+      time: "с 8:00 до 17:00",
+      price: "10200",
+      href: "#",
+      },
+      {
+      title: "Полный день",
+      time: "с 8:00 до 22:00",
+      price: "16200",
+      href: "#",
+      },
+    ]
+
+    const tariffs = [tariffMonth, tariffSemiAnnual, tariffAnnual]
+    const controls = ["1 месяц", "6 месяцев", "12 месяцев"]
+
+  section.tariffs
+    .container(data-tabs="parent")
+      .tabs__controls(data-tabs="controls")
+        each item in controls
+          button.tabs__control(data-tabs="control" type="button" aria-label=`Тарифы подписки на срок в ${item}`)=item
+      .tabs__content(data-tabs="content")
+        each element in tariffs
+          .tabs__element(data-tabs="element")
+            ul
+              each item in element
+                li
+                  h3=item.title
+                  p=item.time
+                  .tariffs__price
+                    span=item.price
+                  +btn(href=item.href)
+
+
