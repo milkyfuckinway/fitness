@@ -2535,16 +2535,12 @@ button,
         -ms-flex-direction: column;
             flex-direction: column;
     gap: 40px;
+    width: 100%;
   }
 }
 
 .about__media > picture > img {
   width: 100%;
-}
-@media (max-width: 767px) {
-  .about__media > picture > img {
-    width: 100vw;
-  }
 }
 
 .about__preview {
@@ -2570,13 +2566,11 @@ button,
   .about__preview {
     aspect-ratio: 1/0.52;
     height: 100%;
-    min-height: 167px;
-    min-width: 320px;
     position: unset;
     -webkit-transform: none;
         -ms-transform: none;
             transform: none;
-    width: 100vw;
+    width: 100%;
   }
 }
 
