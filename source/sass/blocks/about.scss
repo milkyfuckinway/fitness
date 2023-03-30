@@ -108,6 +108,10 @@
 
 .about__media > picture > img {
   width: 100%;
+
+  @include vp-767 {
+    width: 100vw;
+  }
 }
 
 .about__preview {
@@ -125,10 +129,13 @@
   }
 
   @include vp-767 {
-    height: 167px;
+    aspect-ratio: 1 / 0.52;
+    height: 100%;
+    min-height: 167px;
+    min-width: 320px;
     position: unset;
     transform: none;
-    width: 320px;
+    width: 100vw;
   }
 }
 

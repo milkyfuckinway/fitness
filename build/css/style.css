@@ -2541,6 +2541,11 @@ button,
 .about__media > picture > img {
   width: 100%;
 }
+@media (max-width: 767px) {
+  .about__media > picture > img {
+    width: 100vw;
+  }
+}
 
 .about__preview {
   background-color: #102654;
@@ -2563,12 +2568,15 @@ button,
 }
 @media (max-width: 767px) {
   .about__preview {
-    height: 167px;
+    aspect-ratio: 1/0.52;
+    height: 100%;
+    min-height: 167px;
+    min-width: 320px;
     position: unset;
     -webkit-transform: none;
         -ms-transform: none;
             transform: none;
-    width: 320px;
+    width: 100vw;
   }
 }
 
