@@ -2,6 +2,7 @@ import {iosVhFix} from './utils/ios-vh-fix';
 import {Form} from './modules/form-validate/form';
 import {ytdeferInit} from './vendor/ytdefer';
 import {initTabs} from './modules/tabs/init-tabs';
+import {crewSwiper} from './sliders/crew';
 
 // ---------------------------------
 
@@ -22,6 +23,7 @@ window.addEventListener('DOMContentLoaded', () => {
     form.init();
     initTabs();
     ytdeferInit();
+    crewSwiper.init();
   });
 });
 

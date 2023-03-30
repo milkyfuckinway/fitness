@@ -28,12 +28,13 @@
     align-content: center;
     column-gap: 34px;
     flex-grow: 1;
-    padding: 47px 46px 47px 44px;
+    padding: 42px 46px 47px 44px;
     row-gap: 0;
   }
 
   @include vp-767 {
     padding-bottom: 52px;
+    padding-top: 47px;
   }
 }
 
