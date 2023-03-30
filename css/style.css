@@ -2689,7 +2689,7 @@ button,
 }
 @media (max-width: 1199px) {
   .tariffs .container {
-    padding: 104px 163px 35px;
+    padding: 104px 163px 100px;
   }
 }
 @media (max-width: 767px) {
@@ -3078,13 +3078,14 @@ button,
     -webkit-box-flex: 1;
         -ms-flex-positive: 1;
             flex-grow: 1;
-    padding: 47px 46px 47px 44px;
+    padding: 42px 46px 47px 44px;
     row-gap: 0;
   }
 }
 @media (max-width: 767px) {
   .promo__content {
     padding-bottom: 52px;
+    padding-top: 47px;
   }
 }
 
