@@ -18,19 +18,26 @@ mixin promo
     .container
       .promo__content
         h2=title
-        .promo__data
-          .promo__top
-            span Дата
-          .promo__bottom
-            span=data.day
-            span=data.month
-            span=data.year
-        .promo__time
-          .promo__top
-            span Время
-          .promo__bottom
-            span=time
+        .promo__timestamp
+          .promo__timestamp-top
+            .promo__timestamp-label
+              div Дата
+          .promo__timestamp-bottom
+            .promo__timestamp-day
+              div=data.day
+            .promo__timestamp-halfed
+              .promo__timestamp-month
+                div=data.month
+              .promo__timestamp-year
+                div=data.year
+        .promo__timestamp
+          .promo__timestamp-top
+            .promo__timestamp-label
+              div Время
+          .promo__timestamp-bottom
+            .promo__timestamp-time
+              div=time
         p=description
-        .btn(href=link.href)=link.text
+        a.btn(href=link.href)=link.text
       .promo__image
         +picture("content/announcement", "photo", "jpg", "660", "500", "Спортсмен готовится к выступлению.")

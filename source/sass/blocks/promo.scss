@@ -1,0 +1,180 @@
+.promo .container {
+  color: $color-default-white;
+  display: flex;
+  padding-bottom: 120px;
+  padding-top: 120px;
+
+  @include vp-1199 {
+    padding-bottom: 100px;
+    padding-top: 100px;
+  }
+
+  @include vp-767 {
+    flex-direction: column;
+    padding-top: 70px;
+  }
+}
+
+.promo__content {
+  background-color: #ed0233;
+  column-gap: 50px;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: repeat(4, max-content);
+  padding: 84px 76px;
+  row-gap: 14px;
+
+  @include vp-1199 {
+    align-content: center;
+    column-gap: 34px;
+    flex-grow: 1;
+    padding: 47px 46px 47px 44px;
+    row-gap: 0;
+  }
+
+  @include vp-767 {
+    padding-bottom: 52px;
+  }
+}
+
+.promo__content h2 {
+  display: flex;
+  font-family: $ff-alumnisans;
+  font-size: 82px;
+  font-weight: 600;
+  grid-row: 1 / 3;
+  letter-spacing: 0.03em;
+  line-height: 79px;
+  margin: 0;
+  padding: 0 8px 0 12px;
+  text-align: center;
+  text-transform: uppercase;
+  width: min-content;
+
+  @include vp-1199 {
+    font-size: 48px;
+    line-height: 46px;
+    padding: 4px 0 0 8px;
+  }
+}
+
+.promo__content p {
+  font-size: 18px;
+  grid-column: 1 / -1;
+  line-height: 150%;
+  margin-bottom: 30px;
+  margin-top: 0;
+
+  @include vp-1199 {
+    font-size: 12px;
+    margin-top: 2px;
+  }
+}
+
+.promo__content .btn {
+  grid-column: 1 / -1;
+  min-width: 347px;
+  padding: 28px;
+
+  @include vp-1199 {
+    font-size: 10px;
+    line-height: 12px;
+    min-width: fit-content;
+    padding: 14px;
+    width: 100%;
+
+    &::before {
+      @include clipOn(2px);
+    }
+  }
+
+  @include hover {
+    @include vp-1199 {
+      &::before {
+        @include clipOff(2px);
+      }
+    }
+  }
+}
+
+.promo__timestamp {
+  display: flex;
+  flex-direction: column;
+}
+
+.promo__timestamp-top {
+  margin-bottom: 5px;
+  width: fit-content;
+
+  @include vp-1199 {
+    margin-bottom: 1px;
+  }
+}
+
+.promo__timestamp-bottom {
+  column-gap: 8px;
+  display: flex;
+  position: relative;
+  width: fit-content;
+
+  &::after {
+    background-color: $color-default-white;
+    content: "";
+    height: 1px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  @include vp-1199 {
+    column-gap: 4px;
+  }
+}
+
+.promo__timestamp-halfed {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.promo__timestamp-label {
+  font-size: 18px;
+  line-height: 22px;
+
+  @include vp-1199 {
+    font-size: 12px;
+    line-height: 18px;
+  }
+}
+
+.promo__timestamp-day,
+.promo__timestamp-time {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 53px;
+
+  @include vp-1199 {
+    font-size: 24px;
+    line-height: 33px;
+  }
+}
+
+.promo__timestamp-month,
+.promo__timestamp-year {
+  font-size: 14px;
+  line-height: 18px;
+
+  @include vp-1199 {
+    font-size: 10px;
+    line-height: 12px;
+  }
+}
+
+.promo img {
+  height: 100%;
+  object-fit: cover;
+
+  @include vp-767 {
+    height: 290px;
+  }
+}

@@ -7,7 +7,7 @@
   padding-top: 120px;
 
   @include vp-1199 {
-    padding: 104px 138px 100px;
+    padding: 104px 163px 35px;
   }
 
   @include vp-767 {
@@ -44,7 +44,7 @@
   flex-wrap: wrap;
   gap: 48px;
   justify-content: center;
-  margin: 0 auto 12px;
+  margin: 0 auto 37px;
   max-width: 100%;
   position: relative;
   width: max-content;
@@ -60,7 +60,7 @@
 
   @include vp-1199 {
     gap: 55px;
-    margin: 0 auto 19px;
+    margin: 0 auto 44px;
   }
 
   @include vp-767 {
@@ -125,6 +125,7 @@
 
   @include vp-1199 {
     flex-direction: column;
+    gap: 40px;
   }
 
   @include vp-767 {
@@ -213,14 +214,20 @@
 }
 
 .tariffs .tabs__element li {
+  align-items: center;
   background-color: $color-default-white;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   list-style: none;
   min-height: 448px;
   min-width: 360px;
-  padding: 57px 25px 67px;
+  padding: 57px 30px 67px;
   position: relative;
+
+  @include vp-1199 {
+    min-height: 448px;
+  }
 
   @include vp-767 {
     min-height: 384px;
