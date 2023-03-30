@@ -2538,7 +2538,7 @@ button,
   }
 }
 
-.about__media > img {
+.about__media > picture > img {
   width: 100%;
 }
 
@@ -2690,9 +2690,17 @@ button,
 
 .tariffs .container {
   padding-bottom: 120px;
-  padding-left: 50px;
-  padding-right: 50px;
   padding-top: 120px;
+}
+@media (max-width: 1199px) {
+  .tariffs .container {
+    padding: 104px 138px 100px;
+  }
+}
+@media (max-width: 767px) {
+  .tariffs .container {
+    padding: 70px 15px;
+  }
 }
 
 .tariffs h2 {
@@ -2705,6 +2713,22 @@ button,
   margin-top: 0;
   text-align: center;
 }
+@media (max-width: 1199px) {
+  .tariffs h2 {
+    font-size: 42px;
+    line-height: 50px;
+    margin-bottom: 13px;
+    margin-right: 15px;
+  }
+}
+@media (max-width: 767px) {
+  .tariffs h2 {
+    font-size: 32px;
+    line-height: 38px;
+    margin-bottom: 15px;
+    margin-right: 10px;
+  }
+}
 
 .tariffs .tabs__controls {
   -ms-flex-wrap: wrap;
@@ -2713,8 +2737,7 @@ button,
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin: 0 auto;
-  margin-bottom: 12px;
+  margin: 0 auto 12px;
   max-width: 100%;
   position: relative;
   width: -webkit-max-content;
@@ -2728,6 +2751,22 @@ button,
   height: 2px;
   position: absolute;
   width: 100%;
+}
+@media (max-width: 1199px) {
+  .tariffs .tabs__controls {
+    gap: 55px;
+    margin: 0 auto 19px;
+  }
+}
+@media (max-width: 767px) {
+  .tariffs .tabs__controls {
+    gap: 45px;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin: 0 auto 35px;
+    width: 100%;
+  }
 }
 
 .tariffs .tabs__control {
@@ -2771,6 +2810,11 @@ button,
 .tariffs .tabs__element {
   background-color: transparent;
 }
+@media (max-width: 767px) {
+  .tariffs .tabs__element {
+    padding: 0;
+  }
+}
 
 .tariffs .tabs__element ul {
   display: -webkit-box;
@@ -2784,40 +2828,18 @@ button,
   margin: 0;
   padding: 0;
 }
-
-.tariffs .tabs__element li {
-  background-color: #ffffff;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  list-style: none;
-  min-height: 448px;
-  min-width: 360px;
-  padding: 57px 25px 67px;
-  position: relative;
+@media (max-width: 1199px) {
+  .tariffs .tabs__element ul {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
-.tariffs .tabs__element li::before {
-  background: -o-linear-gradient(315deg, transparent 0%, transparent 50%, #d10a42 66%, #00359f 100%);
-  background: linear-gradient(135deg, transparent 0%, transparent 50%, #d10a42 66%, #00359f 100%);
-  background-size: 500%;
-  content: "";
-  height: 100%;
-  left: 0;
-  position: absolute;
-  top: 0;
-  -webkit-transition: background-position 0.25s linear;
-  -o-transition: background-position 0.25s linear;
-  transition: background-position 0.25s linear;
-  width: 100%;
-  -webkit-clip-path: polygon(0% 0%, 0% 100%, 7px 100%, 7px 7px, calc(100% - 7px) 7px, calc(100% - 7px) calc(100% - 7px), 7px calc(100% - 7px), 7px 100%, 100% 100%, 100% 0%);
-          clip-path: polygon(0% 0%, 0% 100%, 7px 100%, 7px 7px, calc(100% - 7px) 7px, calc(100% - 7px) calc(100% - 7px), 7px calc(100% - 7px), 7px 100%, 100% 100%, 100% 0%);
-}
-.tariffs .tabs__element li:hover::before {
-  background-position: 100%;
+@media (max-width: 767px) {
+  .tariffs .tabs__element ul {
+    gap: 35px;
+  }
 }
 
 .tariffs h3 {
@@ -2827,11 +2849,18 @@ button,
   margin-top: 0;
   text-align: center;
 }
+@media (max-width: 767px) {
+  .tariffs h3 {
+    font-size: 22px;
+    line-height: 24px;
+    margin-bottom: 10px;
+  }
+}
 
 .tariffs p {
   font-size: 16px;
   line-height: 150%;
-  margin-bottom: 65px;
+  margin-bottom: 20px;
   margin-top: 0;
   text-align: center;
 }
@@ -2854,6 +2883,7 @@ button,
 }
 
 .tariffs__price span {
+  bottom: 5px;
   color: #e8e8e8;
   font-size: 100px;
   font-weight: 700;
@@ -2861,12 +2891,16 @@ button,
   opacity: 0.48;
   position: absolute;
   text-align: center;
-  top: -55px;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
   z-index: 0;
+}
+@media (max-width: 767px) {
+  .tariffs__price span {
+    font-size: 80px;
+  }
 }
 
 .tariffs__price h4 {
@@ -2880,8 +2914,9 @@ button,
   font-size: 60px;
   font-weight: 700;
   gap: 14px;
-  line-height: 150%;
+  line-height: 100%;
   margin: 0;
+  margin-top: 60px;
   position: relative;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -2894,8 +2929,59 @@ button,
   content: "₽";
   font-size: 58px;
   font-weight: 400;
-  line-height: 100%;
   -webkit-text-stroke: 2px;
+}
+@media (max-width: 767px) {
+  .tariffs__price h4 {
+    font-size: 48px;
+    gap: 12px;
+    margin-top: 45px;
+  }
+  .tariffs__price h4::after {
+    font-size: 40px;
+  }
+}
+
+.tariffs .tabs__element li {
+  background-color: #ffffff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  list-style: none;
+  min-height: 448px;
+  min-width: 360px;
+  padding: 57px 25px 67px;
+  position: relative;
+}
+@media (max-width: 767px) {
+  .tariffs .tabs__element li {
+    min-height: 384px;
+    min-width: 100%;
+    padding: 50px 25px 55px;
+  }
+}
+.tariffs .tabs__element li::before {
+  background: -o-linear-gradient(315deg, transparent 0%, transparent 25%, transparent 45%, #d10a42 55%, #d10a42 60%, #00359f 100%);
+  background: linear-gradient(135deg, transparent 0%, transparent 25%, transparent 45%, #d10a42 55%, #d10a42 60%, #00359f 100%);
+  background-size: 400%;
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  -webkit-transition: background-position 0.25s linear;
+  -o-transition: background-position 0.25s linear;
+  transition: background-position 0.25s linear;
+  width: 100%;
+  -webkit-clip-path: polygon(0% 0%, 0% 100%, 7px 100%, 7px 7px, calc(100% - 7px) 7px, calc(100% - 7px) calc(100% - 7px), 7px calc(100% - 7px), 7px 100%, 100% 100%, 100% 0%);
+          clip-path: polygon(0% 0%, 0% 100%, 7px 100%, 7px 7px, calc(100% - 7px) 7px, calc(100% - 7px) calc(100% - 7px), 7px calc(100% - 7px), 7px 100%, 100% 100%, 100% 0%);
+}
+.tariffs .tabs__element li:hover::before {
+  background-position: 100%;
 }
 
 .tariffs .tabs__element li:hover .btn {
@@ -2916,6 +3002,11 @@ button,
 .tariffs .btn::before {
   background-image: -o-linear-gradient(352.95deg, #102654 0%, #102654 40%, #ed0233 72.53%, #003eb7 98.44%);
   background-image: linear-gradient(97.05deg, #102654 0%, #102654 40%, #ed0233 72.53%, #003eb7 98.44%);
+  -webkit-transition: 0.3s -webkit-transform, 0.3s -webkit-clip-path;
+  transition: 0.3s -webkit-transform, 0.3s -webkit-clip-path;
+  -o-transition: 0.3s transform, 0.3s clip-path;
+  transition: 0.3s transform, 0.3s clip-path;
+  transition: 0.3s transform, 0.3s clip-path, 0.3s -webkit-transform, 0.3s -webkit-clip-path;
   -webkit-clip-path: polygon(0% 0%, 0% 100%, 2px 100%, 2px 2px, calc(100% - 2px) 2px, calc(100% - 2px) calc(100% - 2px), 2px calc(100% - 2px), 2px 100%, 100% 100%, 100% 0%);
           clip-path: polygon(0% 0%, 0% 100%, 2px 100%, 2px 2px, calc(100% - 2px) 2px, calc(100% - 2px) calc(100% - 2px), 2px calc(100% - 2px), 2px 100%, 100% 100%, 100% 0%);
 }
@@ -2925,7 +3016,9 @@ button,
 }
 
 .tariffs .tabs__element li:hover .btn:hover::before {
-  background-position: 50%;
+  -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 /* @mixin hover-focus {

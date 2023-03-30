@@ -1,0 +1,37 @@
+mixin promo
+  -
+    const title = 'Super Games';
+    const description = 'Ежегодные соревнования по CrossFit'
+    const data = {
+      day: '7',
+      month: 'Марта',
+      year: '2019',
+    };
+    const time = '12:00';
+    const link = {
+      href: '#',
+      text: 'Заполнить заявку'
+    }
+    const image = 'promo'
+
+  section.promo
+    .container
+      .promo__content
+        h2=title
+        .promo__data
+          .promo__top
+            span Дата
+          .promo__bottom
+            span=data.day
+            span=data.month
+            span=data.year
+        .promo__time
+          .promo__top
+            span Время
+          .promo__bottom
+            span=time
+        p=description
+        .btn(href=link.href)=link.text
+      .promo__image
+        +picture("content/announcement", "photo", "jpg", "660", "500", "Спортсмен готовится к выступлению.")
+

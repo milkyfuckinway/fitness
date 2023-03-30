@@ -4,9 +4,15 @@
 
 .tariffs .container {
   padding-bottom: 120px;
-  padding-left: 50px;
-  padding-right: 50px;
   padding-top: 120px;
+
+  @include vp-1199 {
+    padding: 104px 138px 100px;
+  }
+
+  @include vp-767 {
+    padding: 70px 15px;
+  }
 }
 
 .tariffs h2 {
@@ -18,14 +24,27 @@
   margin-bottom: 10px;
   margin-top: 0;
   text-align: center;
+
+  @include vp-1199 {
+    font-size: 42px;
+    line-height: 50px;
+    margin-bottom: 13px;
+    margin-right: 15px;
+  }
+
+  @include vp-767 {
+    font-size: 32px;
+    line-height: 38px;
+    margin-bottom: 15px;
+    margin-right: 10px;
+  }
 }
 
 .tariffs .tabs__controls {
   flex-wrap: wrap;
   gap: 48px;
   justify-content: center;
-  margin: 0 auto;
-  margin-bottom: 12px;
+  margin: 0 auto 12px;
   max-width: 100%;
   position: relative;
   width: max-content;
@@ -36,6 +55,18 @@
     content: "";
     height: 2px;
     position: absolute;
+    width: 100%;
+  }
+
+  @include vp-1199 {
+    gap: 55px;
+    margin: 0 auto 19px;
+  }
+
+  @include vp-767 {
+    gap: 45px;
+    justify-content: space-between;
+    margin: 0 auto 35px;
     width: 100%;
   }
 }
@@ -78,6 +109,10 @@
 
 .tariffs .tabs__element {
   background-color: transparent;
+
+  @include vp-767 {
+    padding: 0;
+  }
 }
 
 .tariffs .tabs__element ul {
@@ -87,6 +122,94 @@
   list-style: none;
   margin: 0;
   padding: 0;
+
+  @include vp-1199 {
+    flex-direction: column;
+  }
+
+  @include vp-767 {
+    gap: 35px;
+  }
+}
+
+.tariffs h3 {
+  font-size: 26px;
+  line-height: 40px;
+  margin-bottom: 5px;
+  margin-top: 0;
+  text-align: center;
+
+  @include vp-767 {
+    font-size: 22px;
+    line-height: 24px;
+    margin-bottom: 10px;
+  }
+}
+
+.tariffs p {
+  font-size: 16px;
+  line-height: 150%;
+  margin-bottom: 20px;
+  margin-top: 0;
+  text-align: center;
+}
+
+.tariffs__price {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+.tariffs__price span {
+  bottom: 5px;
+  color: #e8e8e8;
+  font-size: 100px;
+  font-weight: 700;
+  line-height: 100%;
+  opacity: 0.48;
+  position: absolute;
+  text-align: center;
+  user-select: none;
+  z-index: 0;
+
+  @include vp-767 {
+    font-size: 80px;
+  }
+}
+
+.tariffs__price h4 {
+  align-items: center;
+  color: #103aae;
+  display: flex;
+  font-size: 60px;
+  font-weight: 700;
+  gap: 14px;
+  line-height: 100%;
+  margin: 0;
+  margin-top: 60px;
+  position: relative;
+  user-select: none;
+  z-index: 1;
+
+  &::after {
+    color: #102654;
+    content: "₽";
+    font-size: 58px;
+    font-weight: 400;
+    -webkit-text-stroke: 2px;
+  }
+
+  @include vp-767 {
+    font-size: 48px;
+    gap: 12px;
+    margin-top: 45px;
+
+    &::after {
+      font-size: 40px;
+    }
+  }
 }
 
 .tariffs .tabs__element li {
@@ -99,9 +222,15 @@
   padding: 57px 25px 67px;
   position: relative;
 
+  @include vp-767 {
+    min-height: 384px;
+    min-width: 100%;
+    padding: 50px 25px 55px;
+  }
+
   &::before {
     background: $gradient-card-300;
-    background-size: 500%;
+    background-size: 400%;
     content: "";
     height: 100%;
     left: 0;
@@ -117,66 +246,6 @@
     &::before {
       background-position: 100%;
     }
-  }
-}
-
-.tariffs h3 {
-  font-size: 26px;
-  line-height: 40px;
-  margin-bottom: 5px;
-  margin-top: 0;
-  text-align: center;
-}
-
-.tariffs p {
-  font-size: 16px;
-  line-height: 150%;
-  margin-bottom: 65px;
-  margin-top: 0;
-  text-align: center;
-}
-
-.tariffs__price {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  position: relative;
-}
-
-.tariffs__price span {
-  color: #e8e8e8;
-  font-size: 100px;
-  font-weight: 700;
-  line-height: 100%;
-  opacity: 0.48;
-  position: absolute;
-  text-align: center;
-  top: -55px;
-  user-select: none;
-  z-index: 0;
-}
-
-.tariffs__price h4 {
-  align-items: center;
-  color: #103aae;
-  display: flex;
-  font-size: 60px;
-  font-weight: 700;
-  gap: 14px;
-  line-height: 150%;
-  margin: 0;
-  position: relative;
-  user-select: none;
-  z-index: 1;
-
-  &::after {
-    color: #102654;
-    content: "₽";
-    font-size: 58px;
-    font-weight: 400;
-    line-height: 100%;
-    -webkit-text-stroke: 2px;
   }
 }
 
@@ -198,6 +267,7 @@
 
   &::before {
     background-image: $gradient-button-sapphire-300;
+    transition: 0.3s transform, 0.3s clip-path;
 
     @include clipOn(2px);
   }
@@ -209,6 +279,6 @@
 
 .tariffs .tabs__element li:hover .btn:hover {
   &::before {
-    background-position: 50%;
+    transform: scale(1.1);
   }
 }
