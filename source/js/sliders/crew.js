@@ -8,6 +8,19 @@ const crewSwiper = new Swiper('.swiper', {
     nextEl: nextButton,
     prevEl: prevButton,
   },
+  breakpoints: {
+    1200: {
+      slidesPerView: 4,
+      spaceBetween: 40,
+    },
+    768: {
+      slidesPerView: 2,
+      spaceBetween: 30,
+    },
+    320: {
+      slidesPerView: 1,
+    },
+  },
 });
 
 prevButton.ariaLabel = 'Предыдущий слайд.';

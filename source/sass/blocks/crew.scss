@@ -1,0 +1,188 @@
+.crew .container {
+  max-width: fit-content;
+  padding: 56px 70px 90px;
+
+  @include vp-1199 {
+    padding-top: 51px;
+  }
+
+  @include vp-767 {
+    padding: 15px;
+  }
+}
+
+.crew h2 {
+  font-family: $ff-alumnisans;
+  font-size: 54px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  line-height: 65px;
+  margin-bottom: 48px;
+  margin-top: 0;
+
+  @include vp-1199 {
+    font-size: 42px;
+    line-height: 50px;
+    margin-bottom: 31px;
+    margin-right: 5px;
+    text-align: center;
+  }
+
+  @include vp-767 {
+    font-size: 32px;
+    line-height: 38px;
+    margin-bottom: 42px;
+  }
+}
+
+.crew__swiper {
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+  max-width: 1160px;
+  position: relative;
+  width: 100%;
+
+  @include vp-1199 {
+    gap: 40px;
+    width: 566px;
+  }
+
+  @include vp-767 {
+    width: 226px;
+  }
+}
+
+.crew__swiper .swiper-button--next,
+.crew__swiper .swiper-button--prev {
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  height: 100%;
+  padding: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+
+  & svg {
+    height: 34px;
+    width: 18px;
+
+    @include vp-767 {
+      height: 19px;
+      width: 10px;
+    }
+  }
+}
+
+.crew__swiper .swiper-button--prev {
+  left: -65px;
+
+  @include vp-767 {
+    left: -40px;
+  }
+}
+
+.crew__swiper .swiper-button--next {
+  right: -65px;
+
+  & svg {
+    transform: rotate(180deg);
+  }
+
+  @include vp-767 {
+    right: -40px;
+  }
+}
+
+.crew__card {
+  height: 100%;
+  margin: 0;
+  position: relative;
+}
+
+.crew__card:hover {
+  & .crew__content {
+    background-color: rgba(16, 38, 84, 0.89);
+    transform: translateY(0);
+  }
+
+  & .crew__image > span {
+    transform: translateY(-100%);
+  }
+}
+
+.crew__image img {
+  height: 294px;
+  object-fit: cover;
+  width: 294px;
+
+  @include vp-1199 {
+    width: 268px;
+  }
+
+  @include vp-767 {
+    height: 274px;
+  }
+}
+
+.crew__image > span {
+  align-items: flex-end;
+  bottom: 0;
+  color: $color-default-white;
+  display: flex;
+  font-size: 18px;
+  font-weight: 700;
+  justify-content: center;
+  left: 0;
+  line-height: 150%;
+  padding: 22px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: 0.3s transform;
+  z-index: 1000;
+}
+
+.crew__content {
+  color: $color-default-white;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  left: 0;
+  overflow: auto;
+  padding: 52px 25px 20px 25px;
+  position: absolute;
+  top: 0;
+  transform: translateY(100%);
+  transition: 0.3s transform;
+  width: 100%;
+}
+
+.crew__content h3 {
+  font-size: 18px;
+  line-height: 135%;
+  margin: 0;
+  text-align: center;
+}
+
+.crew__content > p {
+  font-size: 16px;
+  line-height: 150%;
+  margin: 0;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.crew__content > ul {
+  margin: 0;
+  padding-left: 47px;
+}
+
+.crew__content > ul p {
+  font-size: 14px;
+  line-height: 150%;
+  margin-bottom: 11px;
+  margin-top: 0;
+}

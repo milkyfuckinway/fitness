@@ -11,5 +11,6 @@ env:
 
 globals:
   ymaps: readonly
+  Swiper: readonly
 
 extends: "./eslintconfig.cjs"

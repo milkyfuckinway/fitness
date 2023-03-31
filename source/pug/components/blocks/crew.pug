@@ -1,15 +1,76 @@
 mixin crew
+  -
+    const title = "Тренеры"
+    const crew = [
+      {
+        name: "Анна Павлова",
+        speciality: "CrossFit",
+        key: "person1",
+        credentials: ["Первое достижение", "Второе достижение", "Третье достижение","Первое достижение", "Второе достижение", "Третье достижение","Первое достижение", "Второе достижение", "Третье достижение","Первое достижение", "Второе достижение", "Третье достижение","Первое достижение", "Второе достижение", "Третье достижение","Первое достижение", "Второе достижение", "Третье достижение",]
+      },
+      {
+        name: "Имя 2",
+        speciality: "CrossFit",
+        key: "person2",
+        credentials: ["Первое достижение", "Второе достижение", "Третье достижение"]
+      },
+      {
+        name: "Александр Пашков",
+        speciality: "CrossFit",
+        key: "person3",
+        credentials: ["Certified Level 3 Trainer", "Победитель чемпионата России по CrossFit ", "Опыт — 6 лет"]
+      },
+      {
+        name: "Имя 4",
+        speciality: "CrossFit",
+        key: "person4",
+        credentials: ["Первое достижение", "Второе достижение", "Третье достижение"]
+      },
+      {
+        name: "Имя 5",
+        speciality: "CrossFit",
+        key: "person5",
+        credentials: ["Первое достижение", "Второе достижение", "Третье достижение"]
+      },
+      {
+        name: "Имя 6",
+        speciality: "CrossFit",
+        key: "person6",
+        credentials: ["Первое достижение", "Второе достижение", "Третье достижение"]
+      },
+      {
+        name: "Имя 7",
+        speciality: "CrossFit",
+        key: "person7",
+        credentials: ["Первое достижение", "Второе достижение", "Третье достижение"]
+      },
+      {
+        name: "Имя 8",
+        speciality: "CrossFit",
+        key: "person8",
+        credentials: ["Первое достижение", "Второе достижение", "Третье достижение"]
+      },
+    ]
+
   section.crew
     .container
-      .swiper
+      h2=title
+      .crew__swiper
         button.swiper-button.swiper-button--prev(type='button')
-        .swiper-wrapper
-          .swiper-slide.slide.slide--first
-            p slaid 1
-        .swiper-wrapper
-          .swiper-slide.slide.slide--second
-            p slaid 2
-        .swiper-wrapper
-          .swiper-slide.slide.slide--third
-            p slaid 3
+          +icon("swiper-button", "16", "32")
+        .swiper
+          .swiper-wrapper
+            each item in crew
+              .swiper-slide.crew__card
+                .crew__image
+                  span=item.name
+                  +picture(`content/crew/${item.key}`, "photo", "jpg", "260", "294", `Наш тренер ${item.name}.`)
+                .crew__content
+                  h3=item.name
+                  p=item.speciality
+                  ul
+                    each credential in item.credentials
+                      li
+                        p=credential
         button.swiper-button.swiper-button--next(type='button')
+          +icon("swiper-button", "16", "32")
