@@ -249,20 +249,26 @@
     @include clipOn(7px);
   }
 
-  &:hover {
+  @include hover-focus {
     &::before {
       background-position: 100%;
     }
-  }
-}
 
-.tariffs .tabs__element li:hover .btn {
-  color: $color-default-white;
+    & .btn {
+      color: $color-default-white;
 
-  &::before {
-    background-position: 100%;
+      &::before {
+        background-position: 100%;
 
-    @include clipOff(2px);
+        @include clipOff(2px);
+      }
+
+      @include hover-focus {
+        &::before {
+          transform: scale(1.1);
+        }
+      }
+    }
   }
 }
 
@@ -281,11 +287,5 @@
 
   @include focus {
     @include default-outline($color-sapphire);
-  }
-}
-
-.tariffs .tabs__element li:hover .btn:hover {
-  &::before {
-    transform: scale(1.1);
   }
 }

@@ -1,0 +1,23 @@
+mixin discounts
+  -
+    const heading = "Акции";
+    const mainDiscount = {
+      title: "Год",
+      price: "4999",
+      description: "Безлимитный абонемент в тренажерный зал",
+      linkHref: "#",
+      linkText: "Подробнее",
+    };
+
+  section.discounts
+    .container
+      h2=heading
+      .discounts__content
+        .discounts__main
+          .discounts__price
+            h3=mainDiscount.title
+            h4=mainDiscount.price
+          p=mainDiscount.description
+          a(href=mainDiscount.linkHref)=mainDiscount.linkText
+
+
