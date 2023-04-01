@@ -3841,17 +3841,55 @@ button,
   -webkit-clip-path: polygon(0% 0%, 0% 100%, 7px 100%, 7px 7px, calc(100% - 7px) 7px, calc(100% - 7px) calc(100% - 7px), 7px calc(100% - 7px), 7px 100%, 100% 100%, 100% 0%);
           clip-path: polygon(0% 0%, 0% 100%, 7px 100%, 7px 7px, calc(100% - 7px) 7px, calc(100% - 7px) calc(100% - 7px), 7px calc(100% - 7px), 7px 100%, 100% 100%, 100% 0%);
 }
-.tariffs .tabs__element li:hover::before {
+@media (hover: hover) {
+  .tariffs .tabs__element li:hover:not(.focus-visible)::before {
+    background-position: 100%;
+  }
+  .tariffs .tabs__element li:hover:not(.focus-visible) .btn {
+    color: #ffffff;
+  }
+  .tariffs .tabs__element li:hover:not(.focus-visible) .btn::before {
+    background-position: 100%;
+    -webkit-clip-path: polygon(0% 0%, 0% 100%, 2px 100%, 2px 2px, 2px 2px, 2px calc(100% - 2px), 2px calc(100% - 2px), 2px 100%, 100% 100%, 100% 0%);
+            clip-path: polygon(0% 0%, 0% 100%, 2px 100%, 2px 2px, 2px 2px, 2px calc(100% - 2px), 2px calc(100% - 2px), 2px 100%, 100% 100%, 100% 0%);
+  }
+}
+@media (hover: hover) and (hover: hover) {
+  .tariffs .tabs__element li:hover:not(.focus-visible) .btn:hover:not(.focus-visible)::before {
+    -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+}
+@media (hover: hover) {
+  .tariffs .tabs__element li:hover:not(.focus-visible) .btn.focus-visible:focus::before {
+    -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+}
+.tariffs .tabs__element li.focus-visible:focus::before {
   background-position: 100%;
 }
-
-.tariffs .tabs__element li:hover .btn {
+.tariffs .tabs__element li.focus-visible:focus .btn {
   color: #ffffff;
 }
-.tariffs .tabs__element li:hover .btn::before {
+.tariffs .tabs__element li.focus-visible:focus .btn::before {
   background-position: 100%;
   -webkit-clip-path: polygon(0% 0%, 0% 100%, 2px 100%, 2px 2px, 2px 2px, 2px calc(100% - 2px), 2px calc(100% - 2px), 2px 100%, 100% 100%, 100% 0%);
           clip-path: polygon(0% 0%, 0% 100%, 2px 100%, 2px 2px, 2px 2px, 2px calc(100% - 2px), 2px calc(100% - 2px), 2px 100%, 100% 100%, 100% 0%);
+}
+@media (hover: hover) {
+  .tariffs .tabs__element li.focus-visible:focus .btn:hover:not(.focus-visible)::before {
+    -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+}
+.tariffs .tabs__element li.focus-visible:focus .btn.focus-visible:focus::before {
+  -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 .tariffs .btn {
@@ -3874,12 +3912,6 @@ button,
 .tariffs .btn.focus-visible:focus {
   outline: 2px solid #102654;
   outline-offset: 2px;
-}
-
-.tariffs .tabs__element li:hover .btn:hover::before {
-  -webkit-transform: scale(1.1);
-      -ms-transform: scale(1.1);
-          transform: scale(1.1);
 }
 
 .promo .container {
