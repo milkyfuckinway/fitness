@@ -29,6 +29,15 @@
   margin: 0;
   padding: 0;
   row-gap: 128px;
+
+  @include vp-1199 {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @include vp-767 {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .advantages li {
@@ -45,6 +54,10 @@
   &:nth-child(-5n + 2),
   &:nth-child(2n + 7) {
     grid-column: 3;
+
+    @include vp-1199 {
+      grid-column: 2;
+    }
   }
 
   &:nth-child(-5n + 1),
@@ -57,6 +70,23 @@
   &:nth-child(2n + 7),
   &:nth-child(-5n + 5) {
     color: inherit;
+  }
+
+  &:nth-child(-5n + 3) {
+    align-items: center;
+    background-color: #1c3374;
+    color: $color-default-white;
+    display: flex;
+    flex-direction: column;
+    grid-column: 2;
+    grid-row: 1 / -1;
+    margin: 30px 0 7px;
+    padding: 45px 30px 35px;
+
+    @include vp-1199 {
+      grid-column: 1 / 3;
+      grid-row: 2;
+    }
   }
 
   &:nth-child(-5n + 4),
@@ -92,18 +122,6 @@
     line-height: 150%;
     margin: 0;
     -webkit-text-fill-color: transparent;
-  }
-
-  &:nth-child(-5n + 3) {
-    align-items: center;
-    background-color: #1c3374;
-    color: $color-default-white;
-    display: flex;
-    flex-direction: column;
-    grid-column: 2;
-    grid-row: 1 / -1;
-    margin: 30px 0 7px;
-    padding: 45px 30px 35px;
   }
 }
 

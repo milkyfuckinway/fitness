@@ -4399,6 +4399,23 @@ button,
   padding: 0;
   row-gap: 128px;
 }
+@media (max-width: 1199px) {
+  .advantages ul {
+    -ms-grid-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 767px) {
+  .advantages ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
 
 .advantages li {
   -webkit-box-align: center;
@@ -4422,11 +4439,45 @@ button,
   -ms-grid-column: 3;
   grid-column: 3;
 }
+@media (max-width: 1199px) {
+  .advantages li:nth-child(-5n+2), .advantages li:nth-child(2n+7) {
+    -ms-grid-column: 2;
+    grid-column: 2;
+  }
+}
 .advantages li:nth-child(-5n+1), .advantages li:nth-child(2n+6), .advantages li:nth-child(-5n+4) {
   padding-left: 19px;
 }
 .advantages li:nth-child(-5n+2), .advantages li:nth-child(2n+7), .advantages li:nth-child(-5n+5) {
   color: inherit;
+}
+.advantages li:nth-child(-5n+3) {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #1c3374;
+  color: #ffffff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-grid-column: 2;
+  grid-column: 2;
+  grid-row: 1/-1;
+  margin: 30px 0 7px;
+  padding: 45px 30px 35px;
+}
+@media (max-width: 1199px) {
+  .advantages li:nth-child(-5n+3) {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-column: 1/3;
+    -ms-grid-row: 2;
+    grid-row: 2;
+  }
 }
 .advantages li:nth-child(-5n+4), .advantages li:nth-child(-5n+5), .advantages li:nth-child(2n+7), .advantages li:nth-child(2n+6) {
   position: relative;
@@ -4457,25 +4508,6 @@ button,
   line-height: 150%;
   margin: 0;
   -webkit-text-fill-color: transparent;
-}
-.advantages li:nth-child(-5n+3) {
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  background-color: #1c3374;
-  color: #ffffff;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-grid-column: 2;
-  grid-column: 2;
-  grid-row: 1/-1;
-  margin: 30px 0 7px;
-  padding: 45px 30px 35px;
 }
 
 .advantages__value {
