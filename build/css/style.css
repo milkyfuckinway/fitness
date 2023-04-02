@@ -3808,6 +3808,11 @@ button,
   text-align: center;
 }
 
+.discounts .container {
+  padding-bottom: 117px;
+  padding-top: 142px;
+}
+
 .discounts h2 {
   font-family: "Alumni Sans", "Arial", sans-serif;
   font-size: 54px;
@@ -3817,11 +3822,6 @@ button,
   margin-bottom: 34px;
   margin-top: 0;
   text-align: center;
-}
-
-.discounts .container {
-  padding-bottom: 117px;
-  padding-top: 142px;
 }
 
 .discounts__content {
@@ -4343,7 +4343,7 @@ button,
   }
 
   .advantages .container {
-    padding: 91px 45px 100px;
+    padding: 91px 45px 92px;
   }
 
   .advantages h2 {
@@ -4422,6 +4422,35 @@ button,
 
   .advantages__description p {
     line-height: 140%;
+  }
+
+  .discounts .container {
+    padding-top: 91px;
+  }
+
+  .discounts .container {
+    padding-top: 65px;
+  }
+
+  .discounts h2 {
+    font-size: 42px;
+    line-height: 50px;
+    margin-bottom: 41px;
+    margin-right: 8px;
+  }
+
+  .discounts__content {
+    gap: 30px;
+  }
+
+  .discounts__main {
+    grid-column: 1/-1;
+    -ms-grid-columns: 2.1fr 3fr;
+    grid-template-columns: 2.1fr 3fr;
+  }
+
+  .discounts__regular {
+    min-height: 211px;
   }
 }
 
@@ -4876,7 +4905,7 @@ button,
   }
 
   .advantages .container {
-    padding: 63px 15px 100px;
+    padding: 63px 15px 64px;
   }
 
   .advantages h2 {
@@ -4946,6 +4975,62 @@ button,
 
   .advantages li:nth-child(-5n+3) .advantages__description p {
     margin: 0 30px;
+  }
+
+  .discounts h2 {
+    font-size: 32px;
+    line-height: 38px;
+    margin-right: 5px;
+  }
+
+  .discounts__content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+
+  .discounts__main {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+    -ms-grid-rows: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  .discounts__main-content h3 {
+    text-align: center;
+  }
+
+  .discounts__main-content h4 {
+    line-height: 150%;
+    text-align: center;
+  }
+
+  .discounts__main-content p {
+    text-align: center;
+  }
+
+  .discounts__main-content a {
+    text-align: center;
+  }
+
+  .discounts__regular {
+    padding: 36px 35px 48px;
+  }
+
+  .discounts__regular h3 {
+    text-align: center;
+  }
+
+  .discounts__regular p {
+    text-align: center;
+  }
+
+  .discounts__regular a {
+    text-align: center;
   }
 }
 
