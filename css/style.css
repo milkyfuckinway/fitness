@@ -3175,8 +3175,9 @@ button,
   font-size: 100px;
   font-weight: 700;
   line-height: 100%;
+  margin-top: -100px;
   opacity: 0.48;
-  position: absolute;
+  position: relative;
   text-align: center;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -3199,6 +3200,7 @@ button,
   line-height: 100%;
   margin: 0;
   margin-top: 60px;
+  overflow: hidden;
   position: relative;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -3742,6 +3744,10 @@ button,
   -webkit-text-fill-color: transparent;
 }
 
+.advantages__value h3 {
+  max-width: 145px;
+}
+
 .advantages__value {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3754,13 +3760,12 @@ button,
 }
 
 .advantages__value div {
-  bottom: 0;
   color: #2e35ac;
   display: block;
   font-size: 14px;
-  left: -2px;
   line-height: 150%;
-  position: absolute;
+  margin-left: -2px;
+  margin-top: -20px;
   text-transform: lowercase;
 }
 
@@ -4403,8 +4408,8 @@ button,
   }
 
   .advantages__value div {
-    bottom: -2px;
-    left: 0;
+    margin-left: 0;
+    margin-top: -14px;
   }
 
   .advantages__description {
@@ -4950,10 +4955,8 @@ button,
   }
 
   .advantages__value div {
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    transform: translateX(-50%);
+    margin-top: -21px;
+    text-align: center;
   }
 
   .advantages__description {
@@ -5006,6 +5009,7 @@ button,
 
   .discounts__main-content h4 {
     line-height: 150%;
+    margin: 0 auto;
     text-align: center;
   }
 
