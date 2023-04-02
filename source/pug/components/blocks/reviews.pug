@@ -1,0 +1,40 @@
+mixin reviews
+  -
+    const heading = "Отзывы";
+    const reviews = [
+      {
+        name: "Анна Орлова",
+        text: "«Хожу в SuperClub уже больше года. Нравится, что в клубе всегда чисто, тренажеры обновляют, персонал дружелюбный. Зал просторный, даже в вечернее время нет очередей»",
+        photo: "user1"
+      },
+      {
+        name: "2",
+        text: "«2",
+        photo: "user2"
+      },
+      {
+        name: "3",
+        text: "«3»",
+        photo: "user3"
+      },
+    ];
+
+  section.reviews
+    .container
+      h2=heading
+      .reviews__swiper
+        button.swiper-button.swiper-button--prev(type='button')
+          +icon("swiper-button", "16", "32")
+        .swiper
+          .swiper-wrapper
+            each item in reviews
+              .swiper-slide.reviews__card
+                .reviews__image
+                  span=item.name
+                  +picture(`content/reviews/${item.photo}`, "avatar", "jpg", "260", "294", `${item.name}.`)
+                .reviews__content
+                  h3=item.name
+                  p=item.speciality
+        button.swiper-button.swiper-button--next(type='button')
+          +icon("swiper-button", "16", "32")
+

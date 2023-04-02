@@ -1,13 +1,16 @@
-const nextButton = document.querySelector('.swiper-button--next');
-const prevButton = document.querySelector('.swiper-button--prev');
+const crew = document.querySelector('.crew');
+const crewSwiperContainer = crew.querySelector('.swiper');
+const nextButton = crew.querySelector('.swiper-button--next');
+const prevButton = crew.querySelector('.swiper-button--prev');
 
-const crewSwiper = new Swiper('.swiper', {
+const crewSwiper = new Swiper(crewSwiperContainer, {
   direction: 'horizontal',
   loop: true,
   navigation: {
     nextEl: nextButton,
     prevEl: prevButton,
   },
+  slidesPerView: 1,
   breakpoints: {
     1200: {
       slidesPerView: 4,
