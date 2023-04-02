@@ -8,16 +8,37 @@ mixin discounts
       linkHref: "#",
       linkText: "Подробнее",
     };
+    const discounts = [
+      {
+        title: "Месяц бесплатно",
+        description: "Приведи друга, получи абонемент в подарок",
+        linkHref: "#",
+        linkText: "Подробнее",
+      },
+      {
+        title: "Скидка 20%",
+        description: "Корпоративный фитнес с командой",
+        linkHref: "#",
+        linkText: "Подробнее",
+      },
+    ]
 
   section.discounts
     .container
       h2=heading
       .discounts__content
         .discounts__main
-          .discounts__price
-            h3=mainDiscount.title
-            h4=mainDiscount.price
-          p=mainDiscount.description
-          a(href=mainDiscount.linkHref)=mainDiscount.linkText
-
+          .discounts__main-content
+            .discounts__price
+              h3=mainDiscount.title
+              h4=mainDiscount.price
+            p=mainDiscount.description
+            a(href=mainDiscount.linkHref)=mainDiscount.linkText
+          .discounts__main-picture
+            +picture-responsive("content/discounts", "photo", "jpg", "280", "462", "Наш тренер.")
+        each item in discounts
+          .discounts__regular
+            h3=item.title
+            p=item.description
+            a(href=item.linkHref)=item.linkText
 

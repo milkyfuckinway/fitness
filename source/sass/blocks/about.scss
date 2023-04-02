@@ -138,7 +138,9 @@
   background-position: center;
   background-size: cover;
 
-  @include graphic-retina("content/about/preview/desktop/preview", $color-sapphire, "jpg");
+  @media (min-width: $vp-1200) {
+    @include graphic-retina("content/about/preview/desktop/preview", $color-sapphire, "jpg");
+  }
 
   @include vp-1199 {
     @include graphic-retina("content/about/preview/tablet/preview", $color-sapphire, "jpg");

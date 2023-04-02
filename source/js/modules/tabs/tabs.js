@@ -58,6 +58,7 @@ export class Tabs {
     this._removeAllActiveClasses(tabControlElements, tabElements);
     tab.classList.add('no-transition');
     tabControlElements[activeIndex].classList.add('is-active');
+    tabControlElements[activeIndex].tabIndex = '-1';
     tabElements[activeIndex].classList.add('is-active');
     if (dataHeight !== 'unset') {
       tabContentElement.style.height = `${blockHeight}px`;
@@ -191,6 +192,7 @@ export class Tabs {
 
     if (activeControl) {
       activeControl.classList.remove('is-active');
+      activeControl.tabIndex = '0';
     }
 
     if (activeElement) {
@@ -203,6 +205,7 @@ export class Tabs {
           contentElement.style.height = newHeight + 'px';
         }
         control.classList.add('is-active');
+        control.tabIndex = '-1';
         tabElements[currentIndex].classList.add('is-active');
         parentElement.classList.remove('no-action');
       }, dataDelay);
@@ -212,6 +215,7 @@ export class Tabs {
       }
       setTimeout(() => {
         control.classList.add('is-active');
+        control.tabIndex = '-1';
         tabElements[currentIndex].classList.add('is-active');
         parentElement.classList.remove('no-action');
       }, dataDelay);

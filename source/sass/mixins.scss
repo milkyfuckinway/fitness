@@ -90,12 +90,17 @@
 // css вебп
 
 @mixin graphic-webp($filename, $background-color: #000000, $extname: "jpg") {
-  background-image: url("./../img/#{$filename}.#{$extname}");
-  $webp: url("./../img/#{$filename}.jpg");
+  $jpg: url("./../img/#{$filename}.#{$extname}");
+  $webp: url("./../img/#{$filename}.webp");
 
   @supports (background-image: $webp) {
     background-color: $background-color;
     background-image: $webp;
+  }
+
+  @supports not (background-image: $webp) {
+    background-color: $background-color;
+    background-image: $jpg;
   }
 }
 

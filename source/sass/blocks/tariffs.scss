@@ -78,11 +78,15 @@
   font-size: 20px;
   line-height: 150%;
   margin: 0;
+  margin-bottom: 8px;
   opacity: 0.5;
-  padding: 6px 0 14px;
+  padding: 6px 0;
   position: relative;
   text-transform: lowercase;
+  user-select: none;
   width: max-content;
+
+  @include default-states($color-sapphire);
 
   @include vp-1199 {
     font-size: 18px;
@@ -97,7 +101,7 @@
 
     &::before {
       background-color: #d10a42;
-      bottom: 0;
+      bottom: -8px;
       content: "";
       height: 2px;
       left: 0;

@@ -1,0 +1,118 @@
+.discounts h2 {
+  font-family: $ff-alumnisans;
+  font-size: 54px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  line-height: 65px;
+  margin-bottom: 34px;
+  margin-top: 0;
+  text-align: center;
+}
+
+.discounts .container {
+  padding-bottom: 117px;
+  padding-top: 142px;
+}
+
+.discounts__content {
+  display: grid;
+  gap: 40px;
+  grid-template-columns: 1fr 1fr;
+}
+
+.discounts__main {
+  display: grid;
+  grid-row: 1 / span 2;
+  grid-template-columns: 1fr 1fr;
+
+  //   @include vp-1199 {
+  //     grid-template-columns: 1fr 2fr;
+  //   }
+}
+
+.discounts__main-content {
+  background-color: #ed0233;
+  color: $color-default-white;
+  display: flex;
+  flex-direction: column;
+  padding: 33px 45px 46px;
+}
+
+.discounts__main-content h3 {
+  font-size: 28px;
+  line-height: 156%;
+  margin: 0;
+}
+
+.discounts__main-content h4 {
+  font-size: 70px;
+  line-height: 156%;
+  margin: -25px 0 0;
+}
+
+.discounts__main-content p {
+  font-size: 18px;
+  line-height: 140%;
+  margin: 0;
+}
+
+.discounts__main-content a {
+  color: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  line-height: 16px;
+  margin-top: auto;
+  text-decoration: underline;
+  text-transform: uppercase;
+  text-underline-offset: 4px;
+}
+
+.discounts__main-picture img {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.discounts__regular {
+  display: flex;
+  flex-direction: column;
+  padding: 25px 35px 37px;
+  position: relative;
+
+  &::before {
+    background: $gradient-card;
+    content: "";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+
+    @include clipOn(7px);
+  }
+}
+
+.discounts__regular h3 {
+  font-size: 26px;
+  line-height: 150%;
+  margin: 0 0 4px;
+}
+
+.discounts__regular p {
+  font-size: 16px;
+  line-height: 140%;
+  margin: 0;
+}
+
+.discounts__regular a {
+  color: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  line-height: 14px;
+  margin-top: auto;
+  text-decoration: underline;
+  text-transform: uppercase;
+  text-underline-offset: 4px;
+}
