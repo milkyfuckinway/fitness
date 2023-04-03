@@ -1,0 +1,70 @@
+.contacts {
+  position: relative;
+}
+
+.contacts > .container {
+  height: 100%;
+  margin-left: 0;
+  margin-right: auto;
+  max-width: 683px;
+  padding: 56px 99px 43px 124px;
+  width: 100%;
+
+  &::before {
+    background-color: rgba($color-sapphire, 0.3);
+    content: "";
+    height: 1px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+}
+
+.contacts h2 {
+  font-family: $ff-alumnisans;
+  font-size: 54px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  line-height: 65px;
+  margin: 0;
+  margin-bottom: 38px;
+}
+
+.contacts ul {
+  column-gap: 120px;
+  columns: 2;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+
+  &::after {
+    background-color: rgba($color-sapphire, 0.5);
+    content: "";
+    height: calc(100% - 30px);
+    left: 50%;
+    position: absolute;
+    top: 6px;
+    width: 1px;
+  }
+}
+
+.contacts li {
+  break-inside: avoid-column;
+  margin-bottom: 18px;
+}
+
+.contacts ul h3 {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 150%;
+  margin: 0;
+  margin-bottom: 3px;
+}
+
+.contacts ul p {
+  font-size: 14px;
+  line-height: 21px;
+  margin: 0;
+}

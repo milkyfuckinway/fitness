@@ -1,4 +1,4 @@
-mixin contacts 
+mixin contacts
   -
     const formHeading = "Бесплатное занятие";
     const contactsHeading = "Контакты";
@@ -21,20 +21,11 @@ mixin contacts
       },
     ];
 
-  section.contacts 
-    .container 
-      .contacts__form(data-callback="base" data-form-validate data-message-base="Сообщение")
-        h2=formHeading
-        form(action="https://echo.htmlacademy.ru" method="post")
-          div(class="custom-input" data-limitation="name" data-required data-validate-type="text")
-              input(name="name" data-focus type="text" aria-label="Введите имя." autocomplete="off" required placeholder="Имя")
-          div(class="custom-input" data-required data-validate-type="phone")
-            input(name="tel" type="tel" aria-label="Введите номер телефона." autocomplete="off" required placeholder="Телефон")
-        button(type='submit') Отправить
-      .contacts__content
-        h2=contactsHeading
-        ul 
-          each item in contacts 
-            li 
-              h3=item.title 
-              p=item.text
+  section.contacts
+    .container
+      h2=contactsHeading
+      ul
+        each item in contacts
+          li
+            h3=item.title
+            p=item.text

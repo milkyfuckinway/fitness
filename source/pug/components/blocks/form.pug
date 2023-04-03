@@ -1,0 +1,14 @@
+mixin form
+  -
+    const formHeading = "Бесплатное занятие";
+
+  section.form
+    .container
+      h2=formHeading
+      .form__wrapper(data-callback="base" data-form-validate data-message-base="Сообщение")
+        form(action="https://echo.htmlacademy.ru" method="post")
+          div(class="custom-input" data-limitation="name" data-required data-validate-type="text")
+            input(name="name" data-focus type="text" aria-label="Введите имя." autocomplete="off" required placeholder="Имя")
+          div(class="custom-input" data-required data-validate-type="phone")
+            input(name="tel" type="tel" aria-label="Введите номер телефона." autocomplete="off" required placeholder="Телефон")
+          button(type='submit') Отправить

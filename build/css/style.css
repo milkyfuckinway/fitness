@@ -2067,8 +2067,20 @@ button,
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding: 0 0 20px 0;
+  margin: 0 0 20px 0;
+  padding: 0;
   position: relative;
+  width: 100%;
+}
+
+.custom-input::before,
+.custom-textarea::before {
+  background-color: #ffffff;
+  bottom: 8px;
+  content: "";
+  height: 1px;
+  left: 0;
+  position: absolute;
   width: 100%;
 }
 
@@ -2087,10 +2099,9 @@ button,
 .custom-input textarea,
 .custom-textarea input,
 .custom-textarea textarea {
-  outline: 2px solid transparent;
-  outline-offset: 2px;
+  background-color: transparent;
   border: 0;
-  color: #000000;
+  color: #ffffff;
   cursor: text;
   -webkit-box-flex: 1;
   -ms-flex-positive: 1;
@@ -2099,18 +2110,20 @@ button,
   line-height: 150%;
   margin-left: auto;
   min-height: 43px;
-  padding: 11px 16px;
+  padding: 11px 0;
   -webkit-transition: outline, opacity 0.3s ease;
   -o-transition: outline, opacity 0.3s ease;
   transition: outline, opacity 0.3s ease;
   width: 100%;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
 }
 
 .custom-input input.focus-visible:focus,
 .custom-input textarea.focus-visible:focus,
 .custom-textarea input.focus-visible:focus,
 .custom-textarea textarea.focus-visible:focus {
-  outline: 2px solid #000000;
+  outline: 2px solid #ffffff;
   outline-offset: 2px;
 }
 
@@ -2118,7 +2131,7 @@ button,
 .custom-input textarea::-webkit-input-placeholder,
 .custom-textarea input::-webkit-input-placeholder,
 .custom-textarea textarea::-webkit-input-placeholder {
-  color: rgba(0, 0, 0, 0.7);
+  color: #ffffff;
   font-size: 14px;
   line-height: 150%;
 }
@@ -2127,7 +2140,7 @@ button,
 .custom-input textarea::-moz-placeholder,
 .custom-textarea input::-moz-placeholder,
 .custom-textarea textarea::-moz-placeholder {
-  color: rgba(0, 0, 0, 0.7);
+  color: #ffffff;
   font-size: 14px;
   line-height: 150%;
 }
@@ -2136,7 +2149,7 @@ button,
 .custom-input textarea:-ms-input-placeholder,
 .custom-textarea input:-ms-input-placeholder,
 .custom-textarea textarea:-ms-input-placeholder {
-  color: rgba(0, 0, 0, 0.7);
+  color: #ffffff;
   font-size: 14px;
   line-height: 150%;
 }
@@ -2145,7 +2158,7 @@ button,
 .custom-input textarea::-ms-input-placeholder,
 .custom-textarea input::-ms-input-placeholder,
 .custom-textarea textarea::-ms-input-placeholder {
-  color: rgba(0, 0, 0, 0.7);
+  color: #ffffff;
   font-size: 14px;
   line-height: 150%;
 }
@@ -2154,7 +2167,7 @@ button,
 .custom-input textarea::placeholder,
 .custom-textarea input::placeholder,
 .custom-textarea textarea::placeholder {
-  color: rgba(0, 0, 0, 0.7);
+  color: #ffffff;
   font-size: 14px;
   line-height: 150%;
 }
@@ -4094,6 +4107,185 @@ button,
   margin: 0;
 }
 
+.form {
+  background-color: #102654;
+  color: #ffffff;
+  width: 100%;
+}
+
+.form h2 {
+  font-family: "Alumni Sans", "Arial", sans-serif;
+  font-size: 54px;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  line-height: 156%;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.form > .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: 0;
+  max-width: 683px;
+  padding: 56px 170px 70px 103px;
+  width: 100%;
+}
+
+.form form {
+  -webkit-column-gap: 30px;
+  -moz-column-gap: 30px;
+  column-gap: 30px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+}
+
+.form form button[type=submit] {
+  background-color: transparent;
+  border: 0;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  grid-column: 1/-1;
+  letter-spacing: 0.05em;
+  line-height: 16px;
+  margin: 0;
+  min-height: 54px;
+  padding: 18px 20px 17px;
+  position: relative;
+  text-transform: uppercase;
+  -webkit-transition: 0.3s color;
+  -o-transition: 0.3s color;
+  transition: 0.3s color;
+  z-index: 0;
+}
+
+.form form button[type=submit]::before {
+  background-color: #ffffff;
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  -webkit-transition: 0.3s -webkit-clip-path;
+  transition: 0.3s -webkit-clip-path;
+  -o-transition: 0.3s clip-path;
+  transition: 0.3s clip-path;
+  transition: 0.3s clip-path, 0.3s -webkit-clip-path;
+  width: 100%;
+  z-index: -1;
+  -webkit-clip-path: polygon(0% 0%, 0% 100%, 3px 100%, 3px 3px, calc(100% - 3px) 3px, calc(100% - 3px) calc(100% - 3px), 3px calc(100% - 3px), 3px 100%, 100% 100%, 100% 0%);
+  clip-path: polygon(0% 0%, 0% 100%, 3px 100%, 3px 3px, calc(100% - 3px) 3px, calc(100% - 3px) calc(100% - 3px), 3px calc(100% - 3px), 3px 100%, 100% 100%, 100% 0%);
+}
+
+.form form button[type=submit].focus-visible:focus {
+  color: #102654;
+}
+
+.form form button[type=submit].focus-visible:focus::before {
+  -webkit-clip-path: polygon(0% 0%, 0% 100%, 3px 100%, 3px 3px, 3px 3px, 3px calc(100% - 3px), 3px calc(100% - 3px), 3px 100%, 100% 100%, 100% 0%);
+  clip-path: polygon(0% 0%, 0% 100%, 3px 100%, 3px 3px, 3px 3px, 3px calc(100% - 3px), 3px calc(100% - 3px), 3px 100%, 100% 100%, 100% 0%);
+}
+
+.contacts {
+  position: relative;
+}
+
+.contacts > .container {
+  height: 100%;
+  margin-left: 0;
+  margin-right: auto;
+  max-width: 683px;
+  padding: 56px 99px 43px 124px;
+  width: 100%;
+}
+
+.contacts > .container::before {
+  background-color: rgba(16, 38, 84, 0.3);
+  content: "";
+  height: 1px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.contacts h2 {
+  font-family: "Alumni Sans", "Arial", sans-serif;
+  font-size: 54px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  line-height: 65px;
+  margin: 0;
+  margin-bottom: 38px;
+}
+
+.contacts ul {
+  -webkit-column-gap: 120px;
+  -moz-column-gap: 120px;
+  column-gap: 120px;
+  -webkit-columns: 2;
+  -moz-columns: 2;
+  columns: 2;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.contacts ul::after {
+  background-color: rgba(16, 38, 84, 0.5);
+  content: "";
+  height: calc(100% - 30px);
+  left: 50%;
+  position: absolute;
+  top: 6px;
+  width: 1px;
+}
+
+.contacts li {
+  -webkit-column-break-inside: avoid;
+  -moz-column-break-inside: avoid;
+  break-inside: avoid-column;
+  margin-bottom: 18px;
+}
+
+.contacts ul h3 {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 150%;
+  margin: 0;
+  margin-bottom: 3px;
+}
+
+.contacts ul p {
+  font-size: 14px;
+  line-height: 21px;
+  margin: 0;
+}
+
+.feedback > .container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  max-width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+}
+
 /* @mixin hover-focus {
     @media (hover: hover) {
       &:hover:not(.focus-visible) {
@@ -5053,7 +5245,9 @@ button,
   }
 
   .crew__swiper {
-    width: 226px;
+    height: auto;
+    margin: 0 auto;
+    width: calc(100% - 80px);
   }
 
   .crew__swiper .swiper-button--next svg,
@@ -5070,8 +5264,22 @@ button,
     right: -40px;
   }
 
+  .crew__card {
+    height: auto;
+    margin: 0 auto;
+    width: calc(100% - 80px);
+  }
+
   .crew__image img {
-    height: 274px;
+    height: auto;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .crew__image > span {
+    height: auto;
+    margin: 0 auto;
+    width: calc(100% - 80px);
   }
 
   .advantages .container {
@@ -5337,7 +5545,7 @@ button,
   .custom-input textarea:hover:not(.focus-visible),
   .custom-textarea input:hover:not(.focus-visible),
   .custom-textarea textarea:hover:not(.focus-visible) {
-    outline: 2px solid #000000;
+    outline: 2px solid #ffffff;
     outline-offset: 2px;
   }
 
@@ -5345,7 +5553,7 @@ button,
   .custom-input textarea:hover:not(.focus-visible),
   .custom-textarea input:hover:not(.focus-visible),
   .custom-textarea textarea:hover:not(.focus-visible) {
-    outline: 2px solid #000000;
+    outline: 2px solid #ffffff;
     outline-offset: 2px;
   }
 
@@ -5451,6 +5659,15 @@ button,
 
   .reviews .swiper-button:not(:disabled):hover:not(.focus-visible) {
     opacity: 0.7;
+  }
+
+  .form form button[type=submit]:hover:not(.focus-visible) {
+    color: #102654;
+  }
+
+  .form form button[type=submit]:hover:not(.focus-visible)::before {
+    -webkit-clip-path: polygon(0% 0%, 0% 100%, 3px 100%, 3px 3px, 3px 3px, 3px calc(100% - 3px), 3px calc(100% - 3px), 3px 100%, 100% 100%, 100% 0%);
+    clip-path: polygon(0% 0%, 0% 100%, 3px 100%, 3px 3px, 3px 3px, 3px calc(100% - 3px), 3px calc(100% - 3px), 3px 100%, 100% 100%, 100% 0%);
   }
 }
 

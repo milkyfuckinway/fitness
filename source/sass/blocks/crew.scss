@@ -50,7 +50,9 @@
   }
 
   @include vp-767 {
-    width: 226px;
+    height: auto;
+    margin: 0 auto;
+    width: calc(100% - 40px * 2);
   }
 }
 
@@ -101,6 +103,12 @@
   height: 100%;
   margin: 0;
   position: relative;
+
+  @include vp-767 {
+    height: auto;
+    margin: 0 auto;
+    width: calc(100% - 40px * 2);
+  }
 }
 
 .crew__card:hover {
@@ -125,7 +133,9 @@
   }
 
   @include vp-767 {
-    height: 274px;
+    height: auto;
+    margin: 0 auto;
+    width: 100%;
   }
 }
 
@@ -145,6 +155,12 @@
   top: 0;
   transition: 0.3s transform;
   user-select: none;
+
+  @include vp-767 {
+    height: auto;
+    margin: 0 auto;
+    width: calc(100% - 40px * 2);
+  }
 }
 
 .crew__content {

@@ -1,0 +1,7 @@
+.feedback > .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+}
