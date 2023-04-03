@@ -65,7 +65,7 @@
   align-items: center;
   column-gap: 28px;
   display: grid;
-  grid-template-columns: min-content 1fr;
+  grid-template-columns: 145px 1fr;
 
   @include vp-1199 {
     column-gap: 30px;
@@ -186,6 +186,7 @@
 
 .advantages__value h3 {
   max-width: 145px;
+  word-break: break-all;
 }
 
 .advantages__value {

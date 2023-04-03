@@ -2709,6 +2709,8 @@ button,
   font-weight: 600;
   letter-spacing: 0.03em;
   line-height: 32px;
+  position: relative;
+  z-index: 1;
   -webkit-tap-highlight-color: transparent;
   -webkit-transition: linear 0.2s opacity;
   -o-transition: linear 0.2s opacity;
@@ -2735,8 +2737,10 @@ button,
   column-gap: 63px;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 397px 500px;
-  grid-template-columns: 397px 500px;
+  -ms-grid-columns: minmax(-webkit-min-content, 397px) 500px;
+  -ms-grid-columns: minmax(min-content, 397px) 500px;
+  grid-template-columns: minmax(-webkit-min-content, 397px) 500px;
+  grid-template-columns: minmax(min-content, 397px) 500px;
   margin-top: 7px;
 }
 
@@ -2757,6 +2761,7 @@ button,
   grid-template-rows: repeat(3, -webkit-min-content);
   grid-template-rows: repeat(3, min-content);
   justify-items: end;
+  max-width: 397px;
 }
 
 .header__content ul {
@@ -3214,6 +3219,7 @@ button,
   font-weight: 700;
   line-height: 100%;
   margin-top: -100px;
+  max-width: 300px;
   opacity: 0.48;
   position: relative;
   text-align: center;
@@ -3221,6 +3227,7 @@ button,
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  word-break: break-all;
   z-index: 0;
 }
 
@@ -3238,12 +3245,13 @@ button,
   line-height: 100%;
   margin: 0;
   margin-top: 60px;
-  overflow: hidden;
+  max-width: 300px;
   position: relative;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  word-break: break-all;
   z-index: 1;
 }
 
@@ -3702,10 +3710,8 @@ button,
   column-gap: 28px;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: -webkit-min-content 1fr;
-  -ms-grid-columns: min-content 1fr;
-  grid-template-columns: -webkit-min-content 1fr;
-  grid-template-columns: min-content 1fr;
+  -ms-grid-columns: 145px 1fr;
+  grid-template-columns: 145px 1fr;
 }
 
 .advantages li:nth-child(-5n+1),
@@ -3791,6 +3797,7 @@ button,
 
 .advantages__value h3 {
   max-width: 145px;
+  word-break: break-all;
 }
 
 .advantages__value {
@@ -4163,7 +4170,7 @@ button,
   line-height: 16px;
   margin: 0;
   min-height: 54px;
-  padding: 18px 20px 17px;
+  padding: 22px 20px 17px;
   position: relative;
   text-transform: uppercase;
   -webkit-transition: 0.3s color;
@@ -4208,7 +4215,7 @@ button,
   margin-left: 0;
   margin-right: auto;
   max-width: 683px;
-  padding: 56px 99px 43px 124px;
+  padding: 56px 99px 43px 120px;
   width: 100%;
 }
 
@@ -4241,6 +4248,7 @@ button,
   columns: 2;
   list-style: none;
   margin: 0;
+  margin-left: 4px;
   padding: 0;
   position: relative;
 }
@@ -4813,6 +4821,65 @@ button,
 
   .reviews__card {
     padding: 56px 65px 52px;
+  }
+
+  .form h2 {
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 50px;
+    margin-bottom: 27px;
+  }
+
+  .form > .container {
+    margin: 0;
+    max-width: 100%;
+    padding: 61px 162px 70px 133px;
+  }
+
+  .form form {
+    -webkit-column-gap: 60px;
+    -moz-column-gap: 60px;
+    column-gap: 60px;
+  }
+
+  .contacts > .container {
+    margin: 0;
+    max-width: 100%;
+    padding: 61px 103px 43px 132px;
+  }
+
+  .contacts h2 {
+    font-size: 42px;
+    line-height: 50px;
+    margin: 0 0 32px;
+  }
+
+  .contacts ul {
+    -webkit-column-gap: 96px;
+    -moz-column-gap: 96px;
+    column-gap: 96px;
+    margin-left: 2px;
+  }
+
+  .contacts ul h3 {
+    font-size: 20px;
+    line-height: 150%;
+    margin: 0 0 7px;
+  }
+
+  .contacts ul p {
+    font-size: 18px;
+    line-height: 27px;
+  }
+
+  .feedback > .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
   }
 }
 
@@ -5477,6 +5544,34 @@ button,
     -ms-grid-row: 2;
     grid-row: 2;
     text-align: center;
+  }
+
+  .form > .container {
+    padding: 61px 15px 70px 15px;
+  }
+
+  .form form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+
+  .contacts > .container {
+    padding: 61px 15px 43px 15px;
+  }
+
+  .contacts ul {
+    -webkit-columns: 1;
+    -moz-columns: 1;
+    columns: 1;
+  }
+
+  .contacts ul::after {
+    display: none;
   }
 }
 

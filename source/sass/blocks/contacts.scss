@@ -7,7 +7,7 @@
   margin-left: 0;
   margin-right: auto;
   max-width: 683px;
-  padding: 56px 99px 43px 124px;
+  padding: 56px 99px 43px 120px;
   width: 100%;
 
   &::before {
@@ -19,6 +19,16 @@
     top: 0;
     width: 100%;
   }
+
+  @include vp-1199 {
+    margin: 0;
+    max-width: 100%;
+    padding: 61px 103px 43px 132px;
+  }
+
+  @include vp-767 {
+    padding: 61px 15px 43px 15px;
+  }
 }
 
 .contacts h2 {
@@ -29,6 +39,12 @@
   line-height: 65px;
   margin: 0;
   margin-bottom: 38px;
+
+  @include vp-1199 {
+    font-size: 42px;
+    line-height: 50px;
+    margin: 0 0 32px;
+  }
 }
 
 .contacts ul {
@@ -36,8 +52,18 @@
   columns: 2;
   list-style: none;
   margin: 0;
+  margin-left: 4px;
   padding: 0;
   position: relative;
+
+  @include vp-1199 {
+    column-gap: 96px;
+    margin-left: 2px;
+  }
+
+  @include vp-767 {
+    columns: 1;
+  }
 
   &::after {
     background-color: rgba($color-sapphire, 0.5);
@@ -47,6 +73,10 @@
     position: absolute;
     top: 6px;
     width: 1px;
+
+    @include vp-767 {
+      display: none;
+    }
   }
 }
 
@@ -61,10 +91,21 @@
   line-height: 150%;
   margin: 0;
   margin-bottom: 3px;
+
+  @include vp-1199 {
+    font-size: 20px;
+    line-height: 150%;
+    margin: 0 0 7px;
+  }
 }
 
 .contacts ul p {
   font-size: 14px;
   line-height: 21px;
   margin: 0;
+
+  @include vp-1199 {
+    font-size: 18px;
+    line-height: 27px;
+  }
 }

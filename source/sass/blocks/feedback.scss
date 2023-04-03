@@ -4,4 +4,9 @@
   max-width: 100%;
   padding-left: 0;
   padding-right: 0;
+
+  @include vp-1199 {
+    display: flex;
+    flex-direction: column;
+  }
 }
