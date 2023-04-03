@@ -1,0 +1,40 @@
+mixin contacts 
+  -
+    const formHeading = "Бесплатное занятие";
+    const contactsHeading = "Контакты";
+    const contacts = [
+      {
+        title: "Адрес",
+        text: "г. Омск, ул. 60 лет Октября, 7",
+      },
+      {
+        title: "График работы",
+        text: "Пн-Вс: с 8:00 до 22:00",
+      },
+      {
+        title: "Телефон",
+        text: "8-800-555-55-55",
+      },
+      {
+        title: "Email",
+        text: "omsk@supergym.ru",
+      },
+    ];
+
+  section.contacts 
+    .container 
+      .contacts__form(data-callback="base" data-form-validate data-message-base="Сообщение")
+        h2=formHeading
+        form(action="https://echo.htmlacademy.ru" method="post")
+          div(class="custom-input" data-limitation="name" data-required data-validate-type="text")
+              input(name="name" data-focus type="text" aria-label="Введите имя." autocomplete="off" required placeholder="Имя")
+          div(class="custom-input" data-required data-validate-type="phone")
+            input(name="tel" type="tel" aria-label="Введите номер телефона." autocomplete="off" required placeholder="Телефон")
+        button(type='submit') Отправить
+      .contacts__content
+        h2=contactsHeading
+        ul 
+          each item in contacts 
+            li 
+              h3=item.title 
+              p=item.text
