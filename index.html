@@ -581,41 +581,47 @@
             </div>
           </div>
         </section>
-        <section class="contacts"> 
-          <div class="container"> 
-            <div class="contacts__form" data-callback="base" data-form-validate data-message-base="Сообщение">
-              <h2>Бесплатное занятие</h2>
-              <form action="https://echo.htmlacademy.ru" method="post">
-                <div class="custom-input" data-limitation="name" data-required data-validate-type="text">
-                  <input name="name" data-focus type="text" aria-label="Введите имя." autocomplete="off" required placeholder="Имя">
+        <section class="feedback">
+          <div class="container">
+            <section class="form">
+              <div class="container">
+                <h2>Бесплатное занятие</h2>
+                <div class="form__wrapper" data-callback="base" data-form-validate data-message-base="Сообщение">
+                  <form action="https://echo.htmlacademy.ru" method="post">
+                    <div class="custom-input" data-limitation="name" data-required data-validate-type="text">
+                      <input name="name" data-focus type="text" aria-label="Введите имя." autocomplete="off" required placeholder="Имя">
+                    </div>
+                    <div class="custom-input" data-required data-validate-type="phone">
+                      <input name="tel" type="tel" aria-label="Введите номер телефона." autocomplete="off" required placeholder="Телефон">
+                    </div>
+                    <button type="submit">Отправить</button>
+                  </form>
                 </div>
-                <div class="custom-input" data-required data-validate-type="phone">
-                  <input name="tel" type="tel" aria-label="Введите номер телефона." autocomplete="off" required placeholder="Телефон">
-                </div>
-              </form>
-              <button type="submit">Отправить</button>
-            </div>
-            <div class="contacts__content">
-              <h2>Контакты</h2>
-              <ul> 
-                <li> 
-                  <h3>Адрес</h3>
-                  <p>г. Омск, ул. 60 лет Октября, 7</p>
-                </li>
-                <li> 
-                  <h3>График работы</h3>
-                  <p>Пн-Вс: с 8:00 до 22:00</p>
-                </li>
-                <li> 
-                  <h3>Телефон</h3>
-                  <p>8-800-555-55-55</p>
-                </li>
-                <li> 
-                  <h3>Email</h3>
-                  <p>omsk@supergym.ru</p>
-                </li>
-              </ul>
-            </div>
+              </div>
+            </section>
+            <section class="contacts">
+              <div class="container">
+                <h2>Контакты</h2>
+                <ul>
+                  <li>
+                    <h3>Адрес:</h3>
+                    <p>г. Омск, ул. 60 лет Октября, 7</p>
+                  </li>
+                  <li>
+                    <h3>График работы:</h3>
+                    <p>Пн-Вс: с 8:00 до 22:00</p>
+                  </li>
+                  <li>
+                    <h3>Телефон:</h3>
+                    <p>8-800-555-55-55</p>
+                  </li>
+                  <li>
+                    <h3>Email:</h3>
+                    <p>omsk@supergym.ru</p>
+                  </li>
+                </ul>
+              </div>
+            </section>
           </div>
         </section>
       </main>
