@@ -15,10 +15,12 @@ const crewSwiper = new Swiper(crewSwiperContainer, {
     1200: {
       slidesPerView: 4,
       spaceBetween: 40,
+      allowTouchMove: false,
     },
     768: {
       slidesPerView: 2,
       spaceBetween: 30,
+      allowTouchMove: true,
     },
     320: {
       slidesPerView: 1,

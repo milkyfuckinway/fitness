@@ -1,0 +1,152 @@
+.reviews h2 {
+  font-family: $ff-alumnisans;
+  font-size: 54px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  line-height: 65px;
+  margin-bottom: 37px;
+  margin-left: 8px;
+  margin-top: 0;
+  text-align: center;
+
+  @include vp-1199 {
+    font-size: 42px;
+    line-height: 50px;
+    margin-bottom: 40px;
+    margin-left: 0;
+    margin-right: 5px;
+  }
+
+  @include vp-767 {
+    font-size: 32px;
+    line-height: 38px;
+    padding: 0 15px;
+  }
+}
+
+.reviews .container {
+  padding-bottom: 120px;
+
+  @include vp-1199 {
+    padding-bottom: 100px;
+  }
+
+  @include vp-767 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.reviews__swiper {
+  height: 100%;
+  margin: 0 auto;
+  position: relative;
+  width: 560px;
+
+  @include vp-1199 {
+    width: 566px;
+  }
+
+  @include vp-767 {
+    width: calc(100% - (47px * 2));
+  }
+}
+
+.reviews .swiper-button {
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  height: 100%;
+  overflow: hidden;
+  padding: 0 40px;
+  position: absolute;
+  top: 0;
+
+  @include default-states($color-sapphire, -2px);
+
+  @include vp-767 {
+    padding: 0 20px 0 16px;
+
+    & svg {
+      width: 11px;
+    }
+  }
+}
+
+.reviews .swiper-button--prev {
+  left: 0;
+  transform: translateX(-100%);
+}
+
+.reviews .swiper-button--next {
+  right: 0;
+  transform: translateX(100%) rotate(180deg);
+}
+
+.reviews__card {
+  background-color: $color-sapphire;
+  color: $color-default-white;
+  column-gap: 28px;
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  grid-template-rows: min-content min-content;
+  height: auto;
+  min-height: 242px;
+  padding: 55px 62px;
+  row-gap: 11px;
+
+  @include vp-1199 {
+    padding: 56px 65px 52px;
+  }
+
+  @include vp-767 {
+    align-items: center;
+    column-gap: 15px;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    padding: 40px 21px 33px 23px;
+  }
+}
+
+.reviews__card .reviews__image {
+  grid-column: 1;
+  grid-row: 1 / -1;
+  height: 100%;
+  margin-top: 5px;
+  width: 80px;
+
+  @include vp-767 {
+    grid-row: auto;
+    margin-left: auto;
+    width: 68px;
+  }
+}
+
+.reviews__card h3 {
+  font-size: 20px;
+  font-weight: 700;
+  grid-column: 2;
+  line-height: 150%;
+  margin: 0;
+
+  @include vp-767 {
+    grid-row: 1;
+    line-height: 130%;
+    margin-right: auto;
+    width: min-content;
+  }
+}
+
+.reviews__card p {
+  font-size: 16px;
+  font-weight: 400;
+  grid-column: 2;
+  line-height: 140%;
+  margin: 0;
+
+  @include vp-767 {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    text-align: center;
+  }
+}

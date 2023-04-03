@@ -117,6 +117,7 @@
 .crew__image img {
   height: 294px;
   object-fit: cover;
+  user-select: none;
   width: 294px;
 
   @include vp-1199 {
@@ -143,7 +144,7 @@
   right: 0;
   top: 0;
   transition: 0.3s transform;
-  z-index: 1000;
+  user-select: none;
 }
 
 .crew__content {

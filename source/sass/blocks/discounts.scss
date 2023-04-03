@@ -1,12 +1,14 @@
 .discounts .container {
   padding-bottom: 117px;
-  padding-top: 142px;
+  padding-top: 149px;
 
   @include vp-1199 {
+    padding-bottom: 91px;
     padding-top: 91px;
   }
 
-  @include vp-1199 {
+  @include vp-767 {
+    padding-bottom: 65px;
     padding-top: 65px;
   }
 }

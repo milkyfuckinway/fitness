@@ -10,10 +10,16 @@ const reviewsSwiper = new Swiper(reviewsSwiperContainer, {
     nextEl: nextButton,
     prevEl: prevButton,
   },
-  autoplay: {
-    delay: 500,
-  },
   slidesPerView: 1,
+  spaceBetween: 30,
+  breakpoints: {
+    1200: {
+      allowTouchMove: false,
+    },
+    768: {
+      allowTouchMove: true,
+    },
+  },
 });
 
 prevButton.ariaLabel = 'Предыдущий слайд.';

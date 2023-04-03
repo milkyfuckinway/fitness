@@ -30,11 +30,9 @@ mixin reviews
             each item in reviews
               .swiper-slide.reviews__card
                 .reviews__image
-                  span=item.name
                   +picture(`content/reviews/${item.photo}`, "avatar", "jpg", "260", "294", `${item.name}.`)
-                .reviews__content
-                  h3=item.name
-                  p=item.speciality
+                h3=item.name
+                p=item.text
         button.swiper-button.swiper-button--next(type='button')
           +icon("swiper-button", "16", "32")
 

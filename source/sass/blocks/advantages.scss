@@ -3,7 +3,7 @@
 }
 
 .advantages .container {
-  padding: 146px 162px 91px 166px;
+  padding: 146px 162px 84px 166px;
 
   @include vp-1199 {
     padding: 91px 45px 92px;
@@ -160,6 +160,7 @@
 
     @include vp-767 {
       line-height: 100%;
+      margin-top: 0;
     }
   }
 
@@ -174,6 +175,11 @@
 
     @include vp-1199 {
       font-size: 58px;
+      margin-top: 8px;
+    }
+
+    @include vp-767 {
+      margin-top: 0;
     }
   }
 }
@@ -199,7 +205,7 @@
 
   @include vp-1199 {
     margin-left: 0;
-    margin-top: -14px;
+    margin-top: -20px;
   }
 
   @include vp-767 {

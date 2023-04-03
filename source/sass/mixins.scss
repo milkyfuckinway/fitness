@@ -40,16 +40,16 @@
 
 // Оутлайн
 
-@mixin default-outline($outline-color: $color-default-white) {
+@mixin default-outline($outline-color: $color-default-white, $outline-offset: 2px) {
   outline: 2px solid $outline-color;
-  outline-offset: 2px;
+  outline-offset: $outline-offset;
 }
 
 // Фокус
 
-@mixin default-focus($outline-color) {
+@mixin default-focus($outline-color, $outline-offset) {
   &:focus-visible {
-    @include default-outline($outline-color);
+    @include default-outline($outline-color, $outline-offset);
     @content;
   }
 
@@ -62,20 +62,27 @@
 
 // Ховер
 
-@mixin default-states($outline-color: $color-default-white) {
+@mixin default-states($outline-color: $color-default-white, $outline-offset: 2px) {
   -webkit-tap-highlight-color: transparent;
   transition: $tf-linear 0.2s opacity;
 
-  @include hover-focus {
-    @include default-focus($outline-color);
+  &:not(:disabled) {
+    @include hover-focus {
+      @include default-focus($outline-color, $outline-offset);
+    }
+
+    @include hover {
+      opacity: 0.7;
+    }
+
+    &:active {
+      opacity: 0.7;
+    }
   }
 
-  @include hover {
-    opacity: 0.7;
-  }
-
-  &:active {
-    opacity: 0.7;
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.2;
   }
 }
 
