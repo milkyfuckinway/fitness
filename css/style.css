@@ -2671,13 +2671,18 @@ button,
   transition: linear 0.2s opacity;
 }
 
-.header__top .logo:not(.disabled).focus-visible:focus:focus-visible {
+.header__top .logo:not(.disabled):not(:disabled).focus-visible:focus:focus-visible {
   outline: 2px solid #ffffff;
   outline-offset: 2px;
 }
 
-.header__top .logo:not(.disabled):active {
+.header__top .logo:not(.disabled):not(:disabled):active {
   opacity: 0.7;
+}
+
+.header__top .logo:not(.disabled):disabled {
+  cursor: not-allowed;
+  opacity: 0.2;
 }
 
 .header__top .logo svg {
@@ -2697,13 +2702,18 @@ button,
   transition: linear 0.2s opacity;
 }
 
-.header__top a[href^="tel:"].focus-visible:focus:focus-visible {
+.header__top a[href^="tel:"]:not(:disabled).focus-visible:focus:focus-visible {
   outline: 2px solid #ffffff;
   outline-offset: 2px;
 }
 
-.header__top a[href^="tel:"]:active {
+.header__top a[href^="tel:"]:not(:disabled):active {
   opacity: 0.7;
+}
+
+.header__top a[href^="tel:"]:disabled {
+  cursor: not-allowed;
+  opacity: 0.2;
 }
 
 .header__bottom {
@@ -2764,13 +2774,18 @@ button,
   transition: linear 0.2s opacity;
 }
 
-.header__content ul a.focus-visible:focus:focus-visible {
+.header__content ul a:not(:disabled).focus-visible:focus:focus-visible {
   outline: 2px solid #ffffff;
   outline-offset: 2px;
 }
 
-.header__content ul a:active {
+.header__content ul a:not(:disabled):active {
   opacity: 0.7;
+}
+
+.header__content ul a:disabled {
+  cursor: not-allowed;
+  opacity: 0.2;
 }
 
 .header__content span {
@@ -3018,13 +3033,18 @@ button,
   transition: linear 0.2s opacity;
 }
 
-.about__preview > div > button.focus-visible:focus:focus-visible {
+.about__preview > div > button:not(:disabled).focus-visible:focus:focus-visible {
   outline: 2px solid #030a1a;
   outline-offset: 2px;
 }
 
-.about__preview > div > button:active {
+.about__preview > div > button:not(:disabled):active {
   opacity: 0.7;
+}
+
+.about__preview > div > button:disabled {
+  cursor: not-allowed;
+  opacity: 0.2;
 }
 
 .tariffs {
@@ -3096,13 +3116,18 @@ button,
   transition: linear 0.2s opacity;
 }
 
-.tariffs .tabs__control.focus-visible:focus:focus-visible {
+.tariffs .tabs__control:not(:disabled).focus-visible:focus:focus-visible {
   outline: 2px solid #102654;
   outline-offset: 2px;
 }
 
-.tariffs .tabs__control:active {
+.tariffs .tabs__control:not(:disabled):active {
   opacity: 0.7;
+}
+
+.tariffs .tabs__control:disabled {
+  cursor: not-allowed;
+  opacity: 0.2;
 }
 
 .tariffs .tabs__control.is-active {
@@ -3526,6 +3551,10 @@ button,
   height: 294px;
   -o-object-fit: cover;
   object-fit: cover;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   width: 294px;
 }
 
@@ -3554,7 +3583,10 @@ button,
   -o-transition: 0.3s transform;
   transition: 0.3s transform;
   transition: 0.3s transform, 0.3s -webkit-transform;
-  z-index: 1000;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .crew__content {
@@ -3615,7 +3647,7 @@ button,
 }
 
 .advantages .container {
-  padding: 146px 162px 91px 166px;
+  padding: 146px 162px 84px 166px;
 }
 
 .advantages h2 {
@@ -3815,7 +3847,7 @@ button,
 
 .discounts .container {
   padding-bottom: 117px;
-  padding-top: 142px;
+  padding-top: 149px;
 }
 
 .discounts h2 {
@@ -3945,6 +3977,121 @@ button,
   text-decoration: underline;
   text-transform: uppercase;
   text-underline-offset: 4px;
+}
+
+.reviews h2 {
+  font-family: "Alumni Sans", "Arial", sans-serif;
+  font-size: 54px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  line-height: 65px;
+  margin-bottom: 37px;
+  margin-left: 8px;
+  margin-top: 0;
+  text-align: center;
+}
+
+.reviews .container {
+  padding-bottom: 120px;
+}
+
+.reviews__swiper {
+  height: 100%;
+  margin: 0 auto;
+  position: relative;
+  width: 560px;
+}
+
+.reviews .swiper-button {
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  height: 100%;
+  overflow: hidden;
+  padding: 0 40px;
+  position: absolute;
+  top: 0;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-transition: linear 0.2s opacity;
+  -o-transition: linear 0.2s opacity;
+  transition: linear 0.2s opacity;
+}
+
+.reviews .swiper-button:not(:disabled).focus-visible:focus:focus-visible {
+  outline: 2px solid #102654;
+  outline-offset: -2px;
+}
+
+.reviews .swiper-button:not(:disabled):active {
+  opacity: 0.7;
+}
+
+.reviews .swiper-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.2;
+}
+
+.reviews .swiper-button--prev {
+  left: 0;
+  -webkit-transform: translateX(-100%);
+  -ms-transform: translateX(-100%);
+  transform: translateX(-100%);
+}
+
+.reviews .swiper-button--next {
+  right: 0;
+  -webkit-transform: translateX(100%) rotate(180deg);
+  -ms-transform: translateX(100%) rotate(180deg);
+  transform: translateX(100%) rotate(180deg);
+}
+
+.reviews__card {
+  background-color: #102654;
+  color: #ffffff;
+  -webkit-column-gap: 28px;
+  -moz-column-gap: 28px;
+  column-gap: 28px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: -webkit-min-content 1fr;
+  -ms-grid-columns: min-content 1fr;
+  grid-template-columns: -webkit-min-content 1fr;
+  grid-template-columns: min-content 1fr;
+  -ms-grid-rows: -webkit-min-content -webkit-min-content;
+  -ms-grid-rows: min-content min-content;
+  grid-template-rows: -webkit-min-content -webkit-min-content;
+  grid-template-rows: min-content min-content;
+  height: auto;
+  min-height: 242px;
+  padding: 55px 62px;
+  row-gap: 11px;
+}
+
+.reviews__card .reviews__image {
+  -ms-grid-column: 1;
+  grid-column: 1;
+  grid-row: 1/-1;
+  height: 100%;
+  margin-top: 5px;
+  width: 80px;
+}
+
+.reviews__card h3 {
+  font-size: 20px;
+  font-weight: 700;
+  -ms-grid-column: 2;
+  grid-column: 2;
+  line-height: 150%;
+  margin: 0;
+}
+
+.reviews__card p {
+  font-size: 16px;
+  font-weight: 400;
+  -ms-grid-column: 2;
+  grid-column: 2;
+  line-height: 140%;
+  margin: 0;
 }
 
 /* @mixin hover-focus {
@@ -4405,11 +4552,12 @@ button,
 
   .advantages li:not(:nth-child(-5n+3)) .advantages__value h3 {
     font-size: 58px;
+    margin-top: 8px;
   }
 
   .advantages__value div {
     margin-left: 0;
-    margin-top: -14px;
+    margin-top: -20px;
   }
 
   .advantages__description {
@@ -4430,11 +4578,8 @@ button,
   }
 
   .discounts .container {
+    padding-bottom: 91px;
     padding-top: 91px;
-  }
-
-  .discounts .container {
-    padding-top: 65px;
   }
 
   .discounts h2 {
@@ -4456,6 +4601,26 @@ button,
 
   .discounts__regular {
     min-height: 211px;
+  }
+
+  .reviews h2 {
+    font-size: 42px;
+    line-height: 50px;
+    margin-bottom: 40px;
+    margin-left: 0;
+    margin-right: 5px;
+  }
+
+  .reviews .container {
+    padding-bottom: 100px;
+  }
+
+  .reviews__swiper {
+    width: 566px;
+  }
+
+  .reviews__card {
+    padding: 56px 65px 52px;
   }
 }
 
@@ -4952,6 +5117,11 @@ button,
 
   .advantages li:nth-child(-5n+3) .advantages__value h3 {
     line-height: 100%;
+    margin-top: 0;
+  }
+
+  .advantages li:not(:nth-child(-5n+3)) .advantages__value h3 {
+    margin-top: 0;
   }
 
   .advantages__value div {
@@ -4978,6 +5148,11 @@ button,
 
   .advantages li:nth-child(-5n+3) .advantages__description p {
     margin: 0 30px;
+  }
+
+  .discounts .container {
+    padding-bottom: 65px;
+    padding-top: 65px;
   }
 
   .discounts h2 {
@@ -5034,6 +5209,65 @@ button,
   }
 
   .discounts__regular a {
+    text-align: center;
+  }
+
+  .reviews h2 {
+    font-size: 32px;
+    line-height: 38px;
+    padding: 0 15px;
+  }
+
+  .reviews .container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .reviews__swiper {
+    width: calc(100% - 94px);
+  }
+
+  .reviews .swiper-button {
+    padding: 0 20px 0 16px;
+  }
+
+  .reviews .swiper-button svg {
+    width: 11px;
+  }
+
+  .reviews__card {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-column-gap: 15px;
+    -moz-column-gap: 15px;
+    column-gap: 15px;
+    -ms-grid-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    padding: 40px 21px 33px 23px;
+  }
+
+  .reviews__card .reviews__image {
+    grid-row: auto;
+    margin-left: auto;
+    width: 68px;
+  }
+
+  .reviews__card h3 {
+    -ms-grid-row: 1;
+    grid-row: 1;
+    line-height: 130%;
+    margin-right: auto;
+    width: -webkit-min-content;
+    width: -moz-min-content;
+    width: min-content;
+  }
+
+  .reviews__card p {
+    grid-column: 1/-1;
+    -ms-grid-row: 2;
+    grid-row: 2;
     text-align: center;
   }
 }
@@ -5133,30 +5367,30 @@ button,
     background-color: rgba(0, 0, 0, 0.4);
   }
 
-  .header__top .logo:not(.disabled):hover:not(.focus-visible):focus-visible {
+  .header__top .logo:not(.disabled):not(:disabled):hover:not(.focus-visible):focus-visible {
     outline: 2px solid #ffffff;
     outline-offset: 2px;
   }
 
-  .header__top .logo:not(.disabled):hover:not(.focus-visible) {
+  .header__top .logo:not(.disabled):not(:disabled):hover:not(.focus-visible) {
     opacity: 0.7;
   }
 
-  .header__top a[href^="tel:"]:hover:not(.focus-visible):focus-visible {
+  .header__top a[href^="tel:"]:not(:disabled):hover:not(.focus-visible):focus-visible {
     outline: 2px solid #ffffff;
     outline-offset: 2px;
   }
 
-  .header__top a[href^="tel:"]:hover:not(.focus-visible) {
+  .header__top a[href^="tel:"]:not(:disabled):hover:not(.focus-visible) {
     opacity: 0.7;
   }
 
-  .header__content ul a:hover:not(.focus-visible):focus-visible {
+  .header__content ul a:not(:disabled):hover:not(.focus-visible):focus-visible {
     outline: 2px solid #ffffff;
     outline-offset: 2px;
   }
 
-  .header__content ul a:hover:not(.focus-visible) {
+  .header__content ul a:not(:disabled):hover:not(.focus-visible) {
     opacity: 0.7;
   }
 
@@ -5166,21 +5400,21 @@ button,
     color: #ff1553;
   }
 
-  .about__preview > div > button:hover:not(.focus-visible):focus-visible {
+  .about__preview > div > button:not(:disabled):hover:not(.focus-visible):focus-visible {
     outline: 2px solid #030a1a;
     outline-offset: 2px;
   }
 
-  .about__preview > div > button:hover:not(.focus-visible) {
+  .about__preview > div > button:not(:disabled):hover:not(.focus-visible) {
     opacity: 0.7;
   }
 
-  .tariffs .tabs__control:hover:not(.focus-visible):focus-visible {
+  .tariffs .tabs__control:not(:disabled):hover:not(.focus-visible):focus-visible {
     outline: 2px solid #102654;
     outline-offset: 2px;
   }
 
-  .tariffs .tabs__control:hover:not(.focus-visible) {
+  .tariffs .tabs__control:not(:disabled):hover:not(.focus-visible) {
     opacity: 0.7;
   }
 
@@ -5208,6 +5442,15 @@ button,
     -webkit-transform: scale(1.1);
     -ms-transform: scale(1.1);
     transform: scale(1.1);
+  }
+
+  .reviews .swiper-button:not(:disabled):hover:not(.focus-visible):focus-visible {
+    outline: 2px solid #102654;
+    outline-offset: -2px;
+  }
+
+  .reviews .swiper-button:not(:disabled):hover:not(.focus-visible) {
+    opacity: 0.7;
   }
 }
 
