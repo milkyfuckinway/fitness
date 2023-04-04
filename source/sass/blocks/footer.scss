@@ -25,16 +25,17 @@
   }
 }
 
-.footer__nav .logo,
+.footer__nav .logo {
+  color: $color-default-white;
+}
+
+.footer__nav .logo:not(.disabled),
 .footer__nav a,
 .footer__social a {
   color: $color-default-white;
+  cursor: pointer;
 
-  @include hover-focus {
-    &:not(.disabled) {
-      color: $color-torch-red;
-    }
-  }
+  @include default-states($color-default-white);
 }
 
 .footer__nav {

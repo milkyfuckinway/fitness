@@ -1,5 +1,5 @@
 .advantages {
-  background-color: #f8f9fc;
+  background-color: $color-ghost-white;
 }
 
 .advantages .container {
@@ -107,7 +107,7 @@
 
   &:nth-child(-5n + 3) {
     align-items: center;
-    background-color: #1c3374;
+    background-color: $color-resolution-blue;
     color: $color-default-white;
     display: flex;
     flex-direction: column;
@@ -195,7 +195,7 @@
 }
 
 .advantages__value div {
-  color: #2e35ac;
+  color: $color-egyptian-blue;
   display: block;
   font-size: 14px;
   line-height: 150%;

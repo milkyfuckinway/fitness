@@ -23,6 +23,8 @@ const baseSuccessCallback = (event) => {
         modal.appendChild(p);
       });
       const button = document.createElement('button');
+      button.style.backgroundColor = 'transparent';
+      button.style.cursor = 'pointer';
       button.textContent = 'Закрыть';
       button.addEventListener('click', () => {
         modal.remove();

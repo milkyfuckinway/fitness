@@ -39,6 +39,7 @@
 }
 
 .reviews__swiper {
+  box-shadow: 0 0 40px rgba(28, 51, 116, 0.2);
   height: 100%;
   margin: 0 auto;
   position: relative;
@@ -85,7 +86,7 @@
 }
 
 .reviews__card {
-  background-color: $color-sapphire;
+  background-color: $color-resolution-blue;
   color: $color-default-white;
   column-gap: 28px;
   display: grid;

@@ -69,7 +69,7 @@
 }
 
 .discounts__main-content {
-  background-color: #ed0233;
+  background-color: $color-torch-red;
   color: $color-default-white;
   display: flex;
   flex-direction: column;
@@ -119,8 +119,13 @@
   text-decoration: underline;
   text-transform: uppercase;
   text-underline-offset: 4px;
+  width: fit-content;
+
+  @include default-states($color-default-white, 4px);
 
   @include vp-767 {
+    margin-left: auto;
+    margin-right: auto;
     text-align: center;
   }
 }
@@ -188,8 +193,13 @@
   text-decoration: underline;
   text-transform: uppercase;
   text-underline-offset: 4px;
+  width: fit-content;
+
+  @include default-states($color-sapphire, 4px);
 
   @include vp-767 {
+    margin-left: auto;
+    margin-right: auto;
     text-align: center;
   }
 }

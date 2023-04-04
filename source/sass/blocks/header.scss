@@ -234,6 +234,14 @@
   margin-top: 48px;
   min-width: 234px;
 
+  &::before {
+    background-image: $gradient-button-just-white;
+  }
+
+  @include hover {
+    color: $color-sapphire;
+  }
+
   @include vp-1199 {
     margin-top: 35px;
     min-width: 100%;

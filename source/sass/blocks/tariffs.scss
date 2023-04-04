@@ -74,7 +74,7 @@
 .tariffs .tabs__control {
   background-color: transparent;
   border: 0;
-  color: #102654;
+  color: $color-sapphire;
   font-size: 20px;
   line-height: 150%;
   margin: 0;
@@ -100,7 +100,7 @@
     opacity: 1;
 
     &::before {
-      background-color: #d10a42;
+      background-color: $color-crimson;
       bottom: -8px;
       content: "";
       height: 2px;
@@ -169,7 +169,7 @@
 
 .tariffs__price span {
   bottom: 5px;
-  color: #e8e8e8;
+  color: $color-whisper;
   font-size: 100px;
   font-weight: 700;
   line-height: 100%;
@@ -189,7 +189,7 @@
 
 .tariffs__price h4 {
   align-items: center;
-  color: #103aae;
+  color: $color-egyptian-blue;
   display: flex;
   font-size: 60px;
   font-weight: 700;
@@ -204,7 +204,7 @@
   z-index: 1;
 
   &::after {
-    color: #102654;
+    color: $color-sapphire;
     content: "₽";
     font-size: 58px;
     font-weight: 400;

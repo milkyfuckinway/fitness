@@ -59,5 +59,5 @@ mixin footer
         ul
           each item in socialsLinks
             li
-              a(href=item.href)
+              a(href=item.href aria-label=item.aria)
                 +icon(item.icon, item.iconwidth, item.iconheight)

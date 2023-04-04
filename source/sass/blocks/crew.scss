@@ -141,6 +141,17 @@
 }
 
 .crew__card:hover {
+  &::before {
+    box-shadow: 0 0 35px rgba(42, 59, 99, 0.17);
+    content: "";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+
   & .crew__content {
     background-color: rgba(16, 38, 84, 0.89);
     transform: translateY(0);

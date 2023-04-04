@@ -99,6 +99,10 @@
     @include clipOn(3px);
   }
 
+  @include focus {
+    @include default-outline($color-default-white);
+  }
+
   @include hover-focus {
     color: $color-sapphire;
 
