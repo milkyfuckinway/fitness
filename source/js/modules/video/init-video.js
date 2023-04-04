@@ -8,12 +8,11 @@ const initVideo = () => {
       button.tabIndex = '0';
       const iframe = item.querySelector('iframe');
       iframe.tabIndex = '-1';
-      iframe.classList.add('visually-hidden');
 
       const playVideo = () => {
         const originalSrc = item.getAttribute('data-src');
         iframe.src = `${originalSrc}?autoplay=1&mute=1`;
-        iframe.classList.remove('visually-hidden');
+        iframe.classList.add('is-active');
         iframe.tabIndex = '0';
         preview.remove();
         button.remove();

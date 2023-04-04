@@ -2974,8 +2974,13 @@ button,
 }
 
 .video iframe {
+  display: none;
   height: inherit;
   width: inherit;
+}
+
+.video iframe.is-active {
+  display: block;
 }
 
 .video__preview {
