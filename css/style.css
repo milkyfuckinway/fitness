@@ -2854,6 +2854,12 @@ button,
   min-width: 234px;
 }
 
+.header__content .btn::before {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#ffffff));
+  background-image: -o-linear-gradient(#ffffff 0%, #ffffff 100%);
+  background-image: linear-gradient(#ffffff 0%, #ffffff 100%);
+}
+
 .footer {
   background-color: #030a1a;
 }
@@ -2873,16 +2879,39 @@ button,
   padding-top: 41px;
 }
 
-.footer__nav .logo,
-.footer__nav a,
-.footer__social a {
+.footer__nav .logo {
   color: #ffffff;
 }
 
-.footer__nav .logo.focus-visible:focus:not(.disabled),
-.footer__nav a.focus-visible:focus:not(.disabled),
-.footer__social a.focus-visible:focus:not(.disabled) {
-  color: #ff1553;
+.footer__nav .logo:not(.disabled),
+.footer__nav a,
+.footer__social a {
+  color: #ffffff;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-transition: linear 0.2s opacity;
+  -o-transition: linear 0.2s opacity;
+  transition: linear 0.2s opacity;
+}
+
+.footer__nav .logo:not(.disabled):not(:disabled).focus-visible:focus:focus-visible,
+.footer__nav a:not(:disabled).focus-visible:focus:focus-visible,
+.footer__social a:not(:disabled).focus-visible:focus:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}
+
+.footer__nav .logo:not(.disabled):not(:disabled):active,
+.footer__nav a:not(:disabled):active,
+.footer__social a:not(:disabled):active {
+  opacity: 0.7;
+}
+
+.footer__nav .logo:not(.disabled):disabled,
+.footer__nav a:disabled,
+.footer__social a:disabled {
+  cursor: not-allowed;
+  opacity: 0.2;
 }
 
 .footer__nav {
@@ -3576,6 +3605,18 @@ button,
   position: relative;
 }
 
+.crew__card:hover::before {
+  -webkit-box-shadow: 0 0 35px rgba(42, 59, 99, 0.17);
+  box-shadow: 0 0 35px rgba(42, 59, 99, 0.17);
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
 .crew__card:hover .crew__content {
   background-color: rgba(16, 38, 84, 0.89);
   -webkit-transform: translateY(0);
@@ -3838,7 +3879,7 @@ button,
 }
 
 .advantages__value div {
-  color: #2e35ac;
+  color: #103aae;
   display: block;
   font-size: 14px;
   line-height: 150%;
@@ -3969,6 +4010,27 @@ button,
   text-decoration: underline;
   text-transform: uppercase;
   text-underline-offset: 4px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-transition: linear 0.2s opacity;
+  -o-transition: linear 0.2s opacity;
+  transition: linear 0.2s opacity;
+}
+
+.discounts__main-content a:not(:disabled).focus-visible:focus:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 4px;
+}
+
+.discounts__main-content a:not(:disabled):active {
+  opacity: 0.7;
+}
+
+.discounts__main-content a:disabled {
+  cursor: not-allowed;
+  opacity: 0.2;
 }
 
 .discounts__main-picture img {
@@ -4026,6 +4088,27 @@ button,
   text-decoration: underline;
   text-transform: uppercase;
   text-underline-offset: 4px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-transition: linear 0.2s opacity;
+  -o-transition: linear 0.2s opacity;
+  transition: linear 0.2s opacity;
+}
+
+.discounts__regular a:not(:disabled).focus-visible:focus:focus-visible {
+  outline: 2px solid #102654;
+  outline-offset: 4px;
+}
+
+.discounts__regular a:not(:disabled):active {
+  opacity: 0.7;
+}
+
+.discounts__regular a:disabled {
+  cursor: not-allowed;
+  opacity: 0.2;
 }
 
 .reviews h2 {
@@ -4045,6 +4128,8 @@ button,
 }
 
 .reviews__swiper {
+  -webkit-box-shadow: 0 0 40px rgba(28, 51, 116, 0.2);
+  box-shadow: 0 0 40px rgba(28, 51, 116, 0.2);
   height: 100%;
   margin: 0 auto;
   position: relative;
@@ -4095,7 +4180,7 @@ button,
 }
 
 .reviews__card {
-  background-color: #102654;
+  background-color: #1c3374;
   color: #ffffff;
   -webkit-column-gap: 28px;
   -moz-column-gap: 28px;
@@ -4224,6 +4309,11 @@ button,
   z-index: -1;
   -webkit-clip-path: polygon(0% 0%, 0% 100%, 3px 100%, 3px 3px, calc(100% - 3px) 3px, calc(100% - 3px) calc(100% - 3px), 3px calc(100% - 3px), 3px 100%, 100% 100%, 100% 0%);
   clip-path: polygon(0% 0%, 0% 100%, 3px 100%, 3px 3px, calc(100% - 3px) 3px, calc(100% - 3px) calc(100% - 3px), 3px calc(100% - 3px), 3px 100%, 100% 100%, 100% 0%);
+}
+
+.form form button[type=submit].focus-visible:focus {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
 }
 
 .form form button[type=submit].focus-visible:focus {
@@ -5549,6 +5639,8 @@ button,
   }
 
   .discounts__main-content a {
+    margin-left: auto;
+    margin-right: auto;
     text-align: center;
   }
 
@@ -5565,6 +5657,8 @@ button,
   }
 
   .discounts__regular a {
+    margin-left: auto;
+    margin-right: auto;
     text-align: center;
   }
 
@@ -5797,10 +5891,21 @@ button,
     opacity: 0.7;
   }
 
-  .footer__nav .logo:hover:not(.focus-visible):not(.disabled),
-  .footer__nav a:hover:not(.focus-visible):not(.disabled),
-  .footer__social a:hover:not(.focus-visible):not(.disabled) {
-    color: #ff1553;
+  .header__content .btn:hover:not(.focus-visible) {
+    color: #102654;
+  }
+
+  .footer__nav .logo:not(.disabled):not(:disabled):hover:not(.focus-visible):focus-visible,
+  .footer__nav a:not(:disabled):hover:not(.focus-visible):focus-visible,
+  .footer__social a:not(:disabled):hover:not(.focus-visible):focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 2px;
+  }
+
+  .footer__nav .logo:not(.disabled):not(:disabled):hover:not(.focus-visible),
+  .footer__nav a:not(:disabled):hover:not(.focus-visible),
+  .footer__social a:not(:disabled):hover:not(.focus-visible) {
+    opacity: 0.7;
   }
 
   .about__preview > div > button:not(:disabled):hover:not(.focus-visible):focus-visible {
@@ -5853,6 +5958,24 @@ button,
   }
 
   .crew__swiper .swiper-button:not(:disabled):hover:not(.focus-visible) {
+    opacity: 0.7;
+  }
+
+  .discounts__main-content a:not(:disabled):hover:not(.focus-visible):focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 4px;
+  }
+
+  .discounts__main-content a:not(:disabled):hover:not(.focus-visible) {
+    opacity: 0.7;
+  }
+
+  .discounts__regular a:not(:disabled):hover:not(.focus-visible):focus-visible {
+    outline: 2px solid #102654;
+    outline-offset: 4px;
+  }
+
+  .discounts__regular a:not(:disabled):hover:not(.focus-visible) {
     opacity: 0.7;
   }
 
