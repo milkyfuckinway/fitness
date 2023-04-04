@@ -614,38 +614,6 @@ template {
   background-color: #17ff45;
 }
 
-.ytdefer {
-  height: 180px;
-  margin: 0 auto;
-  width: 320px;
-}
-
-.ytdefer > div,
-.ytdefer > iframe {
-  height: inherit;
-  width: inherit;
-}
-
-.ytdefer > div {
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: absolute;
-}
-
-.ytdefer > div > button {
-  cursor: pointer;
-  height: 50px;
-  width: 50px;
-  z-index: 1;
-}
-
 [data-tabs=parent] {
   overflow: hidden;
 }
@@ -2994,6 +2962,78 @@ button,
   display: flex;
 }
 
+.video > iframe {
+  height: inherit;
+  width: inherit;
+}
+
+.video {
+  background-color: #102654;
+  height: 228px;
+  margin: 0 auto;
+  position: absolute;
+  -webkit-transform: translate(-17.5%, -50%);
+  -ms-transform: translate(-17.5%, -50%);
+  transform: translate(-17.5%, -50%);
+  width: 364px;
+}
+
+.video__preview {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-position: center;
+  background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: inherit;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+  width: inherit;
+}
+
+.video__preview::before {
+  background-color: rgba(20, 54, 122, 0.5);
+  content: "";
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+
+.video__button {
+  background-color: transparent;
+  background-image: url("./../img/svg/play.svg");
+  background-size: contain;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 100px;
+  position: relative;
+  width: 100px;
+  z-index: 2;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-transition: linear 0.2s opacity;
+  -o-transition: linear 0.2s opacity;
+  transition: linear 0.2s opacity;
+}
+
+.video__button:not(:disabled).focus-visible:focus:focus-visible {
+  outline: 2px solid #030a1a;
+  outline-offset: 2px;
+}
+
+.video__button:not(:disabled):active {
+  opacity: 0.7;
+}
+
+.video__button:disabled {
+  cursor: not-allowed;
+  opacity: 0.2;
+}
+
 .about .container {
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -3041,57 +3081,6 @@ button,
 
 .about__media > picture > img {
   width: 100%;
-}
-
-.about__preview {
-  background-color: #102654;
-  height: 228px;
-  position: absolute;
-  -webkit-transform: translate(-17.5%, -50%);
-  -ms-transform: translate(-17.5%, -50%);
-  transform: translate(-17.5%, -50%);
-  width: 364px;
-}
-
-.about__preview > div {
-  background-position: center;
-  background-size: cover;
-}
-
-.about__preview > div::before {
-  background-color: rgba(20, 54, 122, 0.5);
-  content: "";
-  height: 100%;
-  position: absolute;
-  width: 100%;
-}
-
-.about__preview > div > button {
-  background-color: transparent;
-  background-image: url("./../img/svg/play.svg");
-  background-size: contain;
-  border: 0;
-  border-radius: 50%;
-  height: 100px;
-  width: 100px;
-  -webkit-tap-highlight-color: transparent;
-  -webkit-transition: linear 0.2s opacity;
-  -o-transition: linear 0.2s opacity;
-  transition: linear 0.2s opacity;
-}
-
-.about__preview > div > button:not(:disabled).focus-visible:focus:focus-visible {
-  outline: 2px solid #030a1a;
-  outline-offset: 2px;
-}
-
-.about__preview > div > button:not(:disabled):active {
-  opacity: 0.7;
-}
-
-.about__preview > div > button:disabled {
-  cursor: not-allowed;
-  opacity: 0.2;
 }
 
 .tariffs {
@@ -4463,14 +4452,14 @@ button,
 
 @media (min-width: 1200px) {
 @supports (background-image: url("./../img/content/about/preview/desktop/preview.webp")) {
-    .about__preview > div {
+    .video__preview {
       background-color: #102654;
       background-image: url("./../img/content/about/preview/desktop/preview.webp");
     }
 }
 
 @supports not (background-image: url("./../img/content/about/preview/desktop/preview.webp")) {
-    .about__preview > div {
+    .video__preview {
       background-color: #102654;
       background-image: url("./../img/content/about/preview/desktop/preview.jpg");
     }
@@ -4479,14 +4468,14 @@ button,
 
 @media (min-width: 1200px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 1200px) and (-o-min-device-pixel-ratio: 3/2), (min-width: 1200px) and (min-resolution: 144dpi), (min-width: 1200px) and (min-resolution: 1.5dppx) {
 @supports (background-image: url("./../img/content/about/preview/desktop/preview@2x.webp")) {
-    .about__preview > div {
+    .video__preview {
       background-color: #102654;
       background-image: url("./../img/content/about/preview/desktop/preview@2x.webp");
     }
 }
 
 @supports not (background-image: url("./../img/content/about/preview/desktop/preview@2x.webp")) {
-    .about__preview > div {
+    .video__preview {
       background-color: #102654;
       background-image: url("./../img/content/about/preview/desktop/preview@2x.jpg");
     }
@@ -4627,6 +4616,34 @@ button,
     transform: translateX(6px);
   }
 
+  .video {
+    height: 167px;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 266px;
+  }
+
+@supports (background-image: url("./../img/content/about/preview/tablet/preview.webp")) {
+    .video__preview {
+      background-color: #102654;
+      background-image: url("./../img/content/about/preview/tablet/preview.webp");
+    }
+}
+
+@supports not (background-image: url("./../img/content/about/preview/tablet/preview.webp")) {
+    .video__preview {
+      background-color: #102654;
+      background-image: url("./../img/content/about/preview/tablet/preview.jpg");
+    }
+}
+
+  .video__button {
+    height: 73px;
+    width: 73px;
+  }
+
   .about .container {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -4665,34 +4682,6 @@ button,
 
   .about__content p:not(:first-of-type) {
     display: none;
-  }
-
-  .about__preview {
-    height: 167px;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    width: 266px;
-  }
-
-@supports (background-image: url("./../img/content/about/preview/tablet/preview.webp")) {
-    .about__preview > div {
-      background-color: #102654;
-      background-image: url("./../img/content/about/preview/tablet/preview.webp");
-    }
-}
-
-@supports not (background-image: url("./../img/content/about/preview/tablet/preview.webp")) {
-    .about__preview > div {
-      background-color: #102654;
-      background-image: url("./../img/content/about/preview/tablet/preview.jpg");
-    }
-}
-
-  .about__preview > div > button {
-    height: 73px;
-    width: 73px;
   }
 
   .tariffs .container {
@@ -5035,14 +5024,14 @@ button,
 
 @media (max-width: 1199px) and (-webkit-min-device-pixel-ratio: 1.5), (max-width: 1199px) and (-o-min-device-pixel-ratio: 3/2), (max-width: 1199px) and (min-resolution: 144dpi), (max-width: 1199px) and (min-resolution: 1.5dppx) {
 @supports (background-image: url("./../img/content/about/preview/tablet/preview@2x.webp")) {
-    .about__preview > div {
+    .video__preview {
       background-color: #102654;
       background-image: url("./../img/content/about/preview/tablet/preview@2x.webp");
     }
 }
 
 @supports not (background-image: url("./../img/content/about/preview/tablet/preview@2x.webp")) {
-    .about__preview > div {
+    .video__preview {
       background-color: #102654;
       background-image: url("./../img/content/about/preview/tablet/preview@2x.jpg");
     }
@@ -5318,6 +5307,30 @@ button,
     transform: none;
   }
 
+  .video {
+    aspect-ratio: 1/0.52;
+    height: 100%;
+    position: unset;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    width: 100%;
+  }
+
+@supports (background-image: url("./../img/content/about/preview/mobile/preview.webp")) {
+    .video__preview {
+      background-color: #102654;
+      background-image: url("./../img/content/about/preview/mobile/preview.webp");
+    }
+}
+
+@supports not (background-image: url("./../img/content/about/preview/mobile/preview.webp")) {
+    .video__preview {
+      background-color: #102654;
+      background-image: url("./../img/content/about/preview/mobile/preview.jpg");
+    }
+}
+
   .about .container {
     padding: 64px 0 64px 0;
   }
@@ -5355,30 +5368,6 @@ button,
     gap: 40px;
     width: 100%;
   }
-
-  .about__preview {
-    aspect-ratio: 1/0.52;
-    height: 100%;
-    position: unset;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    width: 100%;
-  }
-
-@supports (background-image: url("./../img/content/about/preview/mobile/preview.webp")) {
-    .about__preview > div {
-      background-color: #102654;
-      background-image: url("./../img/content/about/preview/mobile/preview.webp");
-    }
-}
-
-@supports not (background-image: url("./../img/content/about/preview/mobile/preview.webp")) {
-    .about__preview > div {
-      background-color: #102654;
-      background-image: url("./../img/content/about/preview/mobile/preview.jpg");
-    }
-}
 
   .tariffs .container {
     padding: 70px 15px;
@@ -5808,14 +5797,14 @@ button,
 
 @media (max-width: 767px) and (-webkit-min-device-pixel-ratio: 1.5), (max-width: 767px) and (-o-min-device-pixel-ratio: 3/2), (max-width: 767px) and (min-resolution: 144dpi), (max-width: 767px) and (min-resolution: 1.5dppx) {
 @supports (background-image: url("./../img/content/about/preview/mobile/preview@2x.webp")) {
-    .about__preview > div {
+    .video__preview {
       background-color: #102654;
       background-image: url("./../img/content/about/preview/mobile/preview@2x.webp");
     }
 }
 
 @supports not (background-image: url("./../img/content/about/preview/mobile/preview@2x.webp")) {
-    .about__preview > div {
+    .video__preview {
       background-color: #102654;
       background-image: url("./../img/content/about/preview/mobile/preview@2x.jpg");
     }
@@ -5915,12 +5904,12 @@ button,
     opacity: 0.7;
   }
 
-  .about__preview > div > button:not(:disabled):hover:not(.focus-visible):focus-visible {
+  .video__button:not(:disabled):hover:not(.focus-visible):focus-visible {
     outline: 2px solid #030a1a;
     outline-offset: 2px;
   }
 
-  .about__preview > div > button:not(:disabled):hover:not(.focus-visible) {
+  .video__button:not(:disabled):hover:not(.focus-visible) {
     opacity: 0.7;
   }
 
