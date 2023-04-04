@@ -93,7 +93,7 @@
 
   @include vp-767 {
     line-height: 150%;
-    margin: 0 auto;
+    margin: -22px 0 0 0;
     text-align: center;
   }
 }
@@ -104,6 +104,7 @@
   margin: 0;
 
   @include vp-767 {
+    margin-top: -3px;
     text-align: center;
   }
 }

@@ -90,7 +90,7 @@
 .header__bottom {
   column-gap: 63px;
   display: grid;
-  grid-template-columns: minmax(min-content, calc(500px - 103px)) 500px;
+  grid-template-columns: minmax(min-content, 397px) minmax(auto, 500px);
   margin-top: 7px;
 
   @include vp-1199 {
@@ -133,7 +133,6 @@
   grid-template-columns: 1fr 1fr;
   grid-template-rows: repeat(3, min-content);
   justify-items: end;
-  max-width: 397px;
 
   @include vp-1199 {
     column-gap: 25px;

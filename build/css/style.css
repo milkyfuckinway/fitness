@@ -2737,10 +2737,10 @@ button,
   column-gap: 63px;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: minmax(-webkit-min-content, 397px) 500px;
-  -ms-grid-columns: minmax(min-content, 397px) 500px;
-  grid-template-columns: minmax(-webkit-min-content, 397px) 500px;
-  grid-template-columns: minmax(min-content, 397px) 500px;
+  -ms-grid-columns: minmax(-webkit-min-content, 397px) minmax(auto, 500px);
+  -ms-grid-columns: minmax(min-content, 397px) minmax(auto, 500px);
+  grid-template-columns: minmax(-webkit-min-content, 397px) minmax(auto, 500px);
+  grid-template-columns: minmax(min-content, 397px) minmax(auto, 500px);
   margin-top: 7px;
 }
 
@@ -2761,7 +2761,6 @@ button,
   grid-template-rows: repeat(3, -webkit-min-content);
   grid-template-rows: repeat(3, min-content);
   justify-items: end;
-  max-width: 397px;
 }
 
 .header__content ul {
@@ -3514,8 +3513,7 @@ button,
   width: 100%;
 }
 
-.crew__swiper .swiper-button--next,
-.crew__swiper .swiper-button--prev {
+.crew__swiper .swiper-button {
   background-color: transparent;
   border: 0;
   cursor: pointer;
@@ -3526,11 +3524,28 @@ button,
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
-  width: 40px;
+  width: 47px;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-transition: linear 0.2s opacity;
+  -o-transition: linear 0.2s opacity;
+  transition: linear 0.2s opacity;
 }
 
-.crew__swiper .swiper-button--next svg,
-.crew__swiper .swiper-button--prev svg {
+.crew__swiper .swiper-button:not(:disabled).focus-visible:focus:focus-visible {
+  outline: 2px solid #102654;
+  outline-offset: -2px;
+}
+
+.crew__swiper .swiper-button:not(:disabled):active {
+  opacity: 0.7;
+}
+
+.crew__swiper .swiper-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.2;
+}
+
+.crew__swiper .swiper-button svg {
   height: 34px;
   width: 18px;
 }
@@ -3539,14 +3554,20 @@ button,
   left: -65px;
 }
 
+.crew__swiper .swiper-button--prev svg {
+  -webkit-transform: translate(-8px, 2px);
+  -ms-transform: translate(-8px, 2px);
+  transform: translate(-8px, 2px);
+}
+
 .crew__swiper .swiper-button--next {
   right: -65px;
 }
 
 .crew__swiper .swiper-button--next svg {
-  -webkit-transform: rotate(180deg);
-  -ms-transform: rotate(180deg);
-  transform: rotate(180deg);
+  -webkit-transform: rotate(180deg) translate(-8px, -4px);
+  -ms-transform: rotate(180deg) translate(-8px, -4px);
+  transform: rotate(180deg) translate(-8px, -4px);
 }
 
 .crew__card {
@@ -3697,6 +3718,8 @@ button,
   grid-template-rows: repeat(2, 1fr);
   list-style: none;
   margin: 0;
+  min-height: 0;
+  min-width: 0;
   padding: 0;
   row-gap: 128px;
 }
@@ -3710,8 +3733,10 @@ button,
   column-gap: 28px;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 145px 1fr;
-  grid-template-columns: 145px 1fr;
+  -ms-grid-columns: -webkit-min-content minmax(-webkit-min-content, 1fr);
+  -ms-grid-columns: min-content minmax(min-content, 1fr);
+  grid-template-columns: -webkit-min-content minmax(-webkit-min-content, 1fr);
+  grid-template-columns: min-content minmax(min-content, 1fr);
 }
 
 .advantages li:nth-child(-5n+1),
@@ -3781,6 +3806,9 @@ button,
   font-weight: 700;
   line-height: 120%;
   margin: 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 .advantages li:not(:nth-child(-5n+3)) .advantages__value h3 {
@@ -3793,11 +3821,9 @@ button,
   line-height: 150%;
   margin: 0;
   -webkit-text-fill-color: transparent;
-}
-
-.advantages__value h3 {
-  max-width: 145px;
-  word-break: break-all;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 .advantages__value {
@@ -3819,6 +3845,9 @@ button,
   margin-left: -2px;
   margin-top: -20px;
   text-transform: lowercase;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 .advantages__description {
@@ -4690,8 +4719,32 @@ button,
     width: 566px;
   }
 
+  .crew__swiper .swiper-button--prev svg {
+    -webkit-transform: translate(0, 2px);
+    -ms-transform: translate(0, 2px);
+    transform: translate(0, 2px);
+  }
+
+  .crew__swiper .swiper-button--prev {
+    left: -72px;
+  }
+
+  .crew__swiper .swiper-button--next svg {
+    -webkit-transform: rotate(180deg) translate(0, -4px);
+    -ms-transform: rotate(180deg) translate(0, -4px);
+    transform: rotate(180deg) translate(0, -4px);
+  }
+
+  .crew__swiper .swiper-button--next {
+    right: -72px;
+  }
+
   .crew__image img {
     width: 268px;
+  }
+
+  .crew__content {
+    padding: 52px 33px 20px 25px;
   }
 
   .advantages .container {
@@ -5030,6 +5083,11 @@ button,
     width: 100%;
   }
 
+  .custom-input,
+  .custom-textarea {
+    margin-bottom: 16px;
+  }
+
   .custom-toggle--checkbox {
     margin-bottom: 25px;
   }
@@ -5144,7 +5202,7 @@ button,
   .footer__nav li {
     font-size: 16px;
     line-height: 19px;
-    margin-bottom: 20px;
+    margin-bottom: 22px;
   }
 
   .footer__social {
@@ -5302,7 +5360,7 @@ button,
   }
 
   .crew .container {
-    padding: 15px 15px 70px;
+    padding: 15px 0 70px;
   }
 
   .crew h2 {
@@ -5314,39 +5372,60 @@ button,
   .crew__swiper {
     height: auto;
     margin: 0 auto;
-    width: calc(100% - 80px);
+    width: calc(100% - 94px);
   }
 
-  .crew__swiper .swiper-button--next svg,
-  .crew__swiper .swiper-button--prev svg {
+  .crew__swiper .swiper-button svg {
     height: 19px;
     width: 10px;
   }
 
+  .crew__swiper .swiper-button--prev svg {
+    -webkit-transform: translate(-5px, 2px);
+    -ms-transform: translate(-5px, 2px);
+    transform: translate(-5px, 2px);
+  }
+
   .crew__swiper .swiper-button--prev {
-    left: -40px;
+    left: -47px;
+  }
+
+  .crew__swiper .swiper-button--next svg {
+    -webkit-transform: rotate(180deg) translate(-5px, -2px);
+    -ms-transform: rotate(180deg) translate(-5px, -2px);
+    transform: rotate(180deg) translate(-5px, -2px);
   }
 
   .crew__swiper .swiper-button--next {
-    right: -40px;
+    right: -47px;
   }
 
   .crew__card {
     height: auto;
     margin: 0 auto;
-    width: calc(100% - 80px);
+    width: calc(100% - 94px);
   }
 
   .crew__image img {
     height: auto;
     margin: 0 auto;
+    min-height: 274px;
     width: 100%;
   }
 
   .crew__image > span {
     height: auto;
     margin: 0 auto;
+    padding: 22px 0;
     width: calc(100% - 80px);
+  }
+
+  .crew__content {
+    padding: 43px 25px 20px 25px;
+  }
+
+  .crew__content > ul {
+    padding-left: 25px;
   }
 
   .advantages .container {
@@ -5402,6 +5481,7 @@ button,
   .advantages__value div {
     margin-top: -21px;
     text-align: center;
+    width: auto;
   }
 
   .advantages__description {
@@ -5459,11 +5539,12 @@ button,
 
   .discounts__main-content h4 {
     line-height: 150%;
-    margin: 0 auto;
+    margin: -22px 0 0 0;
     text-align: center;
   }
 
   .discounts__main-content p {
+    margin-top: -3px;
     text-align: center;
   }
 
@@ -5494,6 +5575,7 @@ button,
   }
 
   .reviews .container {
+    padding-bottom: 70px;
     padding-left: 0;
     padding-right: 0;
   }
@@ -5546,8 +5628,14 @@ button,
     text-align: center;
   }
 
+  .form h2 {
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 38px;
+  }
+
   .form > .container {
-    padding: 61px 15px 70px 15px;
+    padding: 64px 15px 69px 15px;
   }
 
   .form form {
@@ -5560,14 +5648,26 @@ button,
     flex-direction: column;
   }
 
+  .form form button[type=submit] {
+    margin-top: 15px;
+  }
+
   .contacts > .container {
-    padding: 61px 15px 43px 15px;
+    padding: 64px 15px 43px;
+  }
+
+  .contacts h2 {
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 38px;
+    margin: 0 0 33px;
   }
 
   .contacts ul {
     -webkit-columns: 1;
     -moz-columns: 1;
     columns: 1;
+    margin: 0;
   }
 
   .contacts ul::after {
@@ -5745,6 +5845,15 @@ button,
     -webkit-transform: scale(1.1);
     -ms-transform: scale(1.1);
     transform: scale(1.1);
+  }
+
+  .crew__swiper .swiper-button:not(:disabled):hover:not(.focus-visible):focus-visible {
+    outline: 2px solid #102654;
+    outline-offset: -2px;
+  }
+
+  .crew__swiper .swiper-button:not(:disabled):hover:not(.focus-visible) {
+    opacity: 0.7;
   }
 
   .reviews .swiper-button:not(:disabled):hover:not(.focus-visible):focus-visible {

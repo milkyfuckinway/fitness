@@ -6,6 +6,10 @@
   position: relative;
   width: 100%;
 
+  @include vp-767 {
+    margin-bottom: 16px;
+  }
+
   &::before {
     background-color: $color-default-white;
     bottom: 8px;

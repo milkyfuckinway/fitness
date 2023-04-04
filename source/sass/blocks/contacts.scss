@@ -27,7 +27,7 @@
   }
 
   @include vp-767 {
-    padding: 61px 15px 43px 15px;
+    padding: 64px 15px 43px;
   }
 }
 
@@ -44,6 +44,13 @@
     font-size: 42px;
     line-height: 50px;
     margin: 0 0 32px;
+  }
+
+  @include vp-767 {
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 38px;
+    margin: 0 0 33px;
   }
 }
 
@@ -63,6 +70,7 @@
 
   @include vp-767 {
     columns: 1;
+    margin: 0;
   }
 
   &::after {

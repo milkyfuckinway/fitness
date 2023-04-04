@@ -8,7 +8,7 @@
   }
 
   @include vp-767 {
-    padding: 15px 15px 70px;
+    padding: 15px 0 70px;
   }
 }
 
@@ -52,12 +52,11 @@
   @include vp-767 {
     height: auto;
     margin: 0 auto;
-    width: calc(100% - 40px * 2);
+    width: calc(100% - 47px * 2);
   }
 }
 
-.crew__swiper .swiper-button--next,
-.crew__swiper .swiper-button--prev {
+.crew__swiper .swiper-button {
   background-color: transparent;
   border: 0;
   cursor: pointer;
@@ -66,7 +65,9 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 40px;
+  width: 47px;
+
+  @include default-states($color-sapphire, -2px);
 
   & svg {
     height: 34px;
@@ -82,8 +83,24 @@
 .crew__swiper .swiper-button--prev {
   left: -65px;
 
+  & svg {
+    transform: translate(-8px, 2px);
+
+    @include vp-1199 {
+      transform: translate(0, 2px);
+    }
+
+    @include vp-767 {
+      transform: translate(-5px, 2px);
+    }
+  }
+
+  @include vp-1199 {
+    left: -72px;
+  }
+
   @include vp-767 {
-    left: -40px;
+    left: -47px;
   }
 }
 
@@ -91,11 +108,23 @@
   right: -65px;
 
   & svg {
-    transform: rotate(180deg);
+    transform: rotate(180deg) translate(-8px, -4px);
+
+    @include vp-1199 {
+      transform: rotate(180deg) translate(0, -4px);
+    }
+
+    @include vp-767 {
+      transform: rotate(180deg) translate(-5px, -2px);
+    }
+  }
+
+  @include vp-1199 {
+    right: -72px;
   }
 
   @include vp-767 {
-    right: -40px;
+    right: -47px;
   }
 }
 
@@ -107,7 +136,7 @@
   @include vp-767 {
     height: auto;
     margin: 0 auto;
-    width: calc(100% - 40px * 2);
+    width: calc(100% - 47px * 2);
   }
 }
 
@@ -135,6 +164,7 @@
   @include vp-767 {
     height: auto;
     margin: 0 auto;
+    min-height: 274px;
     width: 100%;
   }
 }
@@ -159,6 +189,7 @@
   @include vp-767 {
     height: auto;
     margin: 0 auto;
+    padding: 22px 0;
     width: calc(100% - 40px * 2);
   }
 }
@@ -176,6 +207,14 @@
   transform: translateY(100%);
   transition: 0.3s transform;
   width: 100%;
+
+  @include vp-1199 {
+    padding: 52px 33px 20px 25px;
+  }
+
+  @include vp-767 {
+    padding: 43px 25px 20px 25px;
+  }
 }
 
 .crew__content h3 {
@@ -196,6 +235,10 @@
 .crew__content > ul {
   margin: 0;
   padding-left: 47px;
+
+  @include vp-767 {
+    padding-left: 25px;
+  }
 }
 
 .crew__content > ul p {
