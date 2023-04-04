@@ -1,9 +1,9 @@
 import {iosVhFix} from './utils/ios-vh-fix';
 import {Form} from './modules/form-validate/form';
-import {ytdeferInit} from './vendor/ytdefer';
+import {initVideo} from './modules/video/init-video';
 import {initTabs} from './modules/tabs/init-tabs';
-import './sliders/crew.js';
-import './sliders/reviews.js';
+import {initCrewSwiper} from './sliders/crew';
+import {initReviewsSwiper} from './sliders/reviews';
 
 // ---------------------------------
 
@@ -23,7 +23,9 @@ window.addEventListener('DOMContentLoaded', () => {
     window.form = form;
     form.init();
     initTabs();
-    ytdeferInit();
+    initVideo();
+    initCrewSwiper();
+    initReviewsSwiper();
   });
 });
 

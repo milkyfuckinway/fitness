@@ -3,7 +3,6 @@
 
 @import "vendor/normalize";
 @import "vendor/header-example.scss";
-@import "vendor/ytdefer.scss";
 @import "vendor/data-tabs.scss";
 @import "vendor/tabs.scss";
 
@@ -35,6 +34,7 @@
 
 @import "blocks/header";
 @import "blocks/footer";
+@import "blocks/video";
 @import "blocks/about";
 @import "blocks/tariffs";
 @import "blocks/promo";

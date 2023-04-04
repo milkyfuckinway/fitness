@@ -20,4 +20,8 @@ mixin about
           p=item.text
       .about__media
         +picture-responsive("content/about/content", "gym", "jpg", "660", "401", "Наша качалка.")
-        .ytdefer.about__preview(data-src="9TZXsZItgdw")
+        .video(data-src="https://www.youtube.com/embed/9TZXsZItgdw")
+          .video__preview
+            .video__button
+          iframe(title="Бесплатные интерактивные онлайн-курсы." width="560" height="315" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen)
+

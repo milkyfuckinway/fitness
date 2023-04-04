@@ -1,0 +1,79 @@
+.video > iframe {
+  height: inherit;
+  width: inherit;
+}
+
+.video {
+  background-color: $color-sapphire;
+  height: 228px;
+  margin: 0 auto;
+  position: absolute;
+  transform: translate(-17.5%, -50%);
+  width: 364px;
+
+  @include vp-1199 {
+    height: 167px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 266px;
+  }
+
+  @include vp-767 {
+    aspect-ratio: 1 / 0.52;
+    height: 100%;
+    position: unset;
+    transform: none;
+    width: 100%;
+  }
+}
+
+.video__preview {
+  align-items: center;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  height: inherit;
+  justify-content: center;
+  position: relative;
+  width: inherit;
+
+  @media (min-width: $vp-1200) {
+    @include graphic-retina("content/about/preview/desktop/preview", $color-sapphire, "jpg");
+  }
+
+  @include vp-1199 {
+    @include graphic-retina("content/about/preview/tablet/preview", $color-sapphire, "jpg");
+  }
+
+  @include vp-767 {
+    @include graphic-retina("content/about/preview/mobile/preview", $color-sapphire, "jpg");
+  }
+
+  &::before {
+    background-color: rgba(20, 54, 122, 0.5);
+    content: "";
+    height: 100%;
+    position: absolute;
+    width: 100%;
+  }
+}
+
+.video__button {
+  background-color: transparent;
+  background-image: url("./../img/svg/play.svg");
+  background-size: contain;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 100px;
+  position: relative;
+  width: 100px;
+  z-index: 2;
+
+  @include default-states($color-black-russian);
+
+  @include vp-1199 {
+    height: 73px;
+    width: 73px;
+  }
+}
