@@ -2019,6 +2019,7 @@ button,
   line-height: 17px;
   padding: 22px 24px;
   position: relative;
+  -webkit-tap-highlight-color: transparent;
   text-transform: uppercase;
   -webkit-transition: 0.3s color;
   -o-transition: 0.3s color;
@@ -3433,6 +3434,12 @@ button,
   grid-column: 1/-1;
   min-width: 347px;
   padding: 28px;
+}
+
+.promo__content .btn::before {
+  background-image: -webkit-gradient(linear, left top, right top, from(#ffffff), color-stop(30%, #ffffff), color-stop(60%, #102654), to(#102654));
+  background-image: -o-linear-gradient(left, #ffffff 0%, #ffffff 30%, #102654 60%, #102654 100%);
+  background-image: linear-gradient(90deg, #ffffff 0%, #ffffff 30%, #102654 60%, #102654 100%);
 }
 
 .promo__timestamp {

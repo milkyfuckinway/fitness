@@ -77,6 +77,10 @@
   min-width: 347px;
   padding: 28px;
 
+  &::before {
+    background-image: $gradient-button-white-sapphire;
+  }
+
   @include vp-1199 {
     font-size: 10px;
     line-height: 12px;
