@@ -3043,13 +3043,13 @@ button,
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  -webkit-column-gap: 111px;
-  -moz-column-gap: 111px;
-  column-gap: 111px;
+  -webkit-column-gap: 85px;
+  -moz-column-gap: 85px;
+  column-gap: 85px;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 2fr;
-  grid-template-columns: 1fr 2fr;
+  -ms-grid-columns: minmax(355px, 1fr) 2fr;
+  grid-template-columns: minmax(355px, 1fr) 2fr;
   padding-bottom: 235px;
   padding-left: 163px;
   padding-top: 120px;
@@ -3062,6 +3062,7 @@ button,
   letter-spacing: 0.03em;
   line-height: 58px;
   margin-bottom: 5px;
+  margin-top: 15px;
 }
 
 .about__content h3 {
@@ -3099,7 +3100,7 @@ button,
   content: "";
   height: 384px;
   position: absolute;
-  right: -10px;
+  right: -108px;
   -webkit-transform: rotate(150deg);
   -ms-transform: rotate(150deg);
   transform: rotate(150deg);
@@ -3453,7 +3454,7 @@ button,
   font-size: 18px;
   grid-column: 1/-1;
   line-height: 150%;
-  margin-bottom: 30px;
+  margin-bottom: 31px;
   margin-top: 0;
 }
 
@@ -3881,6 +3882,7 @@ button,
   font-weight: 700;
   line-height: 120%;
   margin: 0;
+  margin-right: 5px;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -3939,7 +3941,7 @@ button,
 
 .advantages li:nth-child(-5n+3) .advantages__description {
   gap: 0;
-  margin-top: 0;
+  margin-top: -5px;
 }
 
 .advantages__description h3 {
@@ -4724,6 +4726,7 @@ button,
 
   .tariffs::before {
     height: 345px;
+    right: -10px;
     width: 289px;
   }
 
@@ -4922,7 +4925,7 @@ button,
     -ms-grid-row: 2;
     grid-row: 2;
     margin: 20px 120px 0;
-    padding: 25px 125px 40px;
+    padding: 30px 125px 35px;
   }
 
   .advantages li:nth-child(-5n+4)::before,
@@ -4952,7 +4955,7 @@ button,
 
   .advantages li:nth-child(-5n+3) .advantages__description h3 {
     font-size: 22px;
-    margin-bottom: 14px;
+    margin-bottom: 18px;
   }
 
   .advantages__description p {
@@ -5458,6 +5461,7 @@ button,
 
   .tariffs__price span {
     font-size: 80px;
+    margin-top: -80px;
   }
 
   .tariffs__price h4 {
@@ -5485,8 +5489,7 @@ button,
   }
 
   .promo__content {
-    padding-bottom: 52px;
-    padding-top: 47px;
+    padding: 46px 46px 50px 43px;
   }
 
   .promo img {
@@ -5581,7 +5584,7 @@ button,
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
-    row-gap: 20px;
+    row-gap: 22px;
   }
 
   .advantages li {
@@ -5600,12 +5603,13 @@ button,
   }
 
   .advantages li:nth-child(-5n+3) {
-    margin: 22px -15px 6px;
-    padding: 40px 0 44px;
+    margin: 20px -15px 4px;
+    padding: 37px 0 42px;
   }
 
   .advantages li:nth-child(-5n+3) .advantages__value h3 {
     line-height: 100%;
+    margin-bottom: 5px;
     margin-top: 0;
   }
 
@@ -5628,7 +5632,7 @@ button,
   }
 
   .advantages li:nth-child(-5n+3) .advantages__description h3 {
-    margin-bottom: 10px;
+    margin-bottom: 14px;
   }
 
   .advantages__description p {
