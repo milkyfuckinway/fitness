@@ -1,16 +1,46 @@
 .tariffs {
+  overflow: hidden;
+  position: relative;
+
+  &::before {
+    background-size: cover;
+    bottom: 0;
+    content: "";
+    height: 384px;
+    position: absolute;
+    right: -10px;
+    transform: rotate(150deg);
+    width: 321px;
+
+    @include graphic-retina("content/tariffs/equipment", background-color, $color-crimson);
+
+    @include vp-1199 {
+      height: 345px;
+      width: 289px;
+    }
+
+    @include vp-767 {
+      display: none;
+    }
+  }
+}
+
+.tariffs__wrapper {
   background-color: $color-ghost-white;
 }
 
 .tariffs .container {
+  margin-bottom: 95px;
   padding-bottom: 120px;
   padding-top: 120px;
 
   @include vp-1199 {
+    margin-bottom: 75px;
     padding: 104px 163px 100px;
   }
 
   @include vp-767 {
+    margin-bottom: 0;
     padding: 70px 15px;
   }
 }

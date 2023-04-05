@@ -68,20 +68,21 @@ mixin tariffs
     const controls = ["1 месяц", "6 месяцев", "12 месяцев"]
 
   section.tariffs
-    .container.tabs(data-tabs="parent")
-      h2=heading
-      .tabs__controls(data-tabs="controls")
-        each item in controls
-          button.tabs__control(data-tabs="control" type="button" aria-label=`Тарифы подписки на срок в ${item}`)=item
-      .tabs__content(data-tabs="content")
-        each element in tariffs
-          .tabs__element(data-tabs="element")
-            ul
-              each item in element
-                li
-                  h3=item.title
-                  p=item.time
-                  .tariffs__price
-                    h4=item.price
-                    span=item.price
-                  a.btn(href=item.href) Купить абонемент
+    .tariffs__wrapper
+      .container.tabs(data-tabs="parent")
+        h2=heading
+        .tabs__controls(data-tabs="controls")
+          each item in controls
+            button.tabs__control(data-tabs="control" type="button" aria-label=`Тарифы подписки на срок в ${item}`)=item
+        .tabs__content(data-tabs="content")
+          each element in tariffs
+            .tabs__element(data-tabs="element")
+              ul
+                each item in element
+                  li
+                    h3=item.title
+                    p=item.time
+                    .tariffs__price
+                      h4=item.price
+                      span=item.price
+                    a.btn(href=item.href) Купить абонемент
