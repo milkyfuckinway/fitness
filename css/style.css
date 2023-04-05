@@ -3089,10 +3089,43 @@ button,
 }
 
 .tariffs {
+  overflow: hidden;
+  position: relative;
+}
+
+.tariffs::before {
+  background-size: cover;
+  bottom: 0;
+  content: "";
+  height: 384px;
+  position: absolute;
+  right: -10px;
+  -webkit-transform: rotate(150deg);
+  -ms-transform: rotate(150deg);
+  transform: rotate(150deg);
+  width: 321px;
+}
+
+@supports (background-image: url("./../img/content/tariffs/equipment.webp")) {
+  .tariffs::before {
+    background-color: background-color;
+    background-image: url("./../img/content/tariffs/equipment.webp");
+  }
+}
+
+@supports not (background-image: url("./../img/content/tariffs/equipment.webp")) {
+  .tariffs::before {
+    background-color: background-color;
+    background-image: url("./../img/content/tariffs/equipment.#d10a42");
+  }
+}
+
+.tariffs__wrapper {
   background-color: #f8f9fc;
 }
 
 .tariffs .container {
+  margin-bottom: 95px;
   padding-bottom: 120px;
   padding-top: 120px;
 }
@@ -3375,7 +3408,7 @@ button,
   display: -ms-flexbox;
   display: flex;
   padding-bottom: 50px;
-  padding-top: 120px;
+  padding-top: 25px;
 }
 
 .promo__content {
@@ -3431,9 +3464,9 @@ button,
 }
 
 .promo__content .btn::before {
-  background-image: -webkit-gradient(linear, left top, right top, from(#ffffff), color-stop(30%, #ffffff), color-stop(60%, #102654), to(#102654));
-  background-image: -o-linear-gradient(left, #ffffff 0%, #ffffff 30%, #102654 60%, #102654 100%);
-  background-image: linear-gradient(90deg, #ffffff 0%, #ffffff 30%, #102654 60%, #102654 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#ffffff));
+  background-image: -o-linear-gradient(#ffffff 0%, #ffffff 100%);
+  background-image: linear-gradient(#ffffff 0%, #ffffff 100%);
 }
 
 .promo__timestamp {
@@ -4689,7 +4722,13 @@ button,
     display: none;
   }
 
+  .tariffs::before {
+    height: 345px;
+    width: 289px;
+  }
+
   .tariffs .container {
+    margin-bottom: 75px;
     padding: 104px 163px 100px;
   }
 
@@ -4723,7 +4762,6 @@ button,
 
   .promo .container {
     padding-bottom: 50px;
-    padding-top: 100px;
   }
 
   .promo__content {
@@ -5375,7 +5413,12 @@ button,
     width: 100%;
   }
 
+  .tariffs::before {
+    display: none;
+  }
+
   .tariffs .container {
+    margin-bottom: 0;
     padding: 70px 15px;
   }
 
@@ -5954,6 +5997,10 @@ button,
     transform: scale(1.1);
   }
 
+  .promo__content .btn:hover:not(.focus-visible) {
+    color: #102654;
+  }
+
   .crew__swiper .swiper-button:not(:disabled):hover:not(.focus-visible):focus-visible {
     outline: 2px solid #102654;
     outline-offset: -2px;
@@ -5998,6 +6045,22 @@ button,
     -webkit-clip-path: polygon(0% 0%, 0% 100%, 3px 100%, 3px 3px, 3px 3px, 3px calc(100% - 3px), 3px calc(100% - 3px), 3px 100%, 100% 100%, 100% 0%);
     clip-path: polygon(0% 0%, 0% 100%, 3px 100%, 3px 3px, 3px 3px, 3px calc(100% - 3px), 3px calc(100% - 3px), 3px 100%, 100% 100%, 100% 0%);
   }
+}
+
+@media (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+@supports (background-image: url("./../img/content/tariffs/equipment@2x.webp")) {
+    .tariffs::before {
+      background-color: background-color;
+      background-image: url("./../img/content/tariffs/equipment@2x.webp");
+    }
+}
+
+@supports not (background-image: url("./../img/content/tariffs/equipment@2x.webp")) {
+    .tariffs::before {
+      background-color: background-color;
+      background-image: url("./../img/content/tariffs/equipment@2x.#d10a42");
+    }
+}
 }
 
 @media (hover: hover) and (hover: hover) {
