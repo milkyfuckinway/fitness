@@ -8,7 +8,7 @@
     content: "";
     height: 384px;
     position: absolute;
-    right: -10px;
+    right: -108px;
     transform: rotate(150deg);
     width: 321px;
 
@@ -16,6 +16,7 @@
 
     @include vp-1199 {
       height: 345px;
+      right: -10px;
       width: 289px;
     }
 
@@ -214,6 +215,7 @@
 
   @include vp-767 {
     font-size: 80px;
+    margin-top: -80px;
   }
 }
 
