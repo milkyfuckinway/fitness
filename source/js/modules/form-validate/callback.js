@@ -15,7 +15,7 @@ const baseSuccessCallback = (event) => {
       successMessage.textContent = 'Форма успешно отправлена';
       modal.appendChild(successMessage);
       const dataMessage = document.createElement('p');
-      dataMessage.textContent = 'Вот данные которые были отправленны';
+      dataMessage.textContent = 'Данные которые были отправлены:';
       modal.appendChild(dataMessage);
       entries.forEach((entry) => {
         const p = document.createElement('p');
@@ -38,6 +38,7 @@ const baseSuccessCallback = (event) => {
       modal.style.padding = '40px';
       modal.style.borderRadius = '10px';
       modal.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.5)';
+      modal.style.zIndex = '100000';
       document.body.appendChild(modal);
     } else {
       // eslint-disable-next-line no-alert
