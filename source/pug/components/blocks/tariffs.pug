@@ -67,7 +67,7 @@ mixin tariffs
     const tariffs = [tariffMonth, tariffSemiAnnual, tariffAnnual]
     const controls = ["1 месяц", "6 месяцев", "12 месяцев"]
 
-  section.tariffs
+  section.tariffs(id="tariffs")
     .tariffs__wrapper
       .container.tabs(data-tabs="parent")
         h2=heading
