@@ -1,5 +1,10 @@
 mixin feedback
+  -
+    const heading = "Связаться с нами.";
+
+
   section.feedback
+    h2.visually-hidden=heading
     .container
       +form
       +contacts
