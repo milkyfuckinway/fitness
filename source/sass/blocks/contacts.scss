@@ -107,7 +107,8 @@
   }
 }
 
-.contacts ul p {
+.contacts ul p,
+.contacts ul a {
   font-size: 14px;
   line-height: 21px;
   margin: 0;
@@ -116,4 +117,8 @@
     font-size: 18px;
     line-height: 27px;
   }
+}
+
+.contacts ul a {
+  @include default-states($color-black-russian);
 }

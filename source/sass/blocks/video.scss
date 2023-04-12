@@ -7,10 +7,13 @@
   width: 364px;
 
   @include vp-1199 {
-    height: 167px;
+    aspect-ratio: 1 / 0.63;
+    height: auto;
     left: 50%;
+    min-height: 167px;
+    min-width: 266px;
     transform: translate(-50%, -50%);
-    width: 266px;
+    width: 34.7vw;
   }
 
   @include vp-767 {
@@ -26,8 +29,8 @@
 .video iframe {
   border: 0;
   display: none;
-  height: inherit;
-  width: inherit;
+  height: 100%;
+  width: 100%;
 }
 
 .video iframe.is-active {
@@ -42,7 +45,7 @@
   height: 100%;
   justify-content: center;
   position: relative;
-  width: inherit;
+  width: 100%;
 
   @media (min-width: $vp-1200) {
     @include graphic-retina("content/about/preview/desktop/preview", $color-sapphire, "jpg");

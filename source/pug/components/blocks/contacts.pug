@@ -12,10 +12,12 @@ mixin contacts
         text: "Пн-Вс: с 8:00 до 22:00",
       },
       {
+        href: 'tel:+78005555555',
         title: "Телефон",
         text: "8-800-555-55-55",
       },
       {
+        href: 'mailto:omsk@supergym.ru',
         title: "Email",
         text: "omsk@supergym.ru",
       },
@@ -28,4 +30,7 @@ mixin contacts
         each item in contacts
           li
             h3=`${item.title}:`
-            p=item.text
+            if(item.href)
+              a(href=item.href)=item.text
+            else
+              p=item.text

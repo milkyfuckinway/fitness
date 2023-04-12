@@ -44,6 +44,10 @@
   position: relative;
   width: 100%;
 
+  @include vp-1299 {
+    max-width: 860px;
+  }
+
   @include vp-1199 {
     gap: 40px;
     width: 566px;
@@ -140,7 +144,10 @@
   }
 }
 
-.crew__card:hover {
+.crew__card:hover,
+.crew__card:focus-visible {
+  outline: 0;
+
   &::before {
     box-shadow: 0 0 35px rgba(42, 59, 99, 0.17);
     content: "";
@@ -149,7 +156,6 @@
     position: absolute;
     top: 0;
     width: 100%;
-    z-index: 1000;
   }
 
   & .crew__content {

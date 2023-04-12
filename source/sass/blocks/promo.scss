@@ -27,11 +27,14 @@
     align-content: center;
     column-gap: 34px;
     flex-grow: 1;
+    justify-items: center;
+    max-width: 43.06%;
     padding: 42px 46px 47px 44px;
     row-gap: 0;
   }
 
   @include vp-767 {
+    max-width: none;
     padding: 46px 46px 50px 43px;
   }
 }
@@ -53,6 +56,7 @@
   @include vp-1199 {
     font-size: 48px;
     line-height: 46px;
+    margin-left: auto;
     padding: 4px 0 0 8px;
   }
 }
@@ -66,7 +70,9 @@
 
   @include vp-1199 {
     font-size: 12px;
+    margin-left: -14px;
     margin-top: 2px;
+    text-align: center;
   }
 }
 
@@ -105,6 +111,10 @@
 .promo__timestamp {
   display: flex;
   flex-direction: column;
+
+  @include vp-1199 {
+    margin-right: auto;
+  }
 }
 
 .promo__timestamp-top {

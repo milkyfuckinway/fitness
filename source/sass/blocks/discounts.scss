@@ -40,6 +40,7 @@
 .discounts__content {
   display: grid;
   gap: 40px;
+  grid-auto-rows: auto;
   grid-template-columns: 1fr 1fr;
 
   @include vp-1199 {
@@ -64,7 +65,7 @@
 
   @include vp-767 {
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: min-content 1fr;
   }
 }
 
@@ -126,6 +127,7 @@
   @include vp-767 {
     margin-left: auto;
     margin-right: auto;
+    margin-top: 28px;
     text-align: center;
   }
 }
@@ -139,6 +141,7 @@
 .discounts__regular {
   display: flex;
   flex-direction: column;
+  min-height: 211px;
   padding: 25px 35px 37px;
   position: relative;
 
@@ -152,10 +155,6 @@
     width: 100%;
 
     @include clipOn(7px);
-  }
-
-  @include vp-1199 {
-    min-height: 211px;
   }
 
   @include vp-767 {
@@ -177,6 +176,7 @@
   font-size: 16px;
   line-height: 140%;
   margin: 0;
+  margin-bottom: 20px;
 
   @include vp-767 {
     text-align: center;

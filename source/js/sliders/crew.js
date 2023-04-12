@@ -1,5 +1,15 @@
 const crew = document.querySelector('.crew');
 
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((item) => {
+    if (item.isIntersecting) {
+      item.target.tabIndex = '0';
+    } else {
+      item.target.tabIndex = '-1';
+    }
+  });
+});
+
 const initCrewSwiper = () => {
   if (crew) {
     const crewSwiperContainer = crew.querySelector('.swiper');
@@ -13,10 +23,18 @@ const initCrewSwiper = () => {
         nextEl: nextButton,
         prevEl: prevButton,
       },
+      keyboard: {
+        enabled: true,
+      },
       slidesPerView: 1,
       breakpoints: {
-        1200: {
+        1300: {
           slidesPerView: 4,
+          spaceBetween: 40,
+          allowTouchMove: false,
+        },
+        1200: {
+          slidesPerView: 3,
           spaceBetween: 40,
           allowTouchMove: false,
         },
@@ -30,11 +48,19 @@ const initCrewSwiper = () => {
         },
       },
     });
-
     prevButton.ariaLabel = 'Предыдущий слайд.';
     nextButton.ariaLabel = 'Следующий слайд.';
 
     crewSwiper.init();
+
+    const crewSlides = Array.from(crew.querySelector('.swiper-wrapper').children);
+
+    const setTabIndex = () => {
+      crewSlides.forEach((item) => {
+        observer.observe(item);
+      });
+    };
+    setTabIndex();
   }
 };
 
