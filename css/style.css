@@ -3440,9 +3440,7 @@ button,
 }
 
 .promo__content h2 {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: inline-block;
   font-family: "Alumni Sans", "Arial", sans-serif;
   font-size: 82px;
   font-weight: 600;
