@@ -20,7 +20,7 @@
   display: grid;
   grid-template-columns: auto auto;
   grid-template-rows: repeat(4, max-content);
-  max-width: 43.06%;
+  max-width: 500px;
   padding: 84px 76px;
   row-gap: 14px;
 
@@ -29,6 +29,7 @@
     column-gap: 34px;
     flex-grow: 1;
     justify-items: center;
+    max-width: 43.06%;
     padding: 42px 46px 47px 44px;
     row-gap: 0;
   }
