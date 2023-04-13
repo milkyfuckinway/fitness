@@ -3440,7 +3440,7 @@ button,
 }
 
 .promo__content h2 {
-  display: inline-block;
+  display: block;
   font-family: "Alumni Sans", "Arial", sans-serif;
   font-size: 82px;
   font-weight: 600;
@@ -3450,6 +3450,7 @@ button,
   letter-spacing: 0.03em;
   line-height: 79px;
   margin: 0;
+  overflow: hidden;
   padding: 0 8px 0 12px;
   text-align: center;
   text-transform: uppercase;
