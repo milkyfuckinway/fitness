@@ -40,7 +40,6 @@
 }
 
 .promo__content h2 {
-  display: block;
   font-family: $ff-alumnisans;
   font-size: 82px;
   font-weight: 600;
@@ -48,11 +47,10 @@
   letter-spacing: 0.03em;
   line-height: 79px;
   margin: 0;
-  overflow: hidden;
+  max-width: min-content;
   padding: 0 8px 0 12px;
   text-align: center;
   text-transform: uppercase;
-  width: min-content;
 
   @include vp-1199 {
     font-size: 48px;
