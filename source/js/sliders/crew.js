@@ -28,7 +28,7 @@ const initCrewSwiper = () => {
       },
       slidesPerView: 1,
       breakpoints: {
-        1300: {
+        1320: {
           slidesPerView: 4,
           spaceBetween: 40,
           allowTouchMove: false,
