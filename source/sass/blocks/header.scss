@@ -90,6 +90,12 @@
   }
 }
 
+.header__links {
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+}
+
 .header__bottom {
   column-gap: 63px;
   display: grid;
