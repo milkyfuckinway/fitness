@@ -3681,7 +3681,6 @@ button,
 
 .crew__card:hover .crew__content,
 .crew__card:focus-visible .crew__content {
-  background-color: rgba(16, 38, 84, 0.89);
   -webkit-transform: translateY(0);
   -ms-transform: translateY(0);
   transform: translateY(0);
@@ -3737,6 +3736,7 @@ button,
 }
 
 .crew__content {
+  background-color: rgba(16, 38, 84, 0.89);
   color: #ffffff;
   display: -webkit-box;
   display: -ms-flexbox;
